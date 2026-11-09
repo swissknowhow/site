@@ -510,3 +510,24 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; d
 .full-text > h2 + p:not(.ft-q)::first-letter { font: 650 3.2rem/.9 var(--serif); float: left; margin: 6px 10px 0 0; color: var(--red); }
 .full-text .ft-note, .full-text .ft-source { font-size: .88rem; color: var(--muted); font-style: italic; }
 .full-text .ft-source { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 28px; }
+
+/* ---------- transparence IA & pages légales ---------- */
+.ai-badge { position: absolute; right: 8px; bottom: 8px; z-index: 2; font: 600 .66rem/1 var(--sans); letter-spacing: .04em; color: #fff; background: rgba(17, 24, 39, .72); padding: 4px 7px; border-radius: 999px; backdrop-filter: blur(4px); pointer-events: none; }
+.theme-card .ai-badge { top: 10px; bottom: auto; right: 10px; }
+.theme-hero .ai-badge { top: 12px; bottom: auto; }
+.ph .ph-mono { position: relative; z-index: 1; }
+.hero-ai-note { position: absolute; right: 16px; bottom: 48px; margin: 0; font-size: .72rem; color: rgba(255, 255, 255, .85); background: rgba(0, 0, 0, .35); padding: 4px 10px; border-radius: 999px; z-index: 1; }
+.ai-note { display: flex; gap: 6px; align-items: flex-start; font-size: .82rem; color: var(--muted); margin: 8px 0 0; }
+.ai-note .ico { margin-top: 2px; }
+.ai-note a { text-decoration: underline; }
+.report-link { display: inline-flex; gap: 6px; align-items: center; margin-top: 14px; font-size: .85rem; color: var(--muted); text-decoration: underline; }
+.contact-card .report-link { display: flex; }
+.source-box .report-link { margin: 0 12px 8px 0; }
+.legal section { margin-bottom: 36px; }
+.legal p, .legal li { color: var(--ink-2); line-height: 1.7; }
+.legal ul { padding-left: 20px; }
+.legal li { margin-bottom: 10px; }
+.legal a { text-decoration: underline; }
+.legal code { font-size: .9em; background: var(--bg-2); padding: 1px 5px; border-radius: 4px; }
+/* le badge IA ne doit pas hériter du style du monogramme (.ph span) */
+.ph span.ai-badge, .ph-photo span.ai-badge { position: absolute; top: auto; right: 8px; bottom: 8px; font: 600 .66rem/1 var(--sans); letter-spacing: .04em; padding: 4px 7px; border: 0; border-radius: 999px; text-shadow: none; background: rgba(17, 24, 39, .72); }

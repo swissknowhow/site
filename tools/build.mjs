@@ -186,6 +186,7 @@ for (const m of magazines) {
 // ---------- gabarits ----------
 const themeIcon = (id, cls = 'ico') => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${THEMES[id]?.icon || ''}</svg>`;
 const ICONS = {
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/>',
   search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
   pin: '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
   phone: '<path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/>',
@@ -272,7 +273,7 @@ ${body}
       ${Object.entries(THEMES).slice(0, 6).map(([id, t]) => `<a href="${r}themes/${id}/">${esc(t.label)}</a>`).join('')}
     </div>
   </div>
-  <div class="wrap footer-bottom">© ${new Date().getFullYear()} ${SITE_NAME} · Une marque de Com Consulting Sàrl, Faubourg du Lac 2, CH-2000 Neuchâtel · <a href="mailto:info@comconsulting.ch">info@comconsulting.ch</a></div>
+  <div class="wrap footer-bottom">© ${new Date().getFullYear()} ${SITE_NAME} · Une marque de Com Consulting Sàrl, Faubourg du Lac 2, CH-2000 Neuchâtel · <a href="mailto:info@comconsulting.ch">info@comconsulting.ch</a> · <a href="${r}mentions-legales/">Mentions légales, IA &amp; confidentialité</a> · Aucun cookie</div>
 </footer>
 <div class="search-overlay" data-search-overlay hidden>
   <div class="search-panel" role="dialog" aria-modal="true" aria-label="Recherche">
@@ -291,9 +292,11 @@ const themePhoto = (id) => (id && exists(`assets/themes/${id}.webp`) ? `assets/t
 let PH_ROOT = '';
 // Couleur d'un thème via une classe (th-<id>) définie dans assets/css/themes.css : aucun style inline (CSP stricte)
 const thc = (id) => (THEMES[id] ? `th-${id}` : 'th-none');
+// Images générées par IA (assets/themes/) : toujours signalées (AI Act, art. 50)
+const AI_IMG = "Image d'illustration générée par IA";
 const placeholder = (name, themeId, cls = '') => {
   const photo = themePhoto(themeId);
-  return `<div class="ph ${thc(themeId)} ${photo ? 'ph-photo ' : ''}${cls}" aria-hidden="true">${photo ? `<img src="${PH_ROOT}${photo}" alt="" loading="lazy" decoding="async">` : ''}<span>${esc(initials(name))}</span>${themeId && !photo ? themeIcon(themeId, 'ph-ico') : ''}</div>`;
+  return `<div class="ph ${thc(themeId)} ${photo ? 'ph-photo ' : ''}${cls}">${photo ? `<img src="${PH_ROOT}${photo}" alt="${AI_IMG}" loading="lazy" decoding="async"><span class="ai-badge">Image IA</span>` : ''}<span class="ph-mono" aria-hidden="true">${esc(initials(name))}</span>${themeId && !photo ? themeIcon(themeId, 'ph-ico') : ''}</div>`;
 };
 const img = (src, alt, r, cls = '') => `<img class="${cls}" src="${r}${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
 const location = (c) => [c.postalCode && c.city ? `${c.postalCode} ${c.city}` : c.city, c.canton && CANTONS[c.canton] ? CANTONS[c.canton] : (c.country && c.country !== 'Suisse' ? c.country : '')].filter(Boolean).join(' · ');
@@ -368,6 +371,7 @@ function pageHome() {
   const body = `
 <section class="hero">
   <div class="hero-bg" aria-hidden="true">${heroImgs.map((s, i) => `<img src="${esc(s)}" alt="" class="hero-i${i}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>`).join('')}</div>
+  ${heroImgs.some((s) => s.startsWith('assets/themes/')) ? `<p class="hero-ai-note">${heroImgs.every((s) => s.startsWith('assets/themes/')) ? "Images d'illustration générées par IA" : "Certaines images d'illustration sont générées par IA"}</p>` : ''}
   <div class="wrap hero-inner">
     <p class="eyebrow light">Le magazine du savoir-faire suisse</p>
     <h1>L'annuaire des entreprises<br>qui font la Suisse.</h1>
@@ -389,7 +393,7 @@ function pageHome() {
 <section class="wrap section">
   ${sectionHead('Explorer par thème', 'themes/', r)}
   <div class="theme-grid">
-    ${themeCounts.filter(([, c, a]) => c + a > 0).map(([id, c, a]) => `<a class="theme-card ${thc(id)}${themePhoto(id) ? ' has-photo' : ''}" href="${r}themes/${id}/">${themePhoto(id) ? `<img class="tc-img" src="${r}${themePhoto(id)}" alt="" loading="lazy">` : ''}${themeIcon(id, 'theme-ico')}<h3>${esc(THEMES[id].label)}</h3><p>${plural(c, 'entreprise', 'entreprises')} · ${plural(a, 'article', 'articles')}</p></a>`).join('')}
+    ${themeCounts.filter(([, c, a]) => c + a > 0).map(([id, c, a]) => `<a class="theme-card ${thc(id)}${themePhoto(id) ? ' has-photo' : ''}" href="${r}themes/${id}/">${themePhoto(id) ? `<img class="tc-img" src="${r}${themePhoto(id)}" alt="${AI_IMG}" loading="lazy"><span class="ai-badge">Image IA</span>` : ''}${themeIcon(id, 'theme-ico')}<h3>${esc(THEMES[id].label)}</h3><p>${plural(c, 'entreprise', 'entreprises')} · ${plural(a, 'article', 'articles')}</p></a>`).join('')}
   </div>
 </section>
 <section class="section band">
@@ -467,7 +471,7 @@ function pageCompany(c) {
 </section>
 <div class="wrap detail-grid">
   <article class="detail-main">
-    ${c.description ? `<section><h2>Présentation</h2><p class="prose">${esc(c.description)}</p></section>` : ''}
+    ${c.description ? `<section><h2>Présentation</h2><p class="prose">${esc(c.description)}</p><p class="ai-note">${icon('info', 'ico sm')}Texte rédigé avec l'aide de l'IA à partir de l'édition imprimée du magazine. <a href="${r}mentions-legales/#ia">En savoir plus</a></p></section>` : ''}
     ${gallery.length > 1 ? `<section><h2>Photos</h2><div class="gallery">${gallery.map((s) => `<a href="${r}${esc(s)}" data-lightbox>${img(s, c.name, r)}</a>`).join('')}</div></section>` : ''}
     ${arts.length ? `<section><h2>Articles</h2><div class="grid grid-2">${arts.map((a) => articleCard(a, r)).join('')}</div></section>` : ''}
     <section><h2>Parutions</h2><ul class="appear-list">${apps.map((x) => `<li><a href="${r}magazines/${x.m.slug}/">${magCover(x.m, r, 'xs')}<span><b>${esc(x.m.title)}</b><span class="muted">${x.m.year || ''}${x.page ? ` · page ${esc(x.page)}` : ''}</span></span></a>${pdfLinks(x.m) ? `<a class="btn btn-ghost btn-sm" href="${esc(pdfLinks(x.m).read)}" target="_blank" rel="noopener">${icon('eye', 'ico sm')}PDF</a>` : ''}</li>`).join('')}</ul></section>
@@ -482,6 +486,7 @@ function pageCompany(c) {
       ${!addr.length && !c.phone && !c.email && !c.website ? '<p class="muted">Coordonnées non communiquées dans le magazine.</p>' : ''}
       ${addr.length ? `<a class="btn btn-ghost btn-block" href="https://www.google.com/maps/search/?api=1&query=${mapQ}" target="_blank" rel="noopener">${icon('map', 'ico sm')}Voir sur la carte</a>` : ''}
       ${webUrl(c.website) ? `<a class="btn btn-primary btn-block" href="${esc(webUrl(c.website))}" target="_blank" rel="noopener">${icon('web', 'ico sm')}Site web</a>` : ''}
+      <a class="report-link" href="${reportMail(`Fiche ${c.name}`, `entreprises/${c.slug}/`)}">${icon('mail', 'ico sm')}Signaler une erreur ou demander une modification</a>
     </div>
     ${c.contacts.length ? `<div class="contact-card"><h2>Interlocuteurs</h2>${c.contacts.map((p) => `<p class="ci">${icon('user')}<span><b>${esc(p.name)}</b>${p.role ? `<br><span class="muted">${esc(p.role)}</span>` : ''}</span></p>`).join('')}</div>` : ''}
   </aside>
@@ -527,19 +532,20 @@ function pageArticle(a) {
 </header>
 <div class="wrap article-media">${a.images?.length ? img(a.images[0], a.title, r, 'article-img') : placeholder(a.title, th, 'article-img')}</div>
 <div class="wrap narrow article-body">
-  ${a.body ? `<div class="summary-box"><p class="eyebrow">En bref</p><p>${esc(a.summary || '')}</p></div>` : `<p class="prose">${esc(a.summary || '')}</p>`}
+  ${a.body ? `<div class="summary-box"><p class="eyebrow">En bref</p><p>${esc(a.summary || '')}</p><p class="ai-note">${icon('info', 'ico sm')}Texte rédigé avec l'aide de l'IA à partir de l'édition imprimée du magazine. <a href="${r}mentions-legales/#ia">En savoir plus</a></p></div>` : `<p class="prose">${esc(a.summary || '')}</p><p class="ai-note">${icon('info', 'ico sm')}Texte rédigé avec l'aide de l'IA à partir de l'édition imprimée du magazine. <a href="${r}mentions-legales/#ia">En savoir plus</a></p>`}
   ${a.quote ? `<blockquote>« ${esc(a.quote.replace(/^[«"“\s]+|[»"”\s]+$/g, ''))} »${a.people?.[0] ? `<cite>— ${esc(a.people[0].name)}</cite>` : ''}</blockquote>` : ''}
   ${a.body ? `<section class="full-text" lang="${esc(a.body.lang || a.language || 'fr')}">
     <h2>${a.type === 'interview' ? 'L\'interview intégrale' : 'Texte intégral'}</h2>
     ${a.body.blocks.map((b) => b.t === 'q' ? `<p class="ft-q">${esc(b.x)}</p>` : b.t === 'h' ? `<h3>${esc(b.x)}</h3>` : `<p>${esc(b.x)}</p>`).join('\n    ')}
     ${a.body.note ? `<p class="ft-note">${esc(a.body.note)}</p>` : ''}
-    <p class="ft-source">Texte paru dans ${esc(m?.title || '')}${a.body.pages ? `, ${esc(a.body.pages)}` : (a.page ? `, p. ${esc(a.page)}` : '')}.</p>
+    <p class="ft-source">Texte paru dans ${esc(m?.title || '')}${a.body.pages ? `, ${esc(a.body.pages)}` : (a.page ? `, p. ${esc(a.page)}` : '')}. Retranscrit de l'édition imprimée avec une assistance informatique (IA), sans réécriture ; en cas d'écart, la version imprimée fait foi.</p>
   </section>` : ''}
   ${a.images?.length > 1 ? `<div class="gallery">${a.images.slice(1, 7).map((s) => `<a href="${r}${esc(s)}" data-lightbox>${img(s, a.title, r)}</a>`).join('')}</div>` : ''}
   ${a.people?.length ? `<h2>Personnes citées</h2><ul class="people">${a.people.map((p) => `<li>${icon('user')}<span><b>${esc(p.name)}</b>${p.role ? `<span class="muted">${esc(p.role)}</span>` : ''}</span></li>`).join('')}</ul>` : ''}
   ${m ? `<div class="source-box">
     <a href="${r}magazines/${m.slug}/">${magCover(m, r, 'sm')}</a>
     <div><p class="eyebrow">Paru dans</p><h3><a href="${r}magazines/${m.slug}/">${esc(m.title)}</a></h3><p class="muted">${m.year || ''}${a.page ? ` · page ${esc(a.page)}` : ''}${a.language ? ` · article original en ${({ fr: 'français', de: 'allemand', it: 'italien', en: 'anglais' })[a.language] || esc(a.language)}` : ''}</p>
+    <a class="report-link" href="${reportMail(`Article ${a.title}`, `articles/${a.slug}/`)}">${icon('mail', 'ico sm')}Signaler une erreur</a>
     ${f ? `<a class="btn btn-primary btn-sm" href="${esc(f.read)}" target="_blank" rel="noopener">${icon('book', 'ico sm')}Lire l'article complet</a> <a class="btn btn-ghost btn-sm" href="${esc(f.download)}" download target="_blank" rel="noopener">${icon('download', 'ico sm')}PDF</a>` : ''}</div>
   </div>` : ''}
 </div>
@@ -562,7 +568,7 @@ function pageThemes() {
 ${Object.entries(THEMES).map(([id, t]) => {
     const nc = companies.filter((c) => c.themes.includes(id)).length;
     const na = articles.filter((a) => a.themes.includes(id)).length;
-    return `<a class="theme-card ${thc(id)}${themePhoto(id) ? ' has-photo' : ''}" href="${r}themes/${id}/">${themePhoto(id) ? `<img class="tc-img" src="${r}${themePhoto(id)}" alt="" loading="lazy">` : ''}${themeIcon(id, 'theme-ico')}<h3>${esc(t.label)}</h3><p>${plural(nc, 'entreprise', 'entreprises')} · ${plural(na, 'article', 'articles')}</p></a>`;
+    return `<a class="theme-card ${thc(id)}${themePhoto(id) ? ' has-photo' : ''}" href="${r}themes/${id}/">${themePhoto(id) ? `<img class="tc-img" src="${r}${themePhoto(id)}" alt="${AI_IMG}" loading="lazy"><span class="ai-badge">Image IA</span>` : ''}${themeIcon(id, 'theme-ico')}<h3>${esc(t.label)}</h3><p>${plural(nc, 'entreprise', 'entreprises')} · ${plural(na, 'article', 'articles')}</p></a>`;
   }).join('')}
 </div></section>`;
   write('themes/index.html', layout({ depth: 1, title: 'Thèmes', description: 'Les thèmes de Swiss Knowhow : horlogerie, industrie, santé, construction, énergie, collectivités…', active: 'themes/', body }));
@@ -576,7 +582,7 @@ function pageTheme(id) {
   const ms = magazines.filter((m) => m.themes.includes(id));
   const body = `
 <section class="theme-hero ${thc(id)}${themePhoto(id) ? ' has-photo' : ''}">
-  ${themePhoto(id) ? `<img class="th-bg" src="${r}${themePhoto(id)}" alt="" fetchpriority="high">` : ''}
+  ${themePhoto(id) ? `<img class="th-bg" src="${r}${themePhoto(id)}" alt="${AI_IMG}" fetchpriority="high"><span class="ai-badge">Image IA</span>` : ''}
   <div class="wrap">
     ${crumbs([['themes/', 'Thèmes'], [null, t.label]], r)}
     <div class="theme-hero-row">${themeIcon(id, 'theme-ico xl')}<div><h1>${esc(t.label)}</h1><p class="lead">${plural(cs.length, 'entreprise', 'entreprises')} · ${plural(as.length, 'article', 'articles')} · ${plural(ms.length, 'magazine', 'magazines')}</p></div></div>
@@ -647,6 +653,46 @@ function pageSearch() {
 }
 
 const PUBLISHER = { name: 'Com Consulting Sàrl', address: 'Faubourg du Lac 2', city: 'CH-2000 Neuchâtel', phone: '+41 (0)32 967 95 83', email: 'info@comconsulting.ch' };
+
+// Lien e-mail pré-rempli pour signaler une erreur sur une page
+const reportMail = (what, rel) => esc(`mailto:${PUBLISHER.email}?subject=${encodeURIComponent(`Signalement – ${what}`.slice(0, 140))}&body=${encodeURIComponent(`Page : ${SITE_URL}/${rel}\n\nCorrection ou demande :\n`)}`);
+
+function pageLegal() {
+  const r = '../';
+  PH_ROOT = r;
+  const nAI = Object.keys(THEMES).filter(themePhoto).length + (exists('assets/themes/hero.webp') ? 1 : 0);
+  const body = `
+<section class="page-head wrap narrow">
+  ${crumbs([[null, 'Mentions légales']], r)}
+  <h1>Mentions légales, transparence IA &amp; confidentialité</h1>
+  <p class="lead">Ce que vous devez savoir sur l'éditeur de ce site, sur l'usage de l'intelligence artificielle et sur vos données.</p>
+</section>
+<div class="wrap narrow legal">
+  <section id="editeur"><h2>Éditeur et responsabilité éditoriale</h2>
+    <p>${esc(SITE_NAME)} est une marque de <b>${esc(PUBLISHER.name)}</b>, ${esc(PUBLISHER.address)}, ${esc(PUBLISHER.city)}, Suisse — ${esc(PUBLISHER.phone)} — <a href="mailto:${PUBLISHER.email}">${PUBLISHER.email}</a>. ${esc(PUBLISHER.name)} assume la responsabilité éditoriale du contenu publié sur ce site.</p>
+    <p>Le site reprend le contenu des éditions imprimées du magazine Swiss Knowhow (${magazines.length} numéros). Les coordonnées des entreprises sont celles publiées dans ces éditions ; elles peuvent avoir changé depuis.</p>
+  </section>
+  <section id="ia"><h2>Usage de l'intelligence artificielle</h2>
+    <p>Conformément au principe de transparence (notamment l'article 50 du règlement européen sur l'IA), nous indiquons clairement les contenus produits avec l'aide de l'IA :</p>
+    <ul>
+      <li><b>Images d'illustration</b> : ${nAI} visuels (page d'accueil et pages thématiques) sont <b>générés par IA</b>. Ils portent la mention « Image IA » et sont marqués comme tels dans leurs métadonnées. Ils ne représentent pas des lieux, personnes ou événements réels précis. Toutes les autres photos proviennent des éditions imprimées du magazine.</li>
+      <li><b>Résumés et présentations</b> : les résumés d'articles (« En bref ») et les textes de présentation des entreprises ont été <b>rédigés avec l'aide de l'IA</b> à partir des éditions imprimées. Ils portent une mention à cet effet.</li>
+      <li><b>Interviews</b> : le texte intégral des interviews est celui paru dans le magazine, <b>retranscrit avec une assistance informatique</b> (extraction et remise en ordre du texte des PDF), sans réécriture. En cas d'écart, la version imprimée fait foi.</li>
+      <li><b>Données de l'annuaire</b> : l'extraction des coordonnées, le classement par thème, la correction des coquilles et la sélection des photos ont été réalisés avec l'aide d'outils d'IA, puis contrôlés.</li>
+    </ul>
+    <p>Malgré ces contrôles, des erreurs peuvent subsister. Chaque fiche et chaque article proposent un lien « Signaler une erreur ».</p>
+  </section>
+  <section id="confidentialite"><h2>Protection des données</h2>
+    <p><b>Visiteurs.</b> Ce site ne dépose <b>aucun cookie</b> et n'utilise <b>aucun outil de mesure d'audience, de publicité ou de réseau social</b>. Il ne charge aucune ressource externe (les polices de caractères sont hébergées sur le site). Si vous utilisez le bouton « mode sombre », votre préférence est enregistrée uniquement dans votre navigateur (stockage local, clé <code>skh-theme</code>) ; vous pouvez l'effacer à tout moment depuis les réglages de votre navigateur.</p>
+    <p><b>Hébergement.</b> Le site est hébergé par GitHub Pages (GitHub, Inc., États-Unis). Comme tout hébergeur, GitHub peut enregistrer des données techniques de connexion (adresse IP, navigateur) à des fins de sécurité et de fonctionnement, selon sa <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">déclaration de confidentialité</a>.</p>
+    <p><b>Personnes et entreprises citées.</b> Les noms, fonctions et coordonnées professionnelles publiés proviennent des éditions imprimées du magazine. Toute personne concernée peut demander la <b>rectification</b> ou la <b>suppression</b> de ses données en écrivant à <a href="mailto:${PUBLISHER.email}">${PUBLISHER.email}</a> ; nous y donnons suite dans les meilleurs délais, conformément à la loi fédérale sur la protection des données (nLPD).</p>
+  </section>
+  <section id="droits"><h2>Propriété intellectuelle</h2>
+    <p>Les textes, photos et magazines publiés sur ce site sont la propriété de ${esc(PUBLISHER.name)} ou de leurs auteurs respectifs. Toute reproduction nécessite une autorisation préalable.</p>
+  </section>
+</div>`;
+  write('mentions-legales/index.html', layout({ depth: 1, title: 'Mentions légales, IA & confidentialité', description: `Éditeur, usage de l'intelligence artificielle et protection des données sur ${SITE_NAME}.`, active: '', body }));
+}
 
 function pageContact() {
   const r = '../';
@@ -720,7 +766,7 @@ function searchIndex() {
 
 // ---------- génération ----------
 // Repart de zéro pour les pages générées (les assets statiques sont conservés)
-for (const d of ['entreprises', 'articles', 'themes', 'magazines', 'recherche', 'contact']) fs.rmSync(path.join(OUT, d), { recursive: true, force: true });
+for (const d of ['entreprises', 'articles', 'themes', 'magazines', 'recherche', 'contact', 'mentions-legales']) fs.rmSync(path.join(OUT, d), { recursive: true, force: true });
 // … ainsi que les pages de redirection générées précédemment
 for (const base of ['', 'category']) {
   const dir = path.join(OUT, base);
@@ -741,6 +787,7 @@ pageMagazines();
 magazines.forEach(pageMagazine);
 pageSearch();
 pageContact();
+pageLegal();
 page404();
 const nRedirects = pageRedirects();
 const n = searchIndex();
