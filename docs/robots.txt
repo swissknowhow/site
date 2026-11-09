@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /recherche/
+
+Sitemap: https://swissknowhow.ch/sitemap.xml

@@ -38,7 +38,13 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 const fold = (s) => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 const slugify = (s) => fold(s).replace(/&/g, ' et ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 const uniq = (a) => [...new Set(a.filter(Boolean))];
+const SITEMAP = []; // pages indexables (hors redirections et 404)
 const write = (rel, content) => {
+  if (typeof content === 'string' && content.includes('<!--CANONICAL-->')) {
+    const url = `${process.env.SKH_SITE_URL || 'https://swissknowhow.ch'}/${rel.replace(/index\.html$/, '')}`;
+    content = content.replace('<!--CANONICAL-->', `<link rel="canonical" href="${url}">\n<meta property="og:url" content="${url}">`);
+    if (rel.endsWith('index.html')) SITEMAP.push(rel.replace(/index\.html$/, ''));
+  }
   const f = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(f), { recursive: true });
   fs.writeFileSync(f, content);
@@ -213,7 +219,7 @@ const NAV = [
   ['contact/', 'Contact'],
 ];
 
-function layout({ depth, root, title, description = '', active = '', body, jsonld = '', image = '' }) {
+function layout({ depth, root, noindex = false, title, description = '', active = '', body, jsonld = '', image = '' }) {
   const r = root ?? '../'.repeat(depth);
   const fullTitle = title ? `${title} · ${SITE_NAME}` : `${SITE_NAME} — L'annuaire du savoir-faire suisse`;
   return `<!doctype html>
@@ -228,7 +234,11 @@ function layout({ depth, root, title, description = '', active = '', body, jsonl
 <meta property="og:title" content="${esc(fullTitle)}">
 <meta property="og:description" content="${esc(description.slice(0, 300))}">
 <meta property="og:type" content="website">
-${image ? `<meta property="og:image" content="${esc(r + image)}">` : ''}
+<meta property="og:site_name" content="${SITE_NAME}">
+<meta property="og:locale" content="fr_CH">
+<meta name="twitter:card" content="${image ? 'summary_large_image' : 'summary'}">
+${image ? `<meta property="og:image" content="${esc(`${SITE_URL}/${image}`)}">` : ''}
+${noindex ? '<meta name="robots" content="noindex">' : '<!--CANONICAL-->'}
 <meta name="theme-color" content="#FF0000">
 <link rel="icon" href="${r}assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="${r}assets/fonts/inter-latin-567244.woff2" as="font" type="font/woff2" crossorigin>
@@ -492,7 +502,7 @@ function pageCompany(c) {
   </aside>
 </div>
 ${related.length ? `<section class="wrap section">${sectionHead('Dans le même secteur et la même région', '', r)}<div class="grid grid-4">${related.map((o) => companyCard(o, r)).join('')}</div></section>` : ''}`;
-  write(`entreprises/${c.slug}/index.html`, layout({ depth: 2, title: c.name, description: c.description || `${c.name}${c.sector ? ' — ' + c.sector : ''}${c.city ? ', ' + c.city : ''}`, active: 'entreprises/', body, jsonld, image: gallery[0] }));
+  write(`entreprises/${c.slug}/index.html`, layout({ depth: 2, title: [c.name, [c.sector, c.city].filter(Boolean).join(', ')].filter(Boolean).join(' – ').slice(0, 70), description: c.description || `${c.name}${c.sector ? ' — ' + c.sector : ''}${c.city ? ', ' + c.city : ''}`, active: 'entreprises/', body, jsonld, image: gallery[0] }));
 }
 
 function pageArticles() {
@@ -649,7 +659,7 @@ function pageSearch() {
   <form class="hero-search page-search" role="search" data-nosubmit>${icon('search')}<input type="search" name="q" placeholder="Entreprise, personne, ville, thème, article…" aria-label="Rechercher" data-page-search autofocus autocomplete="off"></form>
 </section>
 <section class="wrap"><div class="search-page-results" data-page-results></div></section>`;
-  write('recherche/index.html', layout({ depth: 1, title: 'Recherche', description: 'Rechercher dans l’annuaire Swiss Knowhow.', active: '', body }));
+  write('recherche/index.html', layout({ depth: 1, noindex: true, title: 'Recherche', description: 'Rechercher dans l’annuaire Swiss Knowhow.', active: '', body }));
 }
 
 const PUBLISHER = { name: 'Com Consulting Sàrl', address: 'Faubourg du Lac 2', city: 'CH-2000 Neuchâtel', phone: '+41 (0)32 967 95 83', email: 'info@comconsulting.ch' };
@@ -751,7 +761,7 @@ function pageRedirects() {
 
 function page404() {
   const body = `<section class="page-head wrap"><h1>Page introuvable</h1><p class="lead">Cette page n'existe pas ou a été déplacée.</p><p><a class="btn btn-primary" href="${SITE_BASE}">Retour à l'accueil</a></p></section>`;
-  write('404.html', layout({ depth: 0, root: SITE_BASE, title: 'Page introuvable', body }));
+  write('404.html', layout({ depth: 0, root: SITE_BASE, noindex: true, title: 'Page introuvable', body }));
 }
 
 function searchIndex() {
@@ -794,7 +804,9 @@ const n = searchIndex();
 write('.nojekyll', '');
 const expires = new Date(Date.now() + 365 * 864e5).toISOString().replace(/\.\d+Z$/, 'Z');
 write('.well-known/security.txt', `Contact: mailto:${PUBLISHER.email}\nExpires: ${expires}\nPreferred-Languages: fr, de, en\nCanonical: ${SITE_URL}/.well-known/security.txt\n`);
-write('robots.txt', `User-agent: *\nAllow: /\n`);
+write('robots.txt', `User-agent: *\nAllow: /\nDisallow: /recherche/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${SITEMAP.sort().map((u) => `  <url><loc>${SITE_URL}/${u}</loc></url>`).join('\n')}\n</urlset>\n`);
+console.log(`Sitemap : ${SITEMAP.length} pages`);
 // Couleurs des thèmes pour le JS de recherche
 write('assets/themes.json', JSON.stringify(Object.fromEntries(Object.entries(THEMES).map(([id, t]) => [id, { label: t.label, color: t.color }]))));
 console.log(`Redirections d'anciennes adresses : ${nRedirects}`);
