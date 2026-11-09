@@ -1,0 +1,9 @@
+node_modules/
+*.pdf
+.DS_Store
+site/
+# PDF publiés avec le site (mêmes chemins que l’ancien WordPress)
+!docs/wp-content/uploads/**/*.pdf
+!docs/wp-content/uploads/*.pdf
+.venv/
+work/
