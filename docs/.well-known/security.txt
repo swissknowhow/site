@@ -1,0 +1,4 @@
+Contact: mailto:info@comconsulting.ch
+Expires: 2027-11-09T16:16:49Z
+Preferred-Languages: fr, de, en
+Canonical: https://swissknowhow.ch/.well-known/security.txt

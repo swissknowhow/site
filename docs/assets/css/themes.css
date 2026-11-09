@@ -1,0 +1,19 @@
+/* Généré par tools/build.mjs — couleurs des thèmes */
+.th-horlogerie{--c:#9a6b2f}
+.th-industrie{--c:#3d5a80}
+.th-construction{--c:#c2410c}
+.th-architecture{--c:#6b21a8}
+.th-energie{--c:#15803d}
+.th-sante{--c:#be123c}
+.th-collectivites{--c:#1d4ed8}
+.th-economie{--c:#0f766e}
+.th-formation{--c:#a16207}
+.th-territoire{--c:#047857}
+.th-mobilite{--c:#475569}
+.th-none{--c:#64748b}
+.th-red{--c:var(--red)}
+.hero-bg img.hero-i0{--i:0}
+.hero-bg img.hero-i1{--i:1}
+.hero-bg img.hero-i2{--i:2}
+.hero-bg img.hero-i3{--i:3}
+.hero-bg img.hero-i4{--i:4}
