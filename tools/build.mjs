@@ -34,6 +34,12 @@ const CSS_V = assetVersion('assets/css/style.css');
 const JS_V = assetVersion('assets/js/app.js');
 
 // ---------- utilitaires ----------
+// Meta description : ≤ 160 caractères, coupée au mot près.
+const metaDesc = (s) => {
+  const t = String(s ?? '').replace(/\s+/g, ' ').trim();
+  if (t.length <= 160) return t;
+  return t.slice(0, 158).replace(/\s+\S*$/, '').replace(/[\s,;:.\-–—(]+$/, '') + '…';
+};
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fold = (s) => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 const slugify = (s) => fold(s).replace(/&/g, ' et ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -230,9 +236,9 @@ function layout({ depth, root, noindex = false, title, description = '', active 
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(fullTitle)}</title>
-<meta name="description" content="${esc(description.slice(0, 300))}">
+<meta name="description" content="${esc(metaDesc(description))}">
 <meta property="og:title" content="${esc(fullTitle)}">
-<meta property="og:description" content="${esc(description.slice(0, 300))}">
+<meta property="og:description" content="${esc(metaDesc(description))}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${SITE_NAME}">
 <meta property="og:locale" content="fr_CH">
