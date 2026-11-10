@@ -300,5 +300,6 @@ document.addEventListener('click', (e) => {
   try { u = new URL(a.getAttribute('href'), location.href); } catch { return; }
   if (!/^https?:$/.test(u.protocol)) return;
   if (/\.pdf$/i.test(u.pathname)) window.umami.track('Téléchargement PDF', { fichier: decodeURIComponent(u.pathname.split('/').pop()).slice(0, 80) });
+  else if (/(^|\.)google\.[a-z.]+$/.test(u.hostname) && /\/maps/.test(u.pathname)) window.umami.track('Clic itinéraire', { depuis: location.pathname.slice(0, 80) });
   else if (u.origin !== location.origin) window.umami.track('Clic site externe', { site: u.hostname, depuis: location.pathname.slice(0, 80) });
 }, true);
