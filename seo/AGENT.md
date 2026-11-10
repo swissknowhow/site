@@ -21,7 +21,7 @@ Tu es l'agent SEO quotidien du site https://swissknowhow.ch (annuaire et magazin
 ## Interdits absolus
 - Modifier les coordonnées des entreprises, les faits, les résumés (hors coquille), ou supprimer du contenu.
 - Retirer ou affaiblir les mentions IA (badges « Image IA », notes « rédigé avec l'aide de l'IA », /mentions-legales/) ou la CSP.
-- Ajouter cookie, traceur, script ou ressource tierce. Seule exception déjà en place : la mesure d'audience Plausible sans cookie (constante `ANALYTICS` de `tools/build.mjs`, déclarée dans /mentions-legales/#audience) ; ne pas la retirer ni la modifier.
+- Ajouter cookie, traceur, script ou ressource tierce. Seule exception déjà en place : la mesure d'audience Umami sans cookie (constante `ANALYTICS` de `tools/build.mjs` + suivi des clics en fin de `docs/assets/js/app.js`, déclarée dans /mentions-legales/#audience) ; ne pas la retirer ni la modifier.
 - Toucher au DNS, aux réglages GitHub, créer d'autres dépôts ou branches. Bourrage de mots-clés ou pages générées en masse.
 
 ## Journal et livrable
