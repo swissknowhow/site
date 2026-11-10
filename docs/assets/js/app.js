@@ -290,3 +290,15 @@
     document.body.appendChild(box);
   });
 })();
+
+// Mesure d'audience (Umami, sans cookie) : téléchargements de PDF et clics vers les sites externes.
+// Ne fait rien si le script de mesure n'est pas chargé.
+document.addEventListener('click', (e) => {
+  const a = e.target.closest && e.target.closest('a[href]');
+  if (!a || !window.umami || typeof window.umami.track !== 'function') return;
+  let u;
+  try { u = new URL(a.getAttribute('href'), location.href); } catch { return; }
+  if (!/^https?:$/.test(u.protocol)) return;
+  if (/\.pdf$/i.test(u.pathname)) window.umami.track('Téléchargement PDF', { fichier: decodeURIComponent(u.pathname.split('/').pop()).slice(0, 80) });
+  else if (u.origin !== location.origin) window.umami.track('Clic site externe', { site: u.hostname, depuis: location.pathname.slice(0, 80) });
+}, true);

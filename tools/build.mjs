@@ -27,9 +27,11 @@ fs.writeFileSync(path.join(OUT, 'assets', 'css', 'themes.css'), '/* Généré pa
   + [0, 1, 2, 3, 4].map((i) => `.hero-bg img.hero-i${i}{--i:${i}}`).join('\n') + '\n');
 // Politique de sécurité du contenu : tout est servi par le site lui-même (sauf la mesure d'audience ci-dessous), aucun script ni style inline.
 // (frame-ancestors ne fonctionne pas en <meta> : voir app.js pour la protection anti-iframe)
-// Mesure d'audience sans cookie (Plausible, UE) : pages vues, téléchargements de PDF, clics vers les sites des entreprises.
-// Mettre ANALYTICS.src à '' pour la désactiver (la CSP se resserre automatiquement).
-const ANALYTICS = { src: 'https://plausible.io/js/script.file-downloads.outbound-links.js', domain: 'swissknowhow.ch' };
+// Mesure d'audience sans cookie (Umami Cloud, offre gratuite, région UE) : pages vues + événements envoyés par app.js
+// (téléchargements de PDF, clics vers les sites des entreprises). Tant que websiteId est vide, rien n'est chargé
+// et la CSP reste fermée à tout domaine tiers.
+const ANALYTICS = { src: 'https://cloud.umami.is/script.js', websiteId: '', domain: 'swissknowhow.ch' };
+if (!ANALYTICS.websiteId) ANALYTICS.src = '';
 const AN_ORIGIN = ANALYTICS.src ? new URL(ANALYTICS.src).origin : '';
 const CSP = `default-src 'none'; script-src 'self'${AN_ORIGIN ? ` ${AN_ORIGIN}` : ''}; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'${AN_ORIGIN ? ` ${AN_ORIGIN}` : ''}; manifest-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'; upgrade-insecure-requests`;
 const THEMES_V = assetVersion('assets/css/themes.css');
@@ -256,7 +258,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : '<!--CANONICAL-->'}
 <link rel="stylesheet" href="${r}assets/css/style.css?v=${CSS_V}">
 <link rel="stylesheet" href="${r}assets/css/themes.css?v=${THEMES_V}">
 <script src="${r}assets/js/theme-init.js?v=${INIT_V}"></script>
-${ANALYTICS.src ? `<script defer data-domain="${ANALYTICS.domain}" src="${ANALYTICS.src}"></script>` : ''}
+${ANALYTICS.src ? `<script defer src="${ANALYTICS.src}" data-website-id="${ANALYTICS.websiteId}" data-domains="${ANALYTICS.domain}"></script>` : ''}
 ${jsonld ? `<script type="application/ld+json">${jsonld}</script>` : ''}
 </head>
 <body data-root="${r}">
@@ -709,7 +711,7 @@ function pageLegal() {
   </section>
   <section id="confidentialite"><h2>Protection des données</h2>
     <p><b>Visiteurs.</b> Ce site ne dépose <b>aucun cookie</b> et n'utilise <b>aucun outil de publicité ou de réseau social</b>. Les polices de caractères sont hébergées sur le site.</p>
-    <p id="audience"><b>Mesure d'audience.</b> Pour connaître la fréquentation du site (pages consultées, provenance, type d'appareil, téléchargements de magazines et clics vers les sites des entreprises), nous utilisons <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">Plausible Analytics</a>, un service hébergé dans l'Union européenne (Allemagne). Il <b>ne dépose aucun cookie</b>, ne stocke aucune donnée sur votre appareil, ne suit pas les visiteurs d'un site à l'autre et ne conserve pas les adresses IP : seules des statistiques agrégées et anonymes sont produites. Vous pouvez bloquer ce comptage avec un bloqueur de contenu, sans conséquence sur l'usage du site.</p>
+    ${ANALYTICS.src ? `<p id="audience"><b>Mesure d'audience.</b> Pour connaître la fréquentation du site (pages consultées, provenance, type d'appareil, téléchargements de magazines et clics vers les sites des entreprises), nous utilisons <a href="https://umami.is/privacy" target="_blank" rel="noopener">Umami Cloud</a>, avec un stockage des statistiques dans l'Union européenne. Ce service <b>ne dépose aucun cookie</b>, ne stocke aucune donnée sur votre appareil, ne suit pas les visiteurs d'un site à l'autre et ne produit que des statistiques agrégées et anonymes. Vous pouvez bloquer ce comptage avec un bloqueur de contenu, sans conséquence sur l'usage du site.</p>` : `<p id="audience"><b>Mesure d'audience.</b> Aucune mesure d'audience n'est active sur ce site.</p>`}
     <p>Si vous utilisez le bouton « mode sombre », votre préférence est enregistrée uniquement dans votre navigateur (stockage local, clé <code>skh-theme</code>) ; vous pouvez l'effacer à tout moment depuis les réglages de votre navigateur.</p>
     <p><b>Hébergement.</b> Le site est hébergé par GitHub Pages (GitHub, Inc., États-Unis). Comme tout hébergeur, GitHub peut enregistrer des données techniques de connexion (adresse IP, navigateur) à des fins de sécurité et de fonctionnement, selon sa <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">déclaration de confidentialité</a>.</p>
     <p><b>Personnes et entreprises citées.</b> Les noms, fonctions et coordonnées professionnelles publiés proviennent des éditions imprimées du magazine. Toute personne concernée peut demander la <b>rectification</b> ou la <b>suppression</b> de ses données en écrivant à <a href="mailto:${PUBLISHER.email}">${PUBLISHER.email}</a> ; nous y donnons suite dans les meilleurs délais, conformément à la loi fédérale sur la protection des données (nLPD).</p>
