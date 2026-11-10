@@ -30,10 +30,10 @@ fs.writeFileSync(path.join(OUT, 'assets', 'css', 'themes.css'), '/* Généré pa
 // Mesure d'audience sans cookie (Umami Cloud, offre gratuite, région UE) : pages vues + événements envoyés par app.js
 // (téléchargements de PDF, clics vers les sites des entreprises). Tant que websiteId est vide, rien n'est chargé
 // et la CSP reste fermée à tout domaine tiers.
-const ANALYTICS = { src: 'https://cloud.umami.is/script.js', websiteId: '', domain: 'swissknowhow.ch' };
+const ANALYTICS = { src: 'https://cloud.umami.is/script.js', endpoint: 'https://gateway.umami.is', websiteId: 'da916621-2ece-4fbe-b046-e0bec5dde0f2', domain: 'swissknowhow.ch' };
 if (!ANALYTICS.websiteId) ANALYTICS.src = '';
 const AN_ORIGIN = ANALYTICS.src ? new URL(ANALYTICS.src).origin : '';
-const CSP = `default-src 'none'; script-src 'self'${AN_ORIGIN ? ` ${AN_ORIGIN}` : ''}; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'${AN_ORIGIN ? ` ${AN_ORIGIN}` : ''}; manifest-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'; upgrade-insecure-requests`;
+const CSP = `default-src 'none'; script-src 'self'${AN_ORIGIN ? ` ${AN_ORIGIN}` : ''}; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'${AN_ORIGIN ? ` ${new URL(ANALYTICS.endpoint || ANALYTICS.src).origin}` : ''}; manifest-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'; upgrade-insecure-requests`;
 const THEMES_V = assetVersion('assets/css/themes.css');
 const INIT_V = assetVersion('assets/js/theme-init.js');
 const CSS_V = assetVersion('assets/css/style.css');
