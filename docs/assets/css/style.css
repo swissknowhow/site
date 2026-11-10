@@ -516,7 +516,7 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; d
 .theme-card .ai-badge { top: 10px; bottom: auto; right: 10px; }
 .theme-hero .ai-badge { top: 12px; bottom: auto; }
 .ph .ph-mono { position: relative; z-index: 1; }
-.hero-ai-note { position: absolute; right: 16px; bottom: 48px; margin: 0; font-size: .72rem; color: rgba(255, 255, 255, .85); background: rgba(0, 0, 0, .35); padding: 4px 10px; border-radius: 999px; z-index: 1; }
+.hero-ai-note { position: absolute; right: 6px; bottom: 40px; margin: 0; font-size: .55rem; line-height: 1.2; color: rgba(255, 255, 255, .75); background: rgba(0, 0, 0, .25); padding: 1px 5px; border-radius: 4px; z-index: 1; }
 .ai-note { display: flex; gap: 6px; align-items: flex-start; font-size: .82rem; color: var(--muted); margin: 8px 0 0; }
 .ai-note .ico { margin-top: 2px; }
 .ai-note a { text-decoration: underline; }
