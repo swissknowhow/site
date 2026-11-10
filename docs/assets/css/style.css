@@ -531,3 +531,4 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; d
 .legal code { font-size: .9em; background: var(--bg-2); padding: 1px 5px; border-radius: 4px; }
 /* le badge IA ne doit pas hériter du style du monogramme (.ph span) */
 .ph span.ai-badge, .ph-photo span.ai-badge { position: absolute; top: auto; right: 8px; bottom: 8px; font: 600 .66rem/1 var(--sans); letter-spacing: .04em; padding: 4px 7px; border: 0; border-radius: 999px; text-shadow: none; background: rgba(17, 24, 39, .72); }
+.co-notice { display: flex; gap: 8px; align-items: flex-start; font-size: .85rem; line-height: 1.45; background: var(--soft, rgba(0,0,0,.04)); border-left: 3px solid var(--red-ink); padding: 10px 12px; border-radius: 6px; margin: 0 0 14px; }

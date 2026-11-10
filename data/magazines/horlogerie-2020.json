@@ -1183,7 +1183,7 @@
       "country": "Suisse",
       "phone": "+41 (0)32 720 00 30",
       "email": "",
-      "website": "www.abarthel.ch",
+      "website": "",
       "contacts": [
         {
           "name": "Christophe Meyer",
@@ -1192,7 +1192,8 @@
       ],
       "page": "16-17",
       "pdfPages": [],
-      "advertiserOnly": false
+      "advertiserOnly": false,
+      "notice": "Société radiée du registre du commerce le 23.12.2022 à la suite de sa fusion avec Cadramont SA (La Chaux-de-Fonds), elle-même reprise en 2023 par Cadramont Manufacture SA (Le Locle). Les coordonnées ci-dessous sont celles publiées dans le magazine."
     },
     {
       "slug": "broquet-decolletage",

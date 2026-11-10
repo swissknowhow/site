@@ -25,9 +25,13 @@ fs.writeFileSync(path.join(OUT, 'assets', 'css', 'themes.css'), '/* Généré pa
   + Object.entries(THEMES).map(([id, t]) => `.th-${id}{--c:${t.color}}`).join('\n')
   + '\n.th-none{--c:#64748b}\n.th-red{--c:var(--red)}\n'
   + [0, 1, 2, 3, 4].map((i) => `.hero-bg img.hero-i${i}{--i:${i}}`).join('\n') + '\n');
-// Politique de sécurité du contenu : tout est servi par le site lui-même, aucun script ni style inline.
+// Politique de sécurité du contenu : tout est servi par le site lui-même (sauf la mesure d'audience ci-dessous), aucun script ni style inline.
 // (frame-ancestors ne fonctionne pas en <meta> : voir app.js pour la protection anti-iframe)
-const CSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'; upgrade-insecure-requests";
+// Mesure d'audience sans cookie (Plausible, UE) : pages vues, téléchargements de PDF, clics vers les sites des entreprises.
+// Mettre ANALYTICS.src à '' pour la désactiver (la CSP se resserre automatiquement).
+const ANALYTICS = { src: 'https://plausible.io/js/script.file-downloads.outbound-links.js', domain: 'swissknowhow.ch' };
+const AN_ORIGIN = ANALYTICS.src ? new URL(ANALYTICS.src).origin : '';
+const CSP = `default-src 'none'; script-src 'self'${AN_ORIGIN ? ` ${AN_ORIGIN}` : ''}; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'${AN_ORIGIN ? ` ${AN_ORIGIN}` : ''}; manifest-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'; upgrade-insecure-requests`;
 const THEMES_V = assetVersion('assets/css/themes.css');
 const INIT_V = assetVersion('assets/js/theme-init.js');
 const CSS_V = assetVersion('assets/css/style.css');
@@ -146,7 +150,7 @@ for (const m of magazines) {
       companyMap.set(key, t);
     }
     if (dom && !domainIndex.has(dom)) domainIndex.set(dom, key);
-    for (const k of ['sector', 'address', 'postalCode', 'city', 'canton', 'country', 'phone', 'email', 'website']) if (!t[k] && c[k]) t[k] = String(c[k]).trim();
+    for (const k of ['sector', 'address', 'postalCode', 'city', 'canton', 'country', 'phone', 'email', 'website', 'notice']) if (!t[k] && c[k]) t[k] = String(c[k]).trim();
     if ((c.description || '').length > (t.description || '').length * 1.4 || !t.description) t.description = c.description || t.description;
     t.themes = uniq([...t.themes, ...validThemes(c.themes)]);
     for (const p of c.contacts || []) if (p?.name && !t.contacts.some((x) => fold(x.name) === fold(p.name))) t.contacts.push(p);
@@ -227,7 +231,8 @@ const NAV = [
 
 function layout({ depth, root, noindex = false, title, description = '', active = '', body, jsonld = '', image = '' }) {
   const r = root ?? '../'.repeat(depth);
-  const fullTitle = title ? `${title} · ${SITE_NAME}` : `${SITE_NAME} — L'annuaire du savoir-faire suisse`;
+  // Titre ≤ 70 caractères quand c'est possible : la marque n'est ajoutée que si elle tient (Google tronque au-delà).
+  const fullTitle = title ? (`${title} · ${SITE_NAME}`.length <= 70 ? `${title} · ${SITE_NAME}` : title) : `${SITE_NAME} — L'annuaire du savoir-faire suisse`;
   return `<!doctype html>
 <html lang="fr">
 <head>
@@ -251,6 +256,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : '<!--CANONICAL-->'}
 <link rel="stylesheet" href="${r}assets/css/style.css?v=${CSS_V}">
 <link rel="stylesheet" href="${r}assets/css/themes.css?v=${THEMES_V}">
 <script src="${r}assets/js/theme-init.js?v=${INIT_V}"></script>
+${ANALYTICS.src ? `<script defer data-domain="${ANALYTICS.domain}" src="${ANALYTICS.src}"></script>` : ''}
 ${jsonld ? `<script type="application/ld+json">${jsonld}</script>` : ''}
 </head>
 <body data-root="${r}">
@@ -289,7 +295,7 @@ ${body}
       ${Object.entries(THEMES).slice(0, 6).map(([id, t]) => `<a href="${r}themes/${id}/">${esc(t.label)}</a>`).join('')}
     </div>
   </div>
-  <div class="wrap footer-bottom">© ${new Date().getFullYear()} ${SITE_NAME} · Une marque de Com Consulting Sàrl, Faubourg du Lac 2, CH-2000 Neuchâtel · <a href="mailto:info@comconsulting.ch">info@comconsulting.ch</a> · <a href="${r}mentions-legales/">Mentions légales, IA &amp; confidentialité</a> · Aucun cookie</div>
+  <div class="wrap footer-bottom">© ${new Date().getFullYear()} ${SITE_NAME} · Une marque de Com Consulting Sàrl, Faubourg du Lac 2, CH-2000 Neuchâtel · <a href="mailto:info@comconsulting.ch">info@comconsulting.ch</a> · <a href="${r}mentions-legales/">Mentions légales, IA &amp; confidentialité</a> · Sans cookie</div>
 </footer>
 <div class="search-overlay" data-search-overlay hidden>
   <div class="search-panel" role="dialog" aria-modal="true" aria-label="Recherche">
@@ -495,6 +501,7 @@ function pageCompany(c) {
   <aside class="detail-side">
     <div class="contact-card">
       <h2>Coordonnées</h2>
+      ${c.notice ? `<p class="co-notice">${icon('info', 'ico sm')}<span>${esc(c.notice)}</span></p>` : ''}
       ${addr.length ? `<p class="ci">${icon('pin')}<span>${addr.map(esc).join('<br>')}${c.country && c.country !== 'Suisse' ? `<br>${esc(c.country)}` : ''}</span></p>` : ''}
       ${c.phone ? `<p class="ci">${icon('phone')}<a href="${telUrl(c.phone)}">${esc(c.phone)}</a></p>` : ''}
       ${c.email ? `<p class="ci">${icon('mail')}${/^[^\s@<>"']+@[a-z0-9.-]+\.[a-z]{2,}$/i.test(c.email) ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : `<span>${esc(c.email)}</span>`}</p>` : ''}
@@ -701,7 +708,9 @@ function pageLegal() {
     <p>Malgré ces contrôles, des erreurs peuvent subsister. Chaque fiche et chaque article proposent un lien « Signaler une erreur ».</p>
   </section>
   <section id="confidentialite"><h2>Protection des données</h2>
-    <p><b>Visiteurs.</b> Ce site ne dépose <b>aucun cookie</b> et n'utilise <b>aucun outil de mesure d'audience, de publicité ou de réseau social</b>. Il ne charge aucune ressource externe (les polices de caractères sont hébergées sur le site). Si vous utilisez le bouton « mode sombre », votre préférence est enregistrée uniquement dans votre navigateur (stockage local, clé <code>skh-theme</code>) ; vous pouvez l'effacer à tout moment depuis les réglages de votre navigateur.</p>
+    <p><b>Visiteurs.</b> Ce site ne dépose <b>aucun cookie</b> et n'utilise <b>aucun outil de publicité ou de réseau social</b>. Les polices de caractères sont hébergées sur le site.</p>
+    <p id="audience"><b>Mesure d'audience.</b> Pour connaître la fréquentation du site (pages consultées, provenance, type d'appareil, téléchargements de magazines et clics vers les sites des entreprises), nous utilisons <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">Plausible Analytics</a>, un service hébergé dans l'Union européenne (Allemagne). Il <b>ne dépose aucun cookie</b>, ne stocke aucune donnée sur votre appareil, ne suit pas les visiteurs d'un site à l'autre et ne conserve pas les adresses IP : seules des statistiques agrégées et anonymes sont produites. Vous pouvez bloquer ce comptage avec un bloqueur de contenu, sans conséquence sur l'usage du site.</p>
+    <p>Si vous utilisez le bouton « mode sombre », votre préférence est enregistrée uniquement dans votre navigateur (stockage local, clé <code>skh-theme</code>) ; vous pouvez l'effacer à tout moment depuis les réglages de votre navigateur.</p>
     <p><b>Hébergement.</b> Le site est hébergé par GitHub Pages (GitHub, Inc., États-Unis). Comme tout hébergeur, GitHub peut enregistrer des données techniques de connexion (adresse IP, navigateur) à des fins de sécurité et de fonctionnement, selon sa <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">déclaration de confidentialité</a>.</p>
     <p><b>Personnes et entreprises citées.</b> Les noms, fonctions et coordonnées professionnelles publiés proviennent des éditions imprimées du magazine. Toute personne concernée peut demander la <b>rectification</b> ou la <b>suppression</b> de ses données en écrivant à <a href="mailto:${PUBLISHER.email}">${PUBLISHER.email}</a> ; nous y donnons suite dans les meilleurs délais, conformément à la loi fédérale sur la protection des données (nLPD).</p>
   </section>

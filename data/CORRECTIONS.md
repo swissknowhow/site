@@ -31,3 +31,8 @@ Coquilles du magazine imprimé ou de l'extraction, corrigées par recoupement (a
 | horlogerie-2024 | Protofil Sàrl | phone | `21 845 70 00` | `+41 (0)21 845 70 00` | indicatif manquant (L’Orient, Vallée de Joux : 021 845) |
 | horlogerie-2026 | Protofil Sàrl | phone | `21 845 70 00` | `+41 (0)21 845 70 00` | indicatif manquant (L’Orient, Vallée de Joux : 021 845) |
 | uvs-valais-neuchatel | HYBRID SA | website | `http://hybrid.ch/index.php@lang=en.html` | `www.hybrid.ch` | adresse de page mal formée |
+
+## 2026-11-10 – Vérification registre du commerce / sites officiels
+- **ABarthel Sàrl** (CHE-112.915.119) : radiée le 23.12.2022 après fusion avec Cadramont SA, elle-même absorbée en 2023 par Cadramont Manufacture SA (Le Locle, CHE-107.176.528) – source Zefix/FOSC. Site abarthel.ch retiré (domaine inexistant), mention ajoutée sur la fiche.
+- **AGG Kanton Bern** : la BVE est devenue la BVD. Site → bvd.be.ch/…/amt-fuer-grundstuecke-und-gebaeude.html, e-mail info.agg@be.ch, NPA 3013 (site officiel).
+- **Amt für Kultur und Sport SO** : déménagé Kreuzackerstrasse 1, 4502 Solothurn, tél. 032 627 60 60, site so.ch/…/amt-fuer-kultur-und-sport/ (site officiel).
