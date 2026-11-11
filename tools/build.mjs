@@ -539,10 +539,26 @@ function pageArticles() {
   write('articles/index.html', layout({ depth: 1, title: 'Articles & interviews', description: `${list.length} articles, interviews et publireportages Swiss Knowhow.`, active: 'articles/', body }));
 }
 
-let articleTitleCount = null;
+let articleTitleCount = null; // slug → titre de page désambiguïsé
 function pageArticle(a) {
   const r = '../../'; PH_ROOT = r;
-  if (!articleTitleCount) { articleTitleCount = new Map(); for (const o of articles) articleTitleCount.set(o.title, (articleTitleCount.get(o.title) || 0) + 1); }
+  if (!articleTitleCount) {
+    // Titres d'articles identiques d'une édition à l'autre : on ajoute l'édition, ou seulement l'année si cela suffit à les distinguer et évite de dépasser 70 caractères.
+    articleTitleCount = new Map();
+    const groups = new Map();
+    for (const o of articles) { if (!groups.has(o.title)) groups.set(o.title, []); groups.get(o.title).push(o); }
+    for (const [t, os] of groups) {
+      if (os.length < 2) continue;
+      const years = os.map((o) => magBySlug[o.magazine]?.year);
+      const yearsUnique = years.every(Boolean) && new Set(years).size === years.length;
+      for (const o of os) {
+        const om = magBySlug[o.magazine];
+        if (!om) continue;
+        const full = `${t} (${om.series || om.title}${om.year ? ' ' + om.year : ''})`;
+        articleTitleCount.set(o.slug, full.length > 70 && yearsUnique ? `${t} (${om.year})` : full);
+      }
+    }
+  }
   const m = magBySlug[a.magazine];
   const th = a.themes[0];
   const cos = a.companies.map((s) => companyMap.get(s)).filter(Boolean);
@@ -580,7 +596,7 @@ function pageArticle(a) {
 ${cos.length ? `<section class="wrap section">${sectionHead(cos.length > 1 ? 'Entreprises citées' : 'Entreprise citée', '', r)}<div class="grid grid-4">${cos.map((c) => companyCard(c, r)).join('')}</div></section>` : ''}
 ${same.length ? `<section class="wrap section">${sectionHead('Sur le même thème', `themes/${th}/`, r)}<div class="grid grid-3">${same.map((o) => articleCard(o, r)).join('')}</div></section>` : ''}`;
   const jsonld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: a.summary, isPartOf: m ? { '@type': 'PublicationIssue', name: m.title, datePublished: m.year ? String(m.year) : undefined } : undefined }).replace(/[<>&]/g, (ch) => '\\u00' + ch.charCodeAt(0).toString(16));
-  write(`articles/${a.slug}/index.html`, layout({ depth: 2, title: articleTitleCount.get(a.title) > 1 && m ? `${a.title} (${m.series || m.title}${m.year ? ' ' + m.year : ''})` : a.title, description: a.summary || a.subtitle || '', active: 'articles/', body, jsonld, image: a.images?.[0] }));
+  write(`articles/${a.slug}/index.html`, layout({ depth: 2, title: articleTitleCount.get(a.slug) || a.title, description: a.summary || a.subtitle || '', active: 'articles/', body, jsonld, image: a.images?.[0] }));
 }
 
 function pageThemes() {

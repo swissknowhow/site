@@ -25,3 +25,29 @@
 **Actions humaines requises**
 - Vérifier/remplacer les sites web de abarthel, agg-bern (l'office BVE bernois a été réorganisé, domaine www.bve.be.ch disparu) et amt-fuer-kultur-und-sport-solothurn. L'agent ne modifie pas les coordonnées.
 - Décider de la politique sur les titres > 70 car. (ex. ne plus suffixer « · Swiss Knowhow » sur les articles, ou tronquer au mot) : changement massif, pas fait en autonomie.
+
+## 2026-11-11
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis.
+- Audit SEO : 0 page sans titre/description/canonical, h1 unique, 0 image sans alt, JSON-LD valide, 0 orpheline, sitemap ↔ pages cohérents.
+- Pris en compte depuis hier (commits humains) : titres ≤ 70 car. quand la marque tient, 3 fiches corrigées, mesure d'audience Umami (exception autorisée, non touchée).
+
+**Problèmes relevés**
+- 405 titres > 70 car., dont 110 allongés par le suffixe d'édition ajouté hier (ex. « … (Horlogerie 2019) »).
+- 4 titres encore dupliqués (même édition et même année : Stadt Solothurn ×2, Énergies nouvelles Vaud, ZHK – Direktion).
+- Descriptions < 70 car. sur /articles/, /magazines/ (et /recherche/, noindex) : mineur, inchangé.
+
+**Correction faite (tools/build.mjs)**
+- Titres d'articles en doublon : si « (Série Année) » fait dépasser 70 car. et que l'année suffit à distinguer les éditions, seule l'année est ajoutée, ex. « Aiguilla SA – … (2019) ». Titres > 70 : 405 → 361 ; doublons : 4 (inchangé) ; 104 pages d'articles régénérées, aucune autre.
+
+**Rotation sites d'entreprises** (654 liens « Site web » ; 30 fiches de `amt-fuer-staedtebau-winterthur` à `b-braun-medical`)
+- En panne (404/410 ou domaine inexistant) : aucun. Pas de recherche Zefix nécessaire.
+- Non vérifiables depuis la session (DNS résolu, mais erreur TLS / délai / 502 du proxy après 2 essais) : amt-fuer-staedtebau-winterthur (bau.winterthur.ch), apex-tool-switzerland, aqc, arcam, astuto, atmos-medical.
+- OK (200) : les 24 autres.
+- Reprise au prochain passage : première fiche après `b-braun-medical` dans l'ordre alphabétique.
+
+**Actions humaines requises**
+- Facultatif : les 4 doublons restants pourraient être distingués par la personne interviewée (ex. « Énergies nouvelles Vaud – Patrick Chiche ») ; à valider avant de le faire.
+- Les 361 titres > 70 car. restants sont des titres d'articles longs en eux-mêmes : les raccourcir supposerait de réécrire des titres (hors autonomie).
