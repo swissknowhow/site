@@ -536,7 +536,7 @@ function pageArticles() {
   <div class="grid grid-3" data-list>${list.map((a) => articleCard(a, r)).join('')}</div>
   <p class="empty" data-empty hidden>Aucun article ne correspond à ces critères.</p>
 </section>`;
-  write('articles/index.html', layout({ depth: 1, title: 'Articles & interviews', description: `${list.length} articles, interviews et publireportages Swiss Knowhow.`, active: 'articles/', body }));
+  write('articles/index.html', layout({ depth: 1, title: 'Articles & interviews', description: `${list.length} articles, interviews et publireportages Swiss Knowhow sur les entreprises suisses, à filtrer par thème, type et magazine.`, active: 'articles/', body }));
 }
 
 let articleTitleCount = null; // slug → titre de page désambiguïsé
@@ -657,7 +657,7 @@ function pageMagazines() {
   <div class="mag-grid" data-list>${magazines.map((m) => magCard(m, r)).join('')}</div>
   <p class="empty" data-empty hidden>Aucun magazine.</p>
 </section>`;
-  write('magazines/index.html', layout({ depth: 1, title: 'Magazines PDF', description: `Téléchargez les ${magazines.length} éditions PDF de Swiss Knowhow.`, active: 'magazines/', body }));
+  write('magazines/index.html', layout({ depth: 1, title: 'Magazines PDF', description: `Téléchargez les ${magazines.length} éditions PDF de Swiss Knowhow : horlogerie, économie régionale, collectivités, santé, énergie, grands travaux.`, active: 'magazines/', body }));
 }
 
 function pageMagazine(m) {

@@ -51,3 +51,29 @@
 **Actions humaines requises**
 - Facultatif : les 4 doublons restants pourraient être distingués par la personne interviewée (ex. « Énergies nouvelles Vaud – Patrick Chiche ») ; à valider avant de le faire.
 - Les 361 titres > 70 car. restants sont des titres d'articles longs en eux-mêmes : les raccourcir supposerait de réécrire des titres (hors autonomie).
+
+## 2026-11-12
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : 0 page sans titre/description/canonical, h1 unique, 0 image sans alt, JSON-LD valide, 0 orpheline, sitemap ↔ pages cohérents. Titres > 70 car. : 361 (inchangé) ; doublons : 4 (inchangé).
+
+**Problèmes relevés**
+- Meta descriptions trop courtes sur /articles/ (59 car.) et /magazines/ (49 car.).
+
+**Correction faite (tools/build.mjs)**
+- Descriptions complétées sans changer les faits : /articles/ « … publireportages Swiss Knowhow sur les entreprises suisses, à filtrer par thème, type et magazine. » (124 car.) ; /magazines/ « … : horlogerie, économie régionale, collectivités, santé, énergie, grands travaux. » (128 car., séries réellement présentes dans data/magazines). Descriptions < 70 car. restantes : /recherche/ et /404.html (noindex). 2 pages régénérées.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `ba-consulting` à `bonalumi-e-ferrari`)
+- En panne :
+  - ba-consulting (BA ConsultinG SA, Etagnières) : https://www.architectes.ch/baconsulting → 404 (la page n'existe plus sur l'annuaire architectes.ch). Zefix : pas de « BA ConsultinG SA » à Etagnières ; « B.A. Consulting SA », Crissier, CHE-107.991.215, active. Probablement la même société, à confirmer.
+  - bcp-tourbillons (BCP Tourbillons SA, La Chaux-de-Fonds) : www.bcpsa.ch → domaine inexistant (NXDOMAIN). Zefix : BCP Tourbillons SA, La Chaux-de-Fonds, CHE-480.215.236, active. Société toujours inscrite, site à retrouver.
+- Non vérifiables depuis la session (erreur TLS/proxy après 2 essais, DNS en échec temporaire ou 403 anti-robot) : bandi, bates, bbp (DNS SERVFAIL), bm-entreprise-du-batiment, baselworld (403), bergauer (403).
+- OK (200) : les 22 autres.
+- Reprise au prochain passage : première fiche après `bonalumi-e-ferrari`.
+
+**Actions humaines requises**
+- Trouver le site actuel de BCP Tourbillons SA et de BA ConsultinG / B.A. Consulting SA (vérifier si c'est bien la société de Crissier), puis mettre à jour les fiches. L'agent ne modifie pas les coordonnées.
+- baselworld : le salon a pris fin en 2020 (fait connu, non vérifié ici) ; à vérifier si la fiche doit le signaler.
+- Toujours en attente : arbitrage des 4 titres en doublon (nom de la personne interviewée ?).
