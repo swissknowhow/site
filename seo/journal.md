@@ -77,3 +77,31 @@
 - Trouver le site actuel de BCP Tourbillons SA et de BA ConsultinG / B.A. Consulting SA (vérifier si c'est bien la société de Crissier), puis mettre à jour les fiches. L'agent ne modifie pas les coordonnées.
 - baselworld : le salon a pris fin en 2020 (fait connu, non vérifié ici) ; à vérifier si la fiche doit le signaler.
 - Toujours en attente : arbitrage des 4 titres en doublon (nom de la personne interviewée ?).
+
+## 2026-11-13
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : inchangé (titres > 70 car. : 361, doublons : 4, descriptions < 70 car. : /recherche/ et /404.html seulement, tous deux noindex).
+- Contexte (session du 12/11 avec l'éditeur) : sitemap soumis dans Google Search Console et Bing Webmaster Tools. Au 9/11, Google n'avait indexé que 50 URL, toutes de l'ancien WordPress (PDF, anciennes pages, dossiers du thème Divi). Point prévu le 3/12.
+
+**Correction faite (tools/build.mjs)**
+- Pages de redirection des anciennes URL WordPress (38) : `<link rel="canonical">` désormais en URL absolue (`https://swissknowhow.ch/contact/` au lieu de `../contact/`), comme le recommande Google ; le meta refresh et le lien « continuer » restent relatifs. 38 pages régénérées, aucune autre.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `bovard` à `cett-heig-vd`)
+- En panne :
+  - canton-de-vaud-affaires-exterieures : page www.vd.ch/…/affaires-exterieures → 404 (site vd.ch en ligne, page déplacée). Administration publique, pas de recherche Zefix.
+  - ceff-industrie : www.ceff.ch/ceff-industrie → 404 (www.ceff.ch en ligne). École publique, pas de recherche Zefix.
+  - cett-heig-vd : www.heig-vd.ch/rad/cett → 404 (www.heig-vd.ch en ligne). Institut de haute école, pas de recherche Zefix.
+  - bp-conseils (Genève) : www.bp-conseils.ch → domaine inexistant. Zefix : « BP Conseils, Brigitte Philips », Genève, CHE-201.995.669, **radiée le 2024-03-01**.
+  - centre-laser-victor-hugo : www.operation-presbytie.com → domaine inexistant. Zefix : aucune entreprise correspondante (probablement un centre français ; le téléphone de la fiche, « +41 (0)15 573 02 02 », ressemble à un numéro parisien mal converti).
+- Non vérifiables (TLS/proxy après 2 essais, DNS résolu) : bryek-horlogerie, casabat, brain-and-behaviour-laboratory, brasport ; celio-costruzioni répond 500 (erreur du serveur, peut-être passagère).
+- OK (200) : les 21 autres.
+- Reprise au prochain passage : première fiche après `cett-heig-vd`.
+
+**Actions humaines requises**
+- bp-conseils : société radiée en 2024, décider du sort de la fiche (mention « radiée », comme pour ABarthel ?).
+- centre-laser-victor-hugo : vérifier le site actuel et le numéro de téléphone (format suspect).
+- Mettre à jour les liens des 3 institutions publiques (Vaud, ceff, HEIG-VD) vers leurs nouvelles pages.
+- À trancher : les pages de redirection portent à la fois `noindex` et une canonical, deux signaux contradictoires pour Google ; retirer le `noindex` serait plus propre (non fait, en attente d'accord).

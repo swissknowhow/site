@@ -785,7 +785,7 @@ function pageRedirects() {
     const r = '../'.repeat(from.split('/').length);
     write(`${from}/index.html`, `<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><title>Page déplacée · ${SITE_NAME}</title>
-<meta name="robots" content="noindex"><link rel="canonical" href="${r}${to}">
+<meta name="robots" content="noindex"><link rel="canonical" href="${SITE_URL}/${to}">
 <meta http-equiv="Content-Security-Policy" content="${CSP}">
 <meta http-equiv="refresh" content="0; url=${r}${to}"></head>
 <body><p>Cette page a été déplacée : <a href="${r}${to}">continuer</a>.</p></body></html>`);
