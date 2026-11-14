@@ -105,3 +105,26 @@
 - centre-laser-victor-hugo : vérifier le site actuel et le numéro de téléphone (format suspect).
 - Mettre à jour les liens des 3 institutions publiques (Vaud, ceff, HEIG-VD) vers leurs nouvelles pages.
 - À trancher : les pages de redirection portent à la fois `noindex` et une canonical, deux signaux contradictoires pour Google ; retirer le `noindex` serait plus propre (non fait, en attente d'accord).
+
+## 2026-11-14
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : inchangé (titres > 70 car. : 361, doublons : 4, descriptions < 70 car. : /recherche/ et /404.html, noindex).
+- comconsulting.ch : toujours la page « en construction » d'OVH (redirection pas encore en place).
+
+**Problème relevé**
+- Le JSON-LD `Article` des 1184 articles ne contenait que `headline`, `description` et `isPartOf` : ni URL, ni image, ni éditeur, ni langue.
+
+**Correction faite (tools/build.mjs)**
+- JSON-LD `Article` complété : `url` et `mainEntityOfPage` (URL canonique), `image` (URL absolue, seulement pour les 704 articles qui ont une image ; 704/704 fichiers vérifiés présents), `inLanguage: fr`, `publisher` (Organization « Com Consulting Sàrl », url du site). Aucune date inventée (seule l'année de l'édition, déjà présente dans `isPartOf`). 1184 pages régénérées, une seule ligne modifiée par page (le bloc JSON-LD) ; 0 JSON-LD invalide.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `cff-infrastructure-region-sud` à `comptoir-immobilier`)
+- En panne (404/410 ou domaine inexistant) : aucun. Pas de recherche Zefix nécessaire.
+- Non vérifiables (DNS résolu ; délai, erreur TLS du proxy ou 403 anti-robot après 2 essais) : cinelec, cifom, citroen-suisse-geneve, cff-infrastructure-region-sud (403, ffs.ch), cff-leman-2030 (403, sbb.ch).
+- OK (200) : les 25 autres.
+- Reprise au prochain passage : première fiche après `comptoir-immobilier`.
+
+**Actions humaines requises**
+- Rien de nouveau. Restent en attente : fiches bp-conseils (radiée) et centre-laser-victor-hugo (site et téléphone), liens des 3 institutions publiques en 404, doublon `noindex` + canonical sur les pages de redirection, redirection comconsulting.ch.
