@@ -680,7 +680,10 @@ function pageMagazine(m) {
 </section>
 ${arts.length ? `<section class="wrap section">${sectionHead(`Sommaire · ${plural(arts.length, 'article', 'articles')}`, '', r)}<div class="grid grid-3">${arts.map((a) => articleCard(a, r, { showMag: false })).join('')}</div></section>` : ''}
 ${cos.length ? `<section class="wrap section">${sectionHead(`Entreprises de ce numéro · ${cos.length}`, '', r)}${filterBar({ withThemes: false })}<div class="grid grid-4" data-list>${cos.map((c) => companyCard(c, r)).join('')}</div><p class="empty" data-empty hidden>Aucun résultat.</p></section>` : ''}`;
-  write(`magazines/${m.slug}/index.html`, layout({ depth: 2, title: m.title, description: m.description || m.title, active: 'magazines/', body, image: m.cover }));
+  const pdf = pdfLinks(m);
+  const pdfAbs = pdf ? (/^https?:/.test(pdf.download) ? pdf.download : `${SITE_URL}/${pdf.download.replace(/^(\.\.\/)+/, '')}`) : null;
+  const jsonld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'PublicationIssue', name: m.title, description: m.description || undefined, url: `${SITE_URL}/magazines/${m.slug}/`, datePublished: m.year ? String(m.year) : undefined, inLanguage: m.languages?.length ? m.languages : undefined, image: m.cover ? `${SITE_URL}/${m.cover}` : undefined, publisher: { '@type': 'Organization', name: PUBLISHER.name, url: SITE_URL }, isPartOf: { '@type': 'Periodical', name: SITE_NAME, url: SITE_URL }, encoding: pdfAbs ? { '@type': 'MediaObject', contentUrl: pdfAbs, encodingFormat: 'application/pdf' } : undefined }).replace(/[<>&]/g, (ch) => '\\u00' + ch.charCodeAt(0).toString(16));
+  write(`magazines/${m.slug}/index.html`, layout({ depth: 2, title: m.title, description: m.description || m.title, active: 'magazines/', body, jsonld, image: m.cover }));
 }
 
 function pageSearch() {

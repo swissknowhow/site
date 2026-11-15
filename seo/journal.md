@@ -128,3 +128,28 @@
 
 **Actions humaines requises**
 - Rien de nouveau. Restent en attente : fiches bp-conseils (radiée) et centre-laser-victor-hugo (site et téléphone), liens des 3 institutions publiques en 404, doublon `noindex` + canonical sur les pages de redirection, redirection comconsulting.ch.
+
+## 2026-11-15
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : inchangé (titres > 70 car. : 361, doublons : 4, descriptions < 70 car. : /recherche/ et /404.html, noindex).
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Problème relevé**
+- Les 31 pages de magazines n'avaient aucun JSON-LD.
+
+**Correction faite (tools/build.mjs)**
+- JSON-LD `PublicationIssue` ajouté sur chaque page de magazine : nom, description, URL, année de parution, langues, couverture, éditeur (Com Consulting Sàrl), `isPartOf` Periodical « Swiss Knowhow » et, quand le PDF est public, `encoding` MediaObject (URL absolue, application/pdf). Vérifié : 31 JSON-LD valides, 30 PDF présents sur le site (le 31e numéro n'a pas de PDF public, donc pas d'`encoding`), toutes les couvertures présentes. 31 pages régénérées, une ligne ajoutée par page.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `concept-cnc-design` à `demhosa`)
+- En panne (404/410 ou domaine inexistant) : aucun.
+- Non vérifiables (DNS résolu ; erreur TLS ou 502 du proxy après 2 essais) : concept-cnc-design, cornu-cie, corum, cronal, ctm-centre-de-technologies-microtechniques, cyberis, d-tec-dubois, demhosa.
+- darwin-airline (Lugano) : le site répond 406 (refus du serveur, non vérifiable). Pour information, Zefix : « Darwin Airline SA in liquidazione », Lugano, CHE-110.176.084, **en liquidation**.
+- OK (200) : les 21 autres.
+- Reprise au prochain passage : première fiche après `demhosa`.
+
+**Actions humaines requises**
+- darwin-airline : société en liquidation au registre du commerce ; décider du sort de la fiche (comme bp-conseils, radiée).
+- Toujours en attente : bp-conseils, centre-laser-victor-hugo, liens des 3 institutions publiques en 404, `noindex` + canonical sur les pages de redirection, redirection comconsulting.ch.
