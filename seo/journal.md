@@ -153,3 +153,33 @@
 **Actions humaines requises**
 - darwin-airline : société en liquidation au registre du commerce ; décider du sort de la fiche (comme bp-conseils, radiée).
 - Toujours en attente : bp-conseils, centre-laser-victor-hugo, liens des 3 institutions publiques en 404, `noindex` + canonical sur les pages de redirection, redirection comconsulting.ch.
+
+## 2026-11-16
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : inchangé (titres > 70 car. : 361, doublons : 4, descriptions < 70 car. : /recherche/ et /404.html, noindex).
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Problème relevé**
+- La page d'accueil n'avait aucun JSON-LD (identité du site et de l'éditeur absente des données structurées).
+
+**Correction faite (tools/build.mjs)**
+- JSON-LD `WebSite` sur l'accueil : nom, URL, langue, description, et `publisher` Organization Com Consulting Sàrl avec les coordonnées déjà publiées sur /contact/ (constante `PUBLISHER`). Pas de `SearchAction` (abandonnée par Google). JSON-LD valide ; 1 page régénérée, 1 ligne modifiée.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `departement-chemie-universitat-basel` à `effitec`)
+- En panne :
+  - departement-de-physiologie-unil : www.unil.ch/physiologie → 404 (www.unil.ch en ligne). Université, pas de recherche Zefix.
+  - departement-economie-sport-vaud : www.vd.ch/decs → 404 (www.vd.ch en ligne). Administration, pas de recherche Zefix.
+  - dgmr-vaud : www.vd.ch/…/dirh/dgmr → 404. Administration, pas de recherche Zefix.
+  - departement-de-medecine-genetique-et-developpement-unige : medgen.unige.ch → domaine inexistant (www.unige.ch en ligne). Université, pas de recherche Zefix.
+  - ecole-francaise-de-berne (Berne) : www.ecole-francaise-de-berne.ch → domaine inexistant. Zefix : seule « Association de l'Ecole Française de Berne », CHE-109.989.057, **radiée le 2013-12-12** ; l'école peut être exploitée par une autre entité, à vérifier.
+  - ecole-minerva (Lausanne) : www.ecole-minerva.ch → domaine inexistant. Zefix : « Ecole Minerva S.à r.l. », Lausanne, CHE-107.035.709, **active** ; site à retrouver.
+- Non vérifiables (DNS résolu ; erreur TLS/proxy ou 503 après 2 essais) : des-systemes-de-securite, dssa-dumont-schneider, dm-surfaces (503).
+- OK (200) : les 21 autres.
+- Reprise au prochain passage : première fiche après `effitec`.
+
+**Actions humaines requises**
+- Retrouver les nouvelles adresses : École Minerva (active), École française de Berne (statut à vérifier), et les pages déplacées de l'UNIL, de l'UNIGE et de l'État de Vaud (DECS, DGMR). Les liens vd.ch cassés commencent à s'accumuler (4 fiches) : une passe groupée sur les fiches « Canton de Vaud » serait efficace.
+- Toujours en attente : darwin-airline (en liquidation), bp-conseils (radiée), centre-laser-victor-hugo, `noindex` + canonical sur les redirections, redirection comconsulting.ch.

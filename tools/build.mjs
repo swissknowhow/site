@@ -434,7 +434,8 @@ ${featCompanies.length ? `<section class="wrap section">
   ${sectionHead("Dans l'annuaire", 'entreprises/', r, "Tout l'annuaire")}
   <div class="grid grid-4">${featCompanies.map((c) => companyCard(c, r)).join('')}</div>
 </section>` : ''}`;
-  write('index.html', layout({ depth: 0, title: '', description: `Annuaire Swiss Knowhow : ${companies.length} entreprises, ${articles.length} articles et ${magazines.length} magazines PDF sur le savoir-faire suisse.`, active: '', body, image: heroImgs[0] }));
+  const jsonld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: `${SITE_URL}/`, inLanguage: 'fr', description: "L'annuaire du savoir-faire suisse : entreprises, articles et magazines Swiss Knowhow.", publisher: { '@type': 'Organization', name: PUBLISHER.name, url: SITE_URL, email: PUBLISHER.email, telephone: PUBLISHER.phone, address: { '@type': 'PostalAddress', streetAddress: PUBLISHER.address, postalCode: '2000', addressLocality: 'Neuchâtel', addressCountry: 'CH' } } }).replace(/[<>&]/g, (ch) => '\\u00' + ch.charCodeAt(0).toString(16));
+  write('index.html', layout({ depth: 0, title: '', description: `Annuaire Swiss Knowhow : ${companies.length} entreprises, ${articles.length} articles et ${magazines.length} magazines PDF sur le savoir-faire suisse.`, active: '', body, jsonld, image: heroImgs[0] }));
 }
 
 function filterBar({ withThemes = true, cantons = [], extra = '' }) {
