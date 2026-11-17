@@ -52,12 +52,22 @@ def pages_of(mag, a):
     if t.get('pdfPages'): base = set(t['pdfPages'])
     else:
         p = pm.get(f"{mag}:{a['slug']}")
-        if not p: return set(), ''
+        if not p: return set(), set()
         base = set(p['pages'])
     # page voisine sans texte d'aucun autre article : page photo d'ouverture ou de fin
     other = TEXT_PAGES[mag] - base
-    extra = {q for b in base for q in (b - 1, b + 1) if q > 0 and q not in base and q not in other}
-    return base | extra, 'ok'
+    lines = LINES.get(mag, {})
+    extra = {q for b in base for q in (b - 1, b + 1) if q > 0 and q not in base and q not in other and lines.get(q, 99) <= 12}
+    return base, extra
+
+# nombre de lignes de texte par page (work/texts/<mag>.txt) : une page photo n'en a presque pas
+LINES = {}
+for f in glob.glob(str(ROOT / 'work' / 'texts' / '*.txt')):
+    cnt, pg = collections.Counter(), 0
+    for ln in Path(f).read_text(encoding='utf-8').splitlines():
+        if ln.startswith('=== PAGE '): pg = int(ln.split()[2]); cnt[pg] += 0
+        else: cnt[pg] += 1
+    LINES[Path(f).stem] = cnt
 
 TEXT_PAGES = collections.defaultdict(set)
 for mag, d in texts.items():
@@ -68,7 +78,8 @@ stats = collections.Counter()
 for mag, m in mags.items():
     for a in m.get('articles', []):
         k = f"{mag}:{a['slug']}"
-        pages, how = pages_of(mag, a)
+        base, extra = pages_of(mag, a)
+        pages = base | extra
         imgs = []
         for s in raw['articles'].get(k, []):
             mm = PAT.match(s)
@@ -77,8 +88,8 @@ for mag, m in mags.items():
             if pages and int(mm.group(2)) not in pages: stats['hors page'] += 1; continue
             imgs.append(s)
         if imgs: out['articles'][k] = imgs; stats['articles avec photos'] += 1
-        elif pages and a.get('type') != 'annonce':
-            r = render(mag, min(pages))
+        elif base and a.get('type') != 'annonce':
+            r = render(mag, min(base))
             if r: out['pageImages'][k] = r; stats['page reproduite'] += 1
         else: stats['sans rien'] += 1
     for c in m.get('companies', []):
