@@ -324,7 +324,29 @@ const placeholder = (name, themeId, cls = '') => {
   const photo = themePhoto(themeId);
   return `<div class="ph ${thc(themeId)} ${photo ? 'ph-photo ' : ''}${cls}">${photo ? `<img src="${PH_ROOT}${photo}" alt="${AI_IMG}" loading="lazy" decoding="async"><span class="ai-badge">Image IA</span>` : ''}<span class="ph-mono" aria-hidden="true">${esc(initials(name))}</span>${themeId && !photo ? themeIcon(themeId, 'ph-ico') : ''}</div>`;
 };
-const img = (src, alt, r, cls = '') => `<img class="${cls}" src="${r}${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
+// Dimensions des images WebP (lecture de l'en-tête) : sert à repérer les portraits pour mieux les cadrer.
+const IMG_SIZE = new Map();
+const imgSize = (src) => {
+  if (IMG_SIZE.has(src)) return IMG_SIZE.get(src);
+  let d = null;
+  try {
+    const b = fs.readFileSync(path.join(OUT, src));
+    if (b.toString('ascii', 0, 4) === 'RIFF' && b.toString('ascii', 8, 12) === 'WEBP') {
+      const k = b.toString('ascii', 12, 16);
+      if (k === 'VP8 ') d = { w: b.readUInt16LE(26) & 0x3fff, h: b.readUInt16LE(28) & 0x3fff };
+      else if (k === 'VP8L') { const v = b.readUInt32LE(21); d = { w: (v & 0x3fff) + 1, h: ((v >>> 14) & 0x3fff) + 1 }; }
+      else if (k === 'VP8X') d = { w: 1 + b.readUIntLE(24, 3), h: 1 + b.readUIntLE(27, 3) };
+    }
+  } catch { /* image absente : pas de cadrage particulier */ }
+  IMG_SIZE.set(src, d);
+  return d;
+};
+const isPortrait = (src) => { const d = imgSize(src); return !!d && d.h > d.w * 1.05; };
+const img = (src, alt, r, cls = '') => `<img class="${[cls, isPortrait(src) ? 'is-portrait' : ''].filter(Boolean).join(' ')}" src="${r}${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
+// Photo principale d'un article : un portrait n'est pas recadré en bandeau, il est affiché entier sur un fond flouté.
+const articleHero = (src, alt, r) => (isPortrait(src)
+  ? `<div class="article-portrait"><img class="ap-bg" src="${r}${esc(src)}" alt="" aria-hidden="true" decoding="async"><img class="ap-img" src="${r}${esc(src)}" alt="${esc(alt)}" decoding="async"></div>`
+  : img(src, alt, r, 'article-img'));
 const location = (c) => [c.postalCode && c.city ? `${c.postalCode} ${c.city}` : c.city, c.canton && CANTONS[c.canton] ? CANTONS[c.canton] : (c.country && c.country !== 'Suisse' ? c.country : '')].filter(Boolean).join(' · ');
 
 function magCover(m, r, cls = '') {
@@ -578,7 +600,7 @@ function pageArticle(a) {
   ${a.subtitle ? `<p class="lead">${esc(a.subtitle)}</p>` : ''}
   <div class="chips">${a.themes.map((id) => themeChip(id, r)).join('')}</div>
 </header>
-<div class="wrap article-media">${a.images?.length ? img(a.images[0], a.title, r, 'article-img') : placeholder(a.title, th, 'article-img')}</div>
+<div class="wrap article-media">${a.images?.length ? articleHero(a.images[0], a.title, r) : placeholder(a.title, th, 'article-img')}</div>
 <div class="wrap narrow article-body">
   ${a.body ? `<div class="summary-box"><p class="eyebrow">En bref</p><p>${esc(a.summary || '')}</p><p class="ai-note">${icon('info', 'ico sm')}Texte rédigé avec l'aide de l'IA à partir de l'édition imprimée du magazine. <a href="${r}mentions-legales/#ia">En savoir plus</a></p></div>` : `<p class="prose">${esc(a.summary || '')}</p><p class="ai-note">${icon('info', 'ico sm')}Texte rédigé avec l'aide de l'IA à partir de l'édition imprimée du magazine. <a href="${r}mentions-legales/#ia">En savoir plus</a></p>`}
   ${a.quote ? `<blockquote>« ${esc(a.quote.replace(/^[«"“\s]+|[»"”\s]+$/g, ''))} »${a.people?.[0] ? `<cite>— ${esc(a.people[0].name)}</cite>` : ''}</blockquote>` : ''}

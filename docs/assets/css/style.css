@@ -532,3 +532,10 @@ input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; d
 /* le badge IA ne doit pas hériter du style du monogramme (.ph span) */
 .ph span.ai-badge, .ph-photo span.ai-badge { position: absolute; top: auto; right: 8px; bottom: 8px; font: 600 .66rem/1 var(--sans); letter-spacing: .04em; padding: 4px 7px; border: 0; border-radius: 999px; text-shadow: none; background: rgba(17, 24, 39, .72); }
 .co-notice { display: flex; gap: 8px; align-items: flex-start; font-size: .85rem; line-height: 1.45; background: var(--soft, rgba(0,0,0,.04)); border-left: 3px solid var(--red-ink); padding: 10px 12px; border-radius: 6px; margin: 0 0 14px; }
+
+/* Portraits : visage en haut du cadre dans les vignettes, image entière sur fond flouté en tête d'article */
+img.is-portrait { object-position: 50% 18%; }
+.article-portrait { position: relative; aspect-ratio: 21 / 9; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); background: #1b1b1b; display: flex; justify-content: center; }
+.article-portrait .ap-bg { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); max-width: none; object-fit: cover; filter: blur(28px) saturate(1.1); opacity: .55; }
+.article-portrait .ap-img { position: relative; height: 100%; width: auto; max-width: 100%; object-fit: contain; }
+@media (max-width: 720px) { .article-portrait { aspect-ratio: 4 / 5; } }
