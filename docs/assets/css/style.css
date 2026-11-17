@@ -539,3 +539,8 @@ img.is-portrait { object-position: 50% 18%; }
 .article-portrait .ap-bg { position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px); max-width: none; object-fit: cover; filter: blur(28px) saturate(1.1); opacity: .55; }
 .article-portrait .ap-img { position: relative; height: 100%; width: auto; max-width: 100%; object-fit: contain; }
 @media (max-width: 720px) { .article-portrait { aspect-ratio: 4 / 5; } }
+/* Texte original sur les fiches entreprise */
+.full-text .ft-lead { font-weight: 600; font-size: 1.08em; }
+.co-article { margin-bottom: 36px; }
+.co-article .full-text h2 { font-size: 1.5rem; margin-top: 4px; }
+.co-article-link { margin-top: 10px; }
