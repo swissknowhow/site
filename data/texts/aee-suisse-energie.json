@@ -1463,5 +1463,561 @@
    }
   ],
   "note": "Publireportage publié en français (p. 46) et en allemand (p. 47) ; version française retenue."
+ },
+ "aee-suisse-energie-neyruz-avenir-durable": {
+  "lang": "fr",
+  "pages": "p. 24",
+  "pdfPages": [
+   26
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "À noter que ce projet a obtenu une subvention de l’OFEN justifiée par l’intégration énergétique autour du micro-grid, lequel approvisionne une communauté d’autoconsommation, une pompe à chaleur qui produit l’énergie thermique pour le thermoréseau et une batterie qui permet d’améliorer le taux d’autoconsommation et offrir des services système au GRD et au GRT. Ce projet est à la pointe de l’innovation en matière de convergence des réseaux."
+   },
+   {
+    "t": "q",
+    "x": "Quels sont les grands axes de la politique énergétique de la commune ?"
+   },
+   {
+    "t": "p",
+    "x": "Neyruz a obtenu le label Cité de l’énergie en 2015, notamment en focalisant ses ressources sur des projets majeurs plutôt que sur de nombreuses actions marginales. Par exemple, les autorités communales ont fondé en 2015 la société Neyergie SA et lui ont donné la mission de promouvoir les énergies renouvelables sur le territoire communal. Cette décision a été confortée par la population neyruzienne qui a soutenu la stratégie des autorités communales en acceptant la demande de crédit pour constituer le capital de la société. La volonté citoyenne a été confirmée dans les urnes par l’acceptation à plus de 70% de la stratégie énergétique 2050 de la Confédération."
+   },
+   {
+    "t": "q",
+    "x": "Comment favorisez-vous l’assainissement énergétique des bâtiments privés ?"
+   },
+   {
+    "t": "p",
+    "x": "La commission de l’énergie est très active dans ce domaine en offrant du support aux propriétaires qui souhaitent assainir leur immeuble. De plus, le plan communal des énergies prévoit des périmètres à concept énergétique et le règlement communal d’urbanisme des bonus d’indice en fonction du taux d’énergie renouvelable. Dans la révision actuellement en traitement, il est prévu qu’un nouveau secteur affecté à la zone à bâtir soit alimenté à 100 % en énergie renouvelable."
+   },
+   {
+    "t": "q",
+    "x": "Pourriez-vous nous présenter les activités de Neyergie ?"
+   },
+   {
+    "t": "p",
+    "x": "Neyergie SA, pour Neyruz Energie, a mis en chantier dès 2015 la construction d’un réseau de chaleur à distance alimenté par une chaudière à plaquettes de bois. En 2018, près de 1 MWh sera distribué à des bâtiments publics ainsi qu’à des immeubles privés situés dans le périmètre du centre du village. Un important projet immobilier en face de la gare CFF, comprenant 8 immeubles résidentiels et commerces, est en phase finale de construction après 8 années de planification. Les autorités communales se sont beaucoup investies afin que le projet soit équilibré entre le résidentiel, les activités et les services. La solution mise en œuvre répond au concept « vivre avec services ». Dans les tractations avec le promoteur, les autorités ont obtenu que les immeubles privés soient raccordés au thermoréseau et que Neyergie SA bénéficie d’une servitude pour l’usage des toitures afin d’y ériger une centrale photovoltaïque. Les parties se sont fixées pour objectif d’approvisionner le site avec 70 % d’énergie renouvelable. Le financement de la centrale photovoltaïque est en partie citoyen puisqu’une levée de fonds auprès du public est en cours."
+   },
+   {
+    "t": "q",
+    "x": "Comment la commune sensibilise-t-elle ses habitants aux enjeux énergétiques ?"
+   },
+   {
+    "t": "p",
+    "x": "La commission de l’énergie organise régulièrement des évènements autour de sujets relatifs à l’énergie et à la mobilité douce. Ces évènements peuvent être de grande ampleur sur 1 à 2 jours avec la venue d’acteurs du domaine des énergies renouvelables tels que les fabricants de vélos ou de voitures électriques. D’autres sont plus limités dans le temps tout en étant focalisés sur une action comme le remplacement des ampoules et les brise-jets."
+   },
+   {
+    "t": "q",
+    "x": "Pourriez-vous nous présenter les réalisations énergétiques de la commune et les projets prévus ?"
+   },
+   {
+    "t": "p",
+    "x": "La réalisation majeure à ce jour est la construction du thermoréseau. La construction de la centrale photovoltaïque d’une capacité de 500'000 kWh/an a débuté cette année. Sa réalisation complète, prévue pour 2021, comprendra le stockage de l’électricité sous forme thermique et dans des batteries afin d'optimiser l’autoconsommation. La batterie sera exploitée pour offrir des prestations de services système."
+   },
+   {
+    "t": "q",
+    "x": "La commune de Neyruz a reçu la certification Cité de l'énergie. Quels résultats cette distinction récompense-t-elle ?"
+   },
+   {
+    "t": "p",
+    "x": "Elle récompense avant tout la volonté des autorités communales d’être proactives pour tout ce qui touche à la mobilité douce, à l’énergie renouvelable dans le but d’améliorer la qualité de vie des habitants à moyen et long terme. D’ailleurs la devise de Neyruz est « le dynamisme au service du cadre de vie ». Celle justifiant le label est « Neyruz pour un avenir durable »."
+   }
+  ]
+ },
+ "aee-suisse-energie-ajs-ingenieurs-civils": {
+  "lang": "fr",
+  "pages": "p. 25",
+  "pdfPages": [
+   27
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "AJS Ingénieurs civils SA se positionne comme un véritable spécialiste de la construction. Depuis 1960, le bureau AJS réalise des projets routiers de grande ampleur, gère des études de structure du bâtiment et appuie grâce à son expérience les maîtres d’ouvrage. Également consultant pour l’OFROU, la société neuchâteloise intervient sur tout le territoire romand. Depuis quelques années, AJS Ingénieurs civils SA a ajouté une corde à son arc en proposant son expertise pour les questions de chauffage et de ventilation.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "AJS Ingénieurs civils SA jouit d’une solide réputation dans le monde de l’ingénierie romande. Riche d’une quarantaine d’employés et de deux succursales à Brügg et à Genève, la société a été appelée à intervenir sur des projets de grande envergure tels que l’assainissement de la N9 entre Vennes et Chexbres, l’appui au maitre de l’ouvrage pour la suppression du goulet d’étranglement de Crissier, la Voie Verte de Genève entre les Eaux-Vives et la frontière française, le réseau de chauffage à distance de Couvet mais également sur des bâtiments comme le complexe Ilot B à La Chaux-de-Fonds ou le siège Celgene à Boudry. Autant de constructions qui ont pour but d’améliorer le quotidien d’une population toujours plus nombreuse ou de répondre aux exigences techniques de clients variés. Même si l’entreprise est florissante, pour David Quesada, chef de projet et membre de la direction, il est primordial de réfléchir autrement aujourd’hui : « il faut se poser les véritables questions, savoir ce qui est vraiment nécessaire et investir juste. D’autre part, travailler de manière durable dans le génie civil est devenu une priorité. Nous nous soucions de l’énergie grise des projets, optons pour des solutions économiquement supportable et sélectionnons de plus en plus des matériaux durables (recycles) » et régional."
+   },
+   {
+    "t": "h",
+    "x": "Une nouvelle vision du génie civil"
+   },
+   {
+    "t": "p",
+    "x": "Depuis plus de deux ans, le bureau d’AJS Ingénieurs civils SA s’est également spécialisé dans les projets de chauffage et de ventilation. Là encore, l’évolution de la société a poussé l’entreprise à étudier des concepts de synergies entre la structure et ce domaine. Son nouveau département livre des conseils en matière d’assainissement énergétique. Le bureau propose des diagnostics énergétiques et délivre désormais une nouvelle certification pour la labellisation des bâtiments selon les standards CECB (Certificat Énergétique Cantonal du Bâtiment) et CECB Plus."
+   }
+  ]
+ },
+ "aee-suisse-energie-betelec-smart-electricity": {
+  "lang": "fr",
+  "pages": "p. 26-27",
+  "pdfPages": [
+   28
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Créé en 1976 à Lausanne, renforcé par l’ouverture d’une succursale à Genève en 2006 et la création du département Greentech Expert en 2013, le bureau d’ingénieur Betelec mobilise sa quarantaine de collaborateurs autour d’un credo : la gestion intelligente de l’électricité.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Afin de limiter l’impact de l’homme sur le réchauffement climatique et ses conséquences, il est urgent de réaliser la transition énergétique. Portée par la Stratégie énergétique 2050, elle vise la réduction des consommations et la substitution des moyens de production d’énergie par des sources renouvelables. Cette transition entraîne inévitablement le report des consommations thermiques vers l’électricité. En effet, la réduction des besoins thermiques des bâtiments (chauffage, eau chaude, climatisation) passe à la fois par une bonne isolation et par la production de chaud et froid grâce à des pompes à chaleur électriques, dont l’efficience permet de diviser par quatre la consommation d’énergie ! L’électricité est également très efficace pour la mobilité : à puissance égale, il faut quatre fois moins d’énergie pour entraîner un moteur électrique que celle de l’essence consommée par un moteur à explosion !"
+   },
+   {
+    "t": "p",
+    "x": "Conséquence de ce report vers l’électricité, une véritable expertise du domaine électrique est incontournable pour proposer des prestations d’optimisation énergétique. D’ailleurs les lois cantonales ne s’y trompent pas : elles prévoient déjà des obligations pour les Grands Consommateurs (audit énergétique et mesures de réduction de la consommation) qui sont généralement identifiés comme tels en raison de leur consommation d’électricité (supérieure à 500'000 kWh/an). BETELEC en est convaincue depuis longtemps déjà, c’est pourquoi elle a développé cette vision au sein de son département Greentech Expert et se profile aujourd’hui en acteur majeur de l’optimisation et de l’approvisionnement énergétique durable en Suisse romande."
+   },
+   {
+    "t": "p",
+    "x": "Proposer des solutions efficaces nécessite notamment de maîtriser le smart metering (comptage intelligent, analyse fine des consommations grâce aux courbes de charge), la gestion de l’éclairage LED (intérieur ou extérieur), la domotique et l’automation du bâtiment, ou encore les entrainements électriques. Des compétences que BETELEC a mises à profit notamment lors de la réalisation des audits Grands Consommateurs du Palais Wilson à Genève et du Palais de Rumine à Lausanne, ainsi que lors de ses projets de renouvellement de l’éclairage public (Echallens, Romanel-sur-Lausanne, etc.)."
+   },
+   {
+    "t": "p",
+    "x": "Le département Greentech Expert dispose par ailleurs de connaissances pointues dans des domaines plus spécifiques mais essentiels comme l’optimisation énergétique des data centres visant à réduire tant la consommation électrique du matériel informatique (virtualisation des serveurs, etc.) que celle de la climatisation. BETELEC a notamment réalisé l’audit Grand Consommateur du data centre de la DSI du canton de Vaud et dirigé la construction de Safe Host, le plus grand data centre de Suisse situé à Gland, dont la consommation électrique équivaudra à terme à celle de 26 000 habitants !"
+   },
+   {
+    "t": "p",
+    "x": "Plus que jamais, la gestion intelligente de l’énergie implique aussi une production renouvelable et une consommation locale, idéale pour profiter à toutes les parties prenantes d’un quartier et favorisée par la nouvelle loi sur l’énergie. C’est pourquoi les projets réalisés par BETELEC envisagent désormais des communautés de consommateurs regroupés via un réseau électrique privé, alimenté à la fois par des installations photovoltaïques (autoconsommation) et par le réseau de distribution, combiné avec des moyens de stockage (pour limiter les pointes de puissance) ainsi qu’un système de gestion des bornes de recharge pour les véhicules électriques. La taille idéale d’une telle communauté est celle d’un quartier ou d’un immeuble comportant au minimum 40 logements environ, car avec une consommation globale de plus de 100’0000 kWh/an, il est possible de compléter l’approvisionnement en électricité en accédant au marché libre, et donc d’obtenir des tarifs compétitifs. BETELEC accompagne depuis plusieurs années les maîtres d’ouvrage pour réaliser les installations photovoltaïques, mettre en concurrence les fournisseurs d’électricité, voire mettre en place les communautés d’autoconsommateurs, comme récemment lors de la rénovation de la Migros MMM à Crissier (375 kWc)."
+   },
+   {
+    "t": "p",
+    "x": "BETELEC, qui est en outre accréditée spécialiste en énergie ACT (pour l’établissement des conventions d’objectifs fédérales Grands Consommateurs) et conseiller Cité de l’énergie (pour l’accompagnement des communes vers la certification), s’appuie ainsi sur les compétences développées par son département Greentech Expert pour porter des projets visionnaires, alliant gestion intelligente et production renouvelable de l’électricité, et proposer des prestations d’aides aux communes, industries, propriétaires et gérances. Une gestion intelligente que BETELEC continuera à promouvoir, car elle en est persuadée, le futur de l’énergie est électrique mais écologique !"
+   }
+  ]
+ },
+ "aee-suisse-energie-cinelec": {
+  "lang": "fr",
+  "pages": "p. 28",
+  "pdfPages": [
+   30
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "La société Cinelec SA s’est spécialisée dans le contrôle des installations électriques de tous genres. Elle peut compter pour cela sur les compétences pointues de ses collaborateurs. Son indépendance lui garantit par ailleurs une neutralité d’expertise qui fait sa renommée.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Faire contrôler le bon état de ses installations électriques, c’est non seulement utile, mais c’est surtout obligatoire. Cette tâche, on ne peut pas la confier à n’importe qui. La société Cinelec SA en a fait son activité principale. De la villa familiale au bâtiment public, les contrôleurs de Cinelec SA sont habilités à expertiser toutes sortes d’installation. L’entreprise basée à Matran a été fondée en 2004. Ses actionnaires sont les fournisseurs d’énergie électrique du canton de Fribourg, soit Groupe E, Gruyère Energie, IB Murten et EV Jaun. « C’est un des gages de notre indépendance, une valeur très importante pour nous », souligne le directeur Michel Castella. Une indépendance qui se matérialise aussi par la spécialisation exclusive de l’entreprise. « Contrairement à d’autres entreprises actives dans ce secteur, nous ne sommes agréés que pour le contrôle et pas pour l’installation et la révision. Nous pouvons donc garantir de ne pas être juges et parties », relève le directeur. Cette neutralité reconnue permet à la société d’être appelée à assurer des expertises en cas d’accidents ou de litiges."
+   },
+   {
+    "t": "p",
+    "x": "Ce faisant, l’entreprise développe à l’interne des compétences particulièrement pointues. Une dizaine de contrôleurs au bénéfice d’un brevet de conseiller en sécurité électrique travaillent pour Cinelec SA et interviennent dans tout le canton de Fribourg, la Broye vaudoise ou encore la Riviera. « Nous souhaiterions nous développer aussi en direction du canton de Neuchâtel et de l’Arc jurassien », explique encore Michel Castella."
+   },
+   {
+    "t": "p",
+    "x": "Les contrôleurs doivent appliquer l’Ordonnance sur les installations à basse tension (OIBT) et faire respecter les normes sur les installations à basse tension (NIBT) qui sont régulièrement mises à jour. La fréquence du contrôle d’une installation dépend du bâtiment. Tous les 20 ans pour une habitation, tous les 10 ans pour une exploitation agricole, tous les 5 ans pour les restaurants et bâtiments publics. Mais hôpitaux ou bâtiments sensibles doivent être contrôlés quant à eux toutes les années."
+   },
+   {
+    "t": "p",
+    "x": "Les compétences mise en œuvre par Cinelec SA lui permettent dès lors d’élargir ses domaines d’activités en poussant toujours plus ses spécialisations, notamment dans le domaine de la sécurité. Un récent audit du Service d’Accréditation Suisse (SAS) a ainsi permis à la société de recevoir une nouvelle accréditation pour le contrôle d’installations spéciales, comme les abris anti-nucléaires et surveiller les autorisations limitées d’installer selon l’OIBT art, 13, 14 et 15. De même, en matière d’énergies renouvelables, Cinelec va être en mesure d’assurer la certification Swissgrid des installations photovoltaïques. Par ailleurs, l’entreprise sera habilitée à délivrer les certificats énergétiques des bâtiments, rendus obligatoires dès 2014 dans le canton de Fribourg. « Nous envisageons aussi d’étendre nos activités à la thermographie des bâtiments », explique Michel Castella. En effet, les équipements que la société utilise pour déceler les éventuelles surchauffes de tableaux électriques pourront aussi être utilisés à l’examen des performances énergétiques de bâtiments."
+   }
+  ]
+ },
+ "aee-suisse-energie-drosera-ecologie-appliquee": {
+  "lang": "fr",
+  "pages": "p. 29",
+  "pdfPages": [
+   31
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Créé en 1991 et fort de 13 collaborateurs, le bureau d’étude Drosera met au service des collectivités publiques et des entreprises privées ses compétences dans le domaine de l’environnement, de la nature, du paysage et de la gestion de grands projets territoriaux. Il a déjà réalisé plus de 1’200 études et est certifié ISO 9001, 14001, Valais excellence et Entreprise Citoyenne depuis 2017.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Le savoir-faire de Drosera se base sur le respect d’une charte d’entreprise orientée vers la satisfaction des clients, la qualité et l’efficacité des prestations, l’intégrité professionnelle et éthique, la valorisation des compétences, le perfectionnement continu des collaborateurs ainsi que l’innovation. Riches d’une expérience de plus 25 ans, ses collaborateurs maîtrisent parfaitement les procédures administratives et les bases légales relatives aux dossiers d’autorisation de construire, aux concessions hydroélectriques ou d’exploitation d’installations à câble, ou encore aux modifications de plans de zones. En outre, le bureau se distingue par son expérience dans le domaine de la négociation avec les organisations non gouvernementales (ONG) et sa capacité d’anticipation et de prise en compte précoce des éléments bloquants dans des dossiers souvent complexes, pluridisciplinaires et multi-objectifs."
+   },
+   {
+    "t": "p",
+    "x": "Drosera dispose de compétences élargies permettant l’élaboration de réponses claires et professionnelles dans un large spectre de domaines de l’environnement, comme l’étude des milieux terrestres et aquatiques, les expertises nature (faune, flore, forêt), la gestion de grands projets territoriaux, la revitalisation des cours d’eaux, les études d’impact sur l’environnement, le suivi environnemental de chantier, la vulgarisation et l’analyse cartographique par SIG. Le bureau est également membre de la communauté d’études Faune Concept, un groupement de spécialistes dans l’étude de la faune sauvage suisse."
+   },
+   {
+    "t": "p",
+    "x": "Fort de sa polyvalence, Drosera peut se prévaloir de nombreuses références telles que la coordination et l’élaboration de la planification globale des équipements de plusieurs domaines skiables dont Téléverbier et les Portes du Soleil, l’étude pédologique et l’évaluation des qualités des surfaces d’assolement dans le cadre de la modification du tracé ferroviaire des TMR à Vollèges, la revitalisation de la Dranse à Sembrancher et Vollèges (diagnostic biologique, étude d’impact et suivi des travaux), le Concept Nature et Paysage de l’État du Valais, des cours de formation sur la gestion des néophytes envahissantes, plusieurs inventaires botaniques et faunistiques pour l’OFEV et des services de l’État, l’analyse paysagère par modélisation 3D, l’étude de visibilité pour le projet de télécabine de Siviez à Nendaz, etc."
+   },
+   {
+    "t": "p",
+    "x": "À l’heure actuelle, les collaborateurs planchent notamment sur la coordination et les études d’impact pour la concession hydro-électrique des eaux de la Haute Vièze, la révision de la planification du domaine skiable des Portes du Soleil suisse sur 6 communes (un projet d’investissement de 100 millions) ou encore l’organisation, l’accompagnement et l’animation d’ateliers pour le processus participatif lié au projet de revitalisation de la Dranse à Sembrancher et Vollèges. Le bureau travaille également sur la revitalisation par remblayage partiel d’un ancien lac de gravière à Pramont (Sierre), la IIIème correction du Rhône (expertises sur la protection des sols et l’aménagement des milieux riverains) ainsi que des projets de réseaux agro-écologiques en collaboration avec les agriculteurs dans 12 régions du Valais et du canton de Vaud."
+   },
+   {
+    "t": "p",
+    "x": "Sur cette base prometteuse, Drosera entend bien développer des approches novatrices, applicables et transparentes dans les diagnostics environnementaux. Par ailleurs, le bureau d’étude poursuit son activité de veille afin d’anticiper les questions environnementales problématiques et les besoins de ses clients. Drosera met également une attention particulière sur l’évolution professionnelle au sein de l’entreprise et la formation continue de ses collaborateurs."
+   },
+   {
+    "t": "p",
+    "x": "Innover pour nos clients, pour la qualité de nos projets, pour le respect qu’on porte à notre environnement : c’est notre philosophie."
+   }
+  ]
+ },
+ "aee-suisse-energie-dpe-electrotechnique": {
+  "lang": "fr",
+  "pages": "p. 32-33",
+  "pdfPages": [
+   34,
+   35
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Rares sont les bureaux d’ingénieurs en électricité à proposer à leurs clients une palette de prestations aussi large que DPE Electrotechnique SA à Sierre. Planification d’installations, engineering industriel, automation, micro-turbinage, télégestion de réseaux d'eau et désormais signalisation routière sont autant de domaines de l’électricité dans lesquels la société est active.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Bureau d’ingénieurs en électricité à Sierre (VS), DPE Electrotechnique SA est actif dans la planification d’installations électriques et l’engineering électrique industriel. Deux axes principaux qui sont complémentaires et permettent à l’entreprise de mettre à disposition de sa clientèle toutes les compétences touchant aux domaines de l’électricité. « Nous sommes à même d’apporter des solutions complètes à nos clients », souligne ainsi Fabian Hintz, directeur technique. DPE Electrotechnique SA est en effet à même de fournir des prestations allant de l'étude à la réalisation."
+   },
+   {
+    "t": "p",
+    "x": "Ainsi, dans cette recherche de diversification, la société DPE Electrotechnique SA a récemment acquis des compétences en SwiSS Knowhow matière de signalisation routière. Le bureau a réalisé le contrôle-commande de la signalisation du tunnel autoroutier de Sion, de celui de Tourtemagne et de plusieurs tunnels cantonaux. Trois autres tunnels sont en cours de réalisation, dont le contournement sud de Viège."
+   },
+   {
+    "t": "p",
+    "x": "Cette large palette de compétences confère aujourd’hui au bureau un statut particulier sur son marché. « Actuellement, nous avons atteint un stade de diversification important au-delà duquel nous ne souhaitons pas aller afin de pouvoir continuer d’assurer une qualité de service irréprochable à nos clients », relève Pierre-alain Gabbud qui explique encore que le bureau se doit d’être constamment à l’affût des dernières technologies. « Les divers marchés sur lesquels nous sommes actifs évoluent en continu. Nous nous devons donc d’être toujours en avance, du moins n’être jamais en retard »."
+   },
+   {
+    "t": "h",
+    "x": "Marchés de niche"
+   },
+   {
+    "t": "p",
+    "x": "Au fil des ans, l’entreprise s’est spécialisée dans certains domaines d’activité notamment ceux touchant à l’environnement et à l’eau, comme la télégestion de réseaux d’eau, le contrôle-commande de stations de pompage, de potabilisation ou d'épuration. Enfin, le bureau a étendu ses compétences à la petite hydroélectricité, en réalisant des installations de turbinage et de pompage-turbinage. « Nous avons pris l’option de nous diversifier, notamment dans des marchés de niche nécessitant une grande valeur ajoutée », explique Pierre-Alain Gabbud, administrateur et fondateur de la société."
+   },
+   {
+    "t": "h",
+    "x": "Nouveaux locaux pour ses 25 ans"
+   },
+   {
+    "t": "p",
+    "x": "Car la société a une réputation à tenir, celle d’un partenaire fiable, compétent, flexible, réactif et surtout à l’écoute de ses clients. « Nous cherchons en effet à être au maximum proactifs, à devancer les demandes de nos clients et à leur proposer des solutions originales pour répondre à leurs besoins. Notre riche expérience nous permet de le faire », explique Pierre-Alain Gabbud."
+   },
+   {
+    "t": "p",
+    "x": "Fondé en 1992 à Sierre, le bureau DPE Electrotechnique SA est actif dans tout le pays, et à l’étranger pour certains projets particuliers. Le bureau s’est régulièrement développé et emploie aujourd’hui 17 personnes, dont onze ingénieurs HES, spécialisés dans les divers domaines d’activité de la société. A l’heure de fêter son quart de siècle d’existence, DPE Electrotechnique SA envisage ainsi de déménager, relève Pierre-Alain Gabbud. « Nous avons un projet de construction, toujours dans la région sierroise, car nous sommes trop à l’étroit dans nos locaux actuels qui datent de la fondation de la société »."
+   },
+   {
+    "t": "p",
+    "x": "DPE Electrotechnique SA propose des services complets, allant de l’étude jusqu’à la réalisation d’un projet, que celui-ci concerne un nouvel ouvrage ou pour des transformations d’installations existantes. Le bureau est à même de gérer l’ensemble des domaines du bâtiment ayant trait à l’électricité, comme les installations à courant fort ou faible, l’éclairage, la domotique, les réseaux informatiques ou encore les installations photovoltaïques. Le bureau a ainsi déployé ses compétences pour des hôpitaux, des bâtiments publics, des centres commerciaux, des établissements bancaires, des centres scolaires, etc."
+   },
+   {
+    "t": "p",
+    "x": "En parallèle, DPE Electrotechnique SA est un partenaire indispensable à l’industrie. En collaboration avec des constructeurs de machines reconnus, la société réalise des installations clés en main comprenant l’engineering électrique, les plans, les schémas, les tableaux électriques, l’installation, la programmation et la mise en service sur place. Le bureau peut aussi assurer le retrofit d’installations existantes. Il est notamment actif et expérimenté dans la télégestion et l'automation de réseaux d'eau potable, de stations de traitement d'eau, de STEP, d'installations de turbinage et dans le contrôle-commande d'installations routières et autoroutières."
+   }
+  ]
+ },
+ "aee-suisse-energie-groupe-e": {
+  "lang": "fr",
+  "pages": "p. 36-37",
+  "pdfPages": [
+   38,
+   39
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Entreprise générale dans le domaine de l’énergie, Groupe E accompagne ses clients pour mener à bien leurs projets, qu’il s’agisse de la construction d’installations électriques, de l’assainissement ou de la gestion énergétique d’un bâtiment, d’un complexe immobilier ou même de tout un quartier. La société propose une large palette de produits et solutions.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Grâce à une diversification de son offre et à la complémentarité des produits proposés par ses sociétés, Groupe E tire son épingle du jeu non seulement sur le marché de la fourniture des énergies, mais aussi dans le domaine des solutions énergétiques globales, que la société offre à un marché toujours plus étendu. Au fil des années, Groupe E a en effet développé son portefeuille d’activités pour répondre aux besoins de ses clients. Elle propose aujourd’hui une gamme complète de produits et services dans des domaines aussi variés que la production et l’acheminement d’électricité, de gaz naturel, de chaleur et de froid, les installations électriques, le chauffage, la ventilation, l’efficacité énergétique, la mobilité électrique, l’éclairage public, l’entretien des installations ou encore le facility management."
+   },
+   {
+    "t": "p",
+    "x": "Groupe E a ainsi quitté son statut historique d’électricien pour se positionner comme une entreprise générale dans le domaine de l’énergie."
+   },
+   {
+    "t": "p",
+    "x": "« Nous nous devons d’amener des solutions intelligentes, tournées vers l’avenir, contribuant à la mise en œuvre de la Stratégie énergétique que le peuple suisse a approuvée au printemps 2017 » souligne son directeur général Dominique Gachoud. « Ces solutions permettent de répondre aux besoins des consommateurs - qu’il s’agisse de particuliers, de PME ou de grandes industries - et de les aider à consommer moins et mieux. »"
+   },
+   {
+    "t": "h",
+    "x": "Une vision à 360° pour une consommation optimisée"
+   },
+   {
+    "t": "p",
+    "x": "Pour ce faire, l’une de ses sociétés, Groupe E Greenwatt, propose des prestations en efficacité énergétique. Dans le domaine du bâtiment, ses spécialistes proposent des audits comprenant une analyse des données de consommation, des mesures d’optimisation et une évaluation des synergies possibles avec d’autres assainissements au sein d’un même parc immobilier. Cette approche globale tient compte de tous les aspects techniques et des enjeux économiques relatifs à la rénovation. Elle permet aux propriétaires d’optimiser les investissements et de planifier de façon idéale l’assainissement à entreprendre."
+   },
+   {
+    "t": "p",
+    "x": "Groupe E Greenwatt favorise ainsi l’exploitation d’un énorme potentiel d’économies et contribue à l’accélération de la transition énergétique. Mais la démarche ne se limite pas aux seuls bâtiments. La société propose désormais une démarche englobant le besoin de tout un quartier, d’une ville ou d’une commune : il s’agit de la planification énergétique territoriale. « C’est le meilleur moyen pour anticiper la croissance de communes ou de quartiers, car cette démarche tient compte des besoins actuels et futurs » explique Florian Buchter, responsable Efficacité énergétique chez Groupe E Greenwatt. «Les collectivités publiques disposent d’une base idéale pour fixer leurs objectifs et leurs priorités en termes de développement énergétique, tout en gardant une maîtrise des coûts. »"
+   },
+   {
+    "t": "h",
+    "x": "Des chantiers de toute taille"
+   },
+   {
+    "t": "p",
+    "x": "Groupe E travaille pour de grands industriels sur toute la Suisse romande, de nombreuses PME ainsi que les particuliers. En 2017, sa société Groupe E Connect, leader en Suisse romande des installations et des tableaux électriques, active également dans les infrastructures, le photovoltaïque et les pompes à chaleur, a mené 19'000 chantiers. Pour Michel Beaud, qui est à sa tête, chaque mandat est important, mais certains d’entre eux font la fierté de la société, à l’instar du chantier du CEVA, la liaison ferroviaire Genève Cornavin - Eaux-vives – Annemasse, qui constitue la collaboration la plus importante entre la société et les Chemins de fer fédéraux (CFF). Et les chantiers ne manquent pas, comme la nouvelle gravière de l’entreprise JPF à Farvagny, l’Hôpital de Rennaz Riviera-Chablais ou encore le nouveau bâtiment des Hautes écoles fribourgeoises de santé et de travail social à Fribourg, qui constituent autant d’opportunités de valoriser les savoir-faire multiples de ses collaborateurs."
+   },
+   {
+    "t": "h",
+    "x": "Un interlocuteur unique pour une offre globale"
+   },
+   {
+    "t": "p",
+    "x": "Qu’il s’agisse de tout un quartier, d’un bâtiment mais aussi d’une maison, les spécialistes de Groupe E proposent des solutions globales, qui vont du premier conseil à la réalisation, l’entretien, l’optimisation jusqu’au renouvellement des installations. Elles intègrent par exemple les installations électriques et techniques pour les bâtiments, des solutions de chauffage et de froid ou encore du facility management technique."
+   },
+   {
+    "t": "p",
+    "x": "Ce domaine, c’est celui des services énergétiques, qui regroupe de nombreuses compétences développées avec succès. Les grandes pompes à chaleur, la location de machines frigorifiques, des activités liées à la ventilation comme l’hygiénisation et le nettoyage des équipements complètent désormais la palette de prestations. Afin de répondre aux besoins de promoteurs qui conduisent des projets d’envergure ou des industriels qui ont des besoins très variés et importants, le rôle du conseiller – interlocuteur unique qui fait appel à tout un réseau de spécialistes – est essentiel pour accompagner les professionnels et les faire bénéficier du produit adéquat."
+   },
+   {
+    "t": "p",
+    "x": "Avec ses sociétés, Groupe E veut établir une relation de confiance et de proximité avec ses clients, ce qui l’incite à renforcer sa présence dans les régions. Ainsi en va-t-il en Valais, à Riddes, avec la création d’un pôle de compétences réunissant plusieurs de ses sociétés, ainsi qu’à Monthey, où Groupe E Connect a construit un bâtiment qui peut accueillir 15 collaborateurs supplémentaires afin de répondre à la demande dans le Chablais."
+   },
+   {
+    "t": "h",
+    "x": "Proche de ses clients"
+   },
+   {
+    "t": "p",
+    "x": "Présence renforcée également à Neuchâtel grâce à Vuilliomenet, société de Groupe E Connect, qui dispose d’un nouveau site à Boudry. Dexa, également une société de Groupe E Connect, s’installe quant à elle dans une nouvelle construction sise à Mont-sur-Rolle ; ce nouveau site remplacera celui situé à Lausanne, trop exigu, et permettra de mieux répondre aux attentes du marché en direction de Genève. Groupe E Connect elle-même bâtit de nouveaux locaux à Matran, à côté de son siège. Un agrandissement qui témoigne du développement de la société qui peut ainsi créer 50 postes de travail supplémentaires."
+   },
+   {
+    "t": "p",
+    "x": "Au total, Groupe E dispose d’une trentaine de sites bien répartis sur le territoire romand. Une présence physique portée par 1800 collaborateurs et une palette de produits et services qui positionnent le groupe comme un énergéticien de référence et de confiance. Avec toujours le même objectif : garantir des prestations énergétiques efficientes afin d’établir une relation de confiance durable avec ses clients. Car l’énergie, indispensable à toute activité humaine, façonne notre quotidien et notre économie de façon fondamentale."
+   },
+   {
+    "t": "p",
+    "x": "Grâce à Connect Academy, Groupe E Connect augmente le niveau de performance et de compétitivité de l’entreprise. Face aux enjeux actuels et futurs, aux développements stratégiques et opérationnels, la société dispose ainsi de personnel compétent et fidèle afin de garantir un service de qualité et de proximité à tous ses clients."
+   },
+   {
+    "t": "p",
+    "x": "Dans le but de promouvoir et de valoriser la formation, Groupe E Connect a mis en place sa propre structure de formation. Baptisée Connect Academy, elle s’adresse aussi bien à ses futurs apprentis et collaborateurs qu’à toutes les personnes actives au sein de l’entreprise. Car valoriser, accompagner et soutenir la formation professionnelle initiale, par des actions engagées et efficaces, permettent aux collaborateurs de gagner en autonomie et en compétences dans le but de leur offrir un avenir sûr et gratifiant."
+   }
+  ]
+ },
+ "aee-suisse-energie-energest": {
+  "lang": "fr",
+  "pages": "p. 38",
+  "pdfPages": [
+   40
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Fondée en 2005 par Pascal Angéloz, Energest est une PME spécialisée dans l’application des automates industriels au domaine immobilier, notamment des centres commerciaux ou des bâtiments publics comme des écoles, halles de sport ou des réseaux de chauffage urbain, mais aussi pour des maisons de particuliers. Les installations techniques sont ainsi reliées à un automate qui permet de les programmer selon les spécificités du bâtiment, des besoins et demandes de l’utilisateur.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "« A la base, explique Pascal Angéloz, ces automates ont été conçus pour la gestion des machines utilisées dans la production industrielle, puis cette technologie s’est déplacée vers le bâtiment. On peut voir une maison comme une machine à habiter, notamment du point de vue des consommation d’énergie et de son fonctionnement »."
+   },
+   {
+    "t": "p",
+    "x": "Doté d’une intelligence qui permet de contrôler et de régler des installations comme le chauffage, l’éclairage, la ventilation, la climatisation ou encore les stores et le sanitaire, le bâtiment peut être exploité au plus près des besoins spécifiques du client. Le système détecte aussi d’éventuelles pannes des installations. Grâce à cette centralisation des commandes et des données, l’utilisateur dispose d’une vision d’ensemble sur l’exploitation technique du bâtiment."
+   },
+   {
+    "t": "p",
+    "x": "L’optimisation des installations consommatrices d’énergie génère d’importantes économies à moyen et long terme. Les automates industriels proposés et profilés par Energest, principalement de marque SAIA, peuvent être assimilés à des ordinateurs permettant de gérer l’ensemble des installations de manière très libre. Energest part en quelque sorte d’une page blanche. « Notre force est de bien connaître cet outil et d’en tirer le meilleur parti pour nos clients, précise Pascal Angéloz. Il faut être capable d’avoir une vision globale des installations et de leurs interactions, c’est une compétence spécifique, forgée par l’expérience et la connaissance des automates que nous profilons »."
+   },
+   {
+    "t": "h",
+    "x": "Management de projet"
+   },
+   {
+    "t": "p",
+    "x": "Pour de grosses structures, comme des centres commerciaux, Energest propose un contrat d’entretien et de suivi."
+   },
+   {
+    "t": "p",
+    "x": "L’entreprise, qui compte quatre techniciens spécialisés en automation, travaille selon le système du management de projet : une seule personne prend un projet en charge et le mène jusqu’à son à terme. Souple et réactive, toujours au service du client, Energest offre une approche globale propre à assurer une exploitation efficace et à générer une réduction des coûts d’exploitation."
+   },
+   {
+    "t": "h",
+    "x": "Optimiser l’exploitation"
+   },
+   {
+    "t": "p",
+    "x": "Energest fournit les prestations d’automatisation propres à faciliter et simplifier la tâche de l’utilisateur. Au besoin l’entreprise fournit aussi l’outil d’analyse qui permet d’affiner les réglages. « Le système peut mémoriser le fonctionnement des installations et rendre ainsi possibles des mesures pour connaître leur évolution et d’éventuels dysfonctionnements, explique M. Angéloz. On peut voir où se situent d’éventuels problèmes de consommation d’énergie, par exemple des installations enclenchées simultanément, et y remédier ». Un tel outil d’analyse permet des économies d’énergie grâce à un usage rationnel des installations. Confort de l’exploitation et suivi sont deux avantages importants."
+   }
+  ]
+ },
+ "aee-suisse-energie-monnay-electricite": {
+  "lang": "fr",
+  "pages": "p. 39",
+  "pdfPages": [
+   41
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Fondée par Alain Monnay en 1988 et reprise le 01 avril 2015 par Gaïl Rappaz et Tobias Gaillard, l’entreprise est active dans l’artisanat, l’industrie et l’habitation, dans la région de Saint-Maurice mais aussi dans le reste du canton et sur la Riviera.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Forte de 13 collaborateurs dont 4 apprentis, Monnay Electricité SA a installé en 2018 une puissance de près de 62 kW, qui produiront l’équivalant de la consommation annuelle de 15 ménages. L’entreprise propose des études, des missions de conseil et des réalisations de projets dans quatre grands domaines : les installations électrotechniques, les installations à courant faible, les solutions domotiques (installations KNX) et le solaire photovoltaïque (demandes d’autorisation et de subvention, certifications, estimation de la production en fonction de l’orientation et de la situation du toit, analyse comparée des différentes solutions disponibles, conseils esthétiques…). Elle réalise également des projets multimédias pour les particuliers comme pour les entreprises ainsi que des projets pour la téléphonie (y compris les centrales téléphoniques) afin de définir avec l’entreprise cliente la solution la plus économique et la plus utile."
+   },
+   {
+    "t": "p",
+    "x": "Confiante dans l’avenir, Monnay Electricité SA entend bien accroître la part de ses activités photovoltaïques pour répondre à l’intérêt croissant des propriétaires et futurs propriétaires de villas. L’entreprise mise également sur la domotique en vue d’améliorer l’efficience énergétique de bâtiments pour le compte de particuliers. Sans oublier les entreprises, toujours en quête de rénovation / agrandissement de leurs locaux ou de mise à jour de leurs installations."
+   },
+   {
+    "t": "p",
+    "x": "Monnay Electricité SA peut se prévaloir de belles références à Saint-Maurice. Parmi elles figurent la rénovation des installations de l’Abbaye, la Maison de Commune, la banque cantonale du Valais ou encore le centre autoroutier pour le Bas Valais. Mais le portfolio de l’entreprise ne s’arrête pas à sa ville d’élection : en témoignent les Bains de Lavey et le Grand Hôtel des Bains. En outre, les collaborateurs de Monnay Electricité SA s’impliquent actuellement dans des projets aussi divers que le déploiement du nouveau réseau informatique avec fibre optique pour l’administration communale et la Bourgeoisie de Saint-Maurice, la construction d’un garage automobile avec showroom et appartements intégrés dans le même bâtiment ou encore la pose d’installations photovoltaïques sur les toits de 7 villas d’un petit quartier de Saint-Maurice."
+   }
+  ]
+ },
+ "aee-suisse-energie-ep-electricite": {
+  "lang": "fr",
+  "pages": "p. 40",
+  "pdfPages": [
+   42
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Créée en 1981, la SA a réalisé en 2013 un chiffre d’affaires de 23 M CHF et emploie 123 personnes. Son rayon d’activité s’étend sur 3 cantons : Genève, Neuchâtel et Jura. Son leitmotiv : assurer un suivi de qualité, satisfaire nos clients de l’étude à la réalisation finale et maintenance de leurs projets.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "EP Electricité SA est active dans 5 domaines d’activité : l’électricité, la télématique, l’automation, la sécurité et la maintenance 24h/24. Résolument axée sur la qualité et le suivi, EP a fait ses preuves dans des chantiers aussi divers que la transformation d’un bâtiment de l’OMC, l’agrandissement du bâtiment VEDIA à Genève, les installations électriques du Rolex Learning Center de l’EPFL, l’agrandissement de l’usine Philip Morris à Neuchâtel, la rénovation de l’hôtel des Bergues à Genève, l’usine Willemin-Macodel à Delémont,..."
+   },
+   {
+    "t": "h",
+    "x": "Des perspectives de développement au beau fixe !"
+   },
+   {
+    "t": "p",
+    "x": "Les projets en cours d’EP Electricité SA sont tout aussi prometteurs, à commencer par la construction d’un bâtiment communal, de bureaux, d’un hôtel, de surfaces commerciales et d’un parking de 350 places à Versoix. Autre chantier d’envergure : le projet RTS CV1 et CV2. Sans oublier le futur data center de Philip Morris à Onnens, la manufacture horlogère ETA à Villeret, le projet Saconnex Parc (PPP de luxe),..."
+   },
+   {
+    "t": "p",
+    "x": "Forte de ce portefeuille de commandes bien rempli pour 2014, EP Electricité SA s’engage à s’améliorer continuellement, à être un partenaire privilégié pour ses clients, un employeur recherché, une entreprise fidèle et innovante."
+   }
+  ]
+ },
+ "aee-suisse-energie-neo-technologies": {
+  "lang": "fr",
+  "pages": "p. 42-43",
+  "pdfPages": [
+   44
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Créée en 2004 et forte d’une cinquantaine de consultants, la société neo technologies bénéficie d’une assise nationale grâce à ses bureaux à Renens, Zurich et dans la région de Lugano. En plus de ses prestations de conseil, elle offre des produits et solutions prêts à l’emploi dans le secteur public et l’énergie, en accord avec la nouvelle stratégie énergétique 2050 et la libéralisation annoncée du marché de l’électricité.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Spécialisée dans le processus « meter to cash » (du relevé de la consommation à la facturation), neo technologies a anticipé dès 2010 le déploiement des compteurs intelligents en Suisse en proposant des études d’impacts du déploiement aux distributeurs d’électricité et en installant une plate-forme de Smart Metering. Cette plate-forme a été renouvelée en 2016-2017 afin de prendre en compte les nouvelles technologies et les nouvelles contraintes légales. Cette plate-forme multifluide (électricité, eau, gaz, chaleur) et sécurisée (hébergement suisse) est prévue pour rassembler les distributeurs de toutes tailles afin de réduire les coûts d’installation et d’exploitation tout en bénéficiant d’un centre de compétences centralisées. Quatre distributeurs devraient participer à cette plate-forme d’ici la fin 2019. Une aubaine pour les petits distributeurs comme les communes, qui se contentent d’acheter et de poser les compteurs tandis que neo technologies leur fournit l’ensemble des données, les libérant ainsi de la nécessité de développer des infrastructures dédiées."
+   },
+   {
+    "t": "p",
+    "x": "En parallèle à la mise en place de la plate-forme de Smart Metering, neo technologies s’est rapidement intéressé à l’exploitation des données de mesure. C’est ainsi qu’est née en 2011 la solution Green E-value. Elle se décline en 2 produits : Green E-Value Kiosk, qui diffuse en continu les principales consommations d’un immeuble via un écran installé dans le hall d’entrée et Green E-Value Building, permettant le suivi des consommations des différents fluides d’un parc immobilier et offrant de nombreuses fonctionnalités telles que les alertes de dérives, les seuils de consommation ou encore la signature thermique des bâtiments. Les propriétaires peuvent, sur la base de ces informations, planifier des travaux de rénovation et en mesurer les impacts sur l’efficience énergétique. En plus de la soixantaine de bâtiments déjà équipés de Green E-Value pour mesurer leur santé énergétique, neo technologies bénéficie du benchmark des 4 500 bâtiments audités par Signa-Terre, un cabinet de conseils énergétiques avec lequel il a développé un très fort partenariat."
+   },
+   {
+    "t": "p",
+    "x": "Bien conscient des besoins accrus des propriétaires de parcs immobiliers et des régies, neo technologies lancera à partir de septembre 2018 une solution Green E-Value complète englobant les décomptes de chauffage et la gestion de l’autoconsommation électrique d’un bâtiment (en ligne avec la réglementation 2018 qui encourage l’autoproduction, la consommation, la gestion et la facturation locales ainsi que les installations photovoltaïques). Grâce à un meilleur retour sur expérience, neo technologies contribuera activement à l’amélioration du fonctionnement énergétique des bâtiments."
+   },
+   {
+    "t": "p",
+    "x": "En lien avec la nouvelle stratégie énergétique 2050 et l’ouverture complète du marché de l’électricité après 2020, neo technologies accompagne résolument les mutations à venir : des mutations caractérisées par une « localisation » de la production nécessitant la mise en place d’outils de suivi et de redistribution dédiés. Grâce à la solution déjà pleinement opérationnelle que représente Green E-value, neo technologies se positionne comme un partenaire idéal pour tous les gestionnaires de parcs immobiliers soucieux d’optimiser leur consommation énergétique par la surveillance et la rénovation des bâtiments défaillants. Un partenariat d’avenir !"
+   }
+  ]
+ },
+ "aee-suisse-energie-sevt": {
+  "lang": "fr",
+  "pages": "p. 44",
+  "pdfPages": [
+   46
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Créée en 1996, la Société Electrique du Val-de-Travers (SEVT) s’appuie sur 33 collaborateurs, dont 5 apprentis, et réalise un chiffre d’affaires annuel de près de 6,5 millions de francs pour un bénéfice de 500 000 francs. Ses objectifs : des produits d’une qualité irréprochable, la promotion du développement durable et la formation d’apprentis.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Toujours à l’écoute de ses clients, la SEVT dispose d’un magasin d’appareils électroménagers doté d’un très important panel de toutes les plus grandes marques du marché. Il s’agit du dernier de son espèce dans la région du Val-de-Travers. Bien consciente du tourisme d’achat et des ventes croissantes par Internet, la SEVT n’en demeure pas moins attachée à une qualité de service irréprochable et cultive la proximité. En outre, son magasin dispose d’un service de réparation résolument tourné vers le développement durable. La SEVT accompagne également l’évolution des comportements d’achat : un magasin de vente en ligne sera mis en place d’ici la fin 2018."
+   },
+   {
+    "t": "p",
+    "x": "À l’heure actuelle, la SEVT ambitionne avant tout de maintenir l’emploi dans le Val-de-Travers et de rester un acteur incontournable du secteur de l’énergie. Elle espère ainsi croître en taille et promouvoir la production photovoltaïque aux côtés de la production hydro-électrique. Elle envisage enfin de construire d’ici 2021 un nouveau siège, toujours à Couvet mais sur une artère plus passante. Un gage de visibilité et de longévité !"
+   },
+   {
+    "t": "p",
+    "x": "La SEVT est aussi synonyme d’installations électriques générales. À ce titre, elle est compétente pour tout type de réalisation, depuis la simple réparation jusqu’à l’installation complète de villas, appartements et autres sites industriels. Des installations toujours conformes aux attentes du client en termes de délai, de prix et de normes en vigueur. Dans ce dernier domaine, les évolutions rapides de la loi contraignent les 15 collaborateurs de la SEVT dédiés exclusivement aux installations à se former régulièrement."
+   },
+   {
+    "t": "p",
+    "x": "La SEVT est aussi productrice d’énergie électrique. Créées en 1896, ses deux usines hydroélectriques fournissaient encore un tiers de l’énergie consommée dans le Val-de-Travers il y a quelques années. Cette production s’étant effondrée depuis, la SEVT a lancé un projet de renouvellement de son parc hydro-électrique en vue de produire 20 GW/h d’énergie propre, verte et locale d’ici quatre ans. Le dossier est en voie de finalisation au niveau des services de l’État."
+   },
+   {
+    "t": "p",
+    "x": "Soucieuse de pérenniser son activité, la SEVT a conclu deux partenariats stratégiques avec des acteurs de premier plan du secteur. Grâce à son partenariat avec Groupe E, elle peut proposer des prestations à des prix plus compétitifs à ses clients. Si elle reste propriétaire du réseau, elle autorise Groupe E à transiter par ce réseau afin de proposer de l’énergie aux clients finaux, ce qui accroît sa base de clientèle. Son partenariat avec ELITE Electro est tout aussi important : il permet à son magasin d’appareils électroménagers de bénéficier de prix d’achat en gros, et donc de proposer de meilleurs prix de vente à ses clients. Par ailleurs, ELITE Electro édite un magazine touchant l’ensemble de la population du Val-de-Travers, gère un portefeuille d’assurance qui lui donne accès aux conseils de spécialistes neutres et indépendants et assure la gestion de son site Internet – en attendant d’assumer aussi celle de la future boutique en ligne."
+   }
+  ]
+ },
+ "aee-suisse-energie-solstis": {
+  "lang": "fr",
+  "pages": "p. 45",
+  "pdfPages": [
+   47
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Double lauréat du prix solaire Suisse 2018, Solstis est récompensée pour son engagement dans le solaire photovoltaïque. Forte de plus de 22 ans d’existence et d’une soixantaine de collaborateurs fortement polyvalents, Solstis est un leader suisse en matière photovoltaïque. Ses atouts ? Une offre clé en main et sur-mesure, une proximité doublée de fiabilité et de flexibilité, un savoir-faire solide et une maîtrise de A à Z pour la réalisation de tout projet solaire.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Ensemblier-installateur-concepteur actif sur les cantons de Vaud, Genève, Neuchâtel et Valais, Solstis vous propose des solutions esthétiques et performantes en fonction de vos objectifs. Installations photovoltaïques, batteries de stockage, optimisation de l’autoconsommation, entretien et maintenance, boiler thermodynamique ou pompe à chaleur, rénovation de toiture, bornes de recharge pour véhicules électriques … De la conception du projet à la mise en service de l'installation en passant par l'étude de faisabilité, la simulation de production, les demandes d'autorisation de construire et les demandes de subventions communales, cantonales et fédérales, Solstis se charge de tout, y compris de la coordination avec les éventuels autres intervenants du chantier."
+   },
+   {
+    "t": "p",
+    "x": "Solstis propose ainsi un accompagnement dans la durée, de projets complets conciliant investissement durable, geste pour l’environnement et autonomie énergétique – un argumentaire porteur à l’heure où le courant solaire revient au tiers du courant fourni. Dans les autres cantons, Solstis officie comme distributeur et travaille avec un réseau d'agents régionaux sur la base de relations exclusives et privilégiées. Elle exporte même ses compétences dans différents pays du globe et réalise chaque année un à deux projets internationaux."
+   },
+   {
+    "t": "p",
+    "x": "Le portefeuille de Solstis est déjà éloquent : 1 754 projets en service (dont 1 150 projets chez des particuliers) dans plus de 495 communes, soit 748 325 m² de modules installés pour 126 280 kWc de puissance installée, soit la production annuelle équivalente à la consommation de plus de 100'000 habitants. Des clients aussi divers que le CIO, l’EPFL, le CHUV, l’ONU, l’EHL, les SIG, les Services Industriels de Lausanne et de Nyon (avec lesquels l’entreprise propose la marque Solanne en coopération), les HUG, la Manufacture Cartier ou encore la Migros lui ont fait confiance."
+   },
+   {
+    "t": "p",
+    "x": "Solstis a pris un tournant en 2009 lorsque Stéphane Krattinger et Raphaèl Parera ont rejoint ses rangs en tant que responsables du département Installations. Ils ont accompagné la croissance de l’entreprise qui n’occupait que 6 collaborateurs à cette date. Depuis le 1er janvier 2018, ils ont repris la direction de l’entreprise qui compte plus de 60 collaborateurs à ce jour et deux succursales à Genève et La Chaux-de-Fonds. Jacques Bonvin et Pascal Affolter, les fondateurs de l’entreprise, accompagnent depuis cette date la nouvelle direction en tant qu’administrateurs. La nouvelle direction s’est fixée comme objectif de moderniser l’entreprise, et accentuer le virage de la diversification."
+   },
+   {
+    "t": "p",
+    "x": "À l’heure actuelle Solstis est impliquée dans plusieurs gros projets d’éco-quartiers sur Lausanne, Coppet et Rolle : la société leur apporte son savoir-faire dans le dimensionnement et la réalisation de solutions de micro-grid ou micro-réseau, un nom savant relatif à la limite de propriété entre le fournisseur d’électricité et le réseau privé (plusieurs maisons alimentées par un même raccordement font partie d’un micro-grid). En outre, elle a développé des outils informatiques afin de pouvoir prédire l’autoconsommation avec différents scénarios de consommation."
+   },
+   {
+    "t": "p",
+    "x": "Il faut dire que la conjoncture est favorable pour Solstis. Du côté des particuliers, la demande est soutenue et dépasse l’installation de panneaux pour intégrer différentes solutions énergétiques autour de l’électricité. Par ailleurs, le marché bascule davantage vers les installations à taille modérée qui maximisent l’autoconsommation et l’intégration de solutions de type micro-grid où les infrastructures électriques sont mutualisées et les batteries intégrées pour stocker l’énergie mais aussi lisser les pics de demande, coûteux pour les entreprises."
+   },
+   {
+    "t": "p",
+    "x": "Avec plus de 100 batteries installées au premier semestre 2018, Solstis développe actuellement plusieurs gros projets de batteries industrielles de plusieurs centaines de kWh."
+   },
+   {
+    "t": "p",
+    "x": "In fine, Solstis reste confiante en l’avenir : qu’il s’agisse de la Stratégie Energétique 2050 ou de la libéralisation du marché de l’électricité, la force de Solstis reste d’être capable de se réinventer rapidement à chaque changement de cadre législatif."
+   }
+  ]
  }
 }
