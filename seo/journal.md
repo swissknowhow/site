@@ -183,3 +183,30 @@
 **Actions humaines requises**
 - Retrouver les nouvelles adresses : École Minerva (active), École française de Berne (statut à vérifier), et les pages déplacées de l'UNIL, de l'UNIGE et de l'État de Vaud (DECS, DGMR). Les liens vd.ch cassés commencent à s'accumuler (4 fiches) : une passe groupée sur les fiches « Canton de Vaud » serait efficace.
 - Toujours en attente : darwin-airline (en liquidation), bp-conseils (radiée), centre-laser-victor-hugo, `noindex` + canonical sur les redirections, redirection comconsulting.ch.
+
+## 2026-11-17
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : inchangé (titres > 70 car. : 361, doublons : 4, descriptions < 70 car. : /recherche/ et /404.html, noindex).
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Problème relevé**
+- Le fil d'Ariane existait en HTML sur toutes les pages internes mais pas en données structurées.
+
+**Correction faite (tools/build.mjs)**
+- JSON-LD `BreadcrumbList` généré automatiquement à partir du fil d'Ariane HTML (même libellés, URL absolues ; dernier élément sans URL, comme Google l'autorise). Vérifié : 2019 pages concernées, exactement une `BreadcrumbList` sur chaque page qui affiche un fil d'Ariane et aucune ailleurs (accueil, 404), toutes les URL pointent vers une page existante. Diff : 2019 fichiers, 1 ligne ajoutée chacun, rien d'autre.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `eichenberger-futuretech` à `fart`)
+- En panne :
+  - eichenberger-futuretech (Baar) : www.eb-futuretech.ch → domaine inexistant. Zefix : « Eichenberger Futuretech AG in Liquidation », Baar, CHE-406.513.346, **radiée le 2019-12-19**.
+  - ensemble-hospitalier-de-la-cote (Morges) : www.ehc.vd.ch → domaine inexistant. Zefix : Ensemble Hospitalier de la Côte, Morges, CHE-105.940.939, **actif**. Le domaine www.ehc-vd.ch répond 200 : probablement le nouveau site, à confirmer.
+- Non vérifiables (DNS résolu ; délai ou erreur TLS du proxy après 2 essais) : engie-services, endetec-neroxis, fart (www.centovalli.ch).
+- OK (200) : les 25 autres.
+- Reprise au prochain passage : première fiche après `fart`.
+
+**Actions humaines requises**
+- eichenberger-futuretech : société radiée en 2019, décider du sort de la fiche.
+- ensemble-hospitalier-de-la-cote : vérifier puis remplacer le lien par www.ehc-vd.ch.
+- Toujours en attente : écoles Minerva et EFB, liens UNIL/UNIGE/vd.ch (4 fiches), darwin-airline, bp-conseils, centre-laser-victor-hugo, `noindex` + canonical sur les redirections, redirection comconsulting.ch.

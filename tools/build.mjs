@@ -233,6 +233,8 @@ const NAV = [
 
 function layout({ depth, root, noindex = false, title, description = '', active = '', body, jsonld = '', image = '' }) {
   const r = root ?? '../'.repeat(depth);
+  const breadcrumbLd = LAST_CRUMBS ? JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [[ '', 'Accueil'], ...LAST_CRUMBS].map(([href, label], i, all) => ({ '@type': 'ListItem', position: i + 1, name: label, item: i === all.length - 1 && href == null ? undefined : `${SITE_URL}/${href}` })) }).replace(/[<>&]/g, (ch) => '\\u00' + ch.charCodeAt(0).toString(16)) : '';
+  LAST_CRUMBS = null;
   // Titre ≤ 70 caractères quand c'est possible : la marque n'est ajoutée que si elle tient (Google tronque au-delà).
   const fullTitle = title ? (`${title} · ${SITE_NAME}`.length <= 70 ? `${title} · ${SITE_NAME}` : title) : `${SITE_NAME} — L'annuaire du savoir-faire suisse`;
   return `<!doctype html>
@@ -259,7 +261,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : '<!--CANONICAL-->'}
 <link rel="stylesheet" href="${r}assets/css/themes.css?v=${THEMES_V}">
 <script src="${r}assets/js/theme-init.js?v=${INIT_V}"></script>
 ${ANALYTICS.src ? `<script defer src="${ANALYTICS.src}" data-website-id="${ANALYTICS.websiteId}" data-domains="${ANALYTICS.domain}"></script>` : ''}
-${jsonld ? `<script type="application/ld+json">${jsonld}</script>` : ''}
+${jsonld ? `<script type="application/ld+json">${jsonld}</script>` : ''}${breadcrumbLd ? `\n<script type="application/ld+json">${breadcrumbLd}</script>` : ''}
 </head>
 <body data-root="${r}">
 <a class="skip" href="#main">Aller au contenu</a>
@@ -375,7 +377,9 @@ function magCard(m, r) {
 }
 
 const sectionHead = (title, link, r, linkLabel = 'Tout voir') => `<div class="section-head"><h2>${title}</h2>${link ? `<a class="link-arrow" href="${r}${link}">${linkLabel}${icon('arrow', 'ico sm')}</a>` : ''}</div>`;
-const crumbs = (items, r) => `<nav class="crumbs" aria-label="Fil d'Ariane"><a href="${r}">Accueil</a>${items.map(([href, label]) => href ? `<a href="${r}${href}">${esc(label)}</a>` : `<span aria-current="page">${esc(label)}</span>`).join('')}</nav>`;
+// Le dernier fil d'Ariane rendu est repris par layout() en JSON-LD BreadcrumbList, puis effacé.
+let LAST_CRUMBS = null;
+const crumbs = (items, r) => (LAST_CRUMBS = items, `<nav class="crumbs" aria-label="Fil d'Ariane"><a href="${r}">Accueil</a>${items.map(([href, label]) => href ? `<a href="${r}${href}">${esc(label)}</a>` : `<span aria-current="page">${esc(label)}</span>`).join('')}</nav>`);
 
 // ---------- pages ----------
 function pageHome() {
