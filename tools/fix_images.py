@@ -47,18 +47,21 @@ def render(mag, page):
         im = Image.open(str(tmp) + '.png').convert('RGB'); im.save(out, 'WEBP', quality=80, method=6); Path(str(tmp) + '.png').unlink()
     return str(out.relative_to(ROOT / 'docs'))
 
+OWNERS = collections.Counter(s for v in raw['articles'].values() for s in set(v))
+
 def pages_of(mag, a):
     t = texts.get(mag, {}).get(a['slug'], {})
     if t.get('pdfPages'): base = set(t['pdfPages'])
     else:
         p = pm.get(f"{mag}:{a['slug']}")
-        if not p: return set(), set()
+        if not p: return set(), set(), set()
         base = set(p['pages'])
     # page voisine sans texte d'aucun autre article : page photo d'ouverture ou de fin
     other = TEXT_PAGES[mag] - base
     lines = LINES.get(mag, {})
-    extra = {q for b in base for q in (b - 1, b + 1) if q > 0 and q not in base and q not in other and lines.get(q, 99) <= 12}
-    return base, extra
+    near = {q for b in base for q in (b - 1, b + 1) if q > 0 and q not in base and q not in other}
+    photo = {q for q in near if lines.get(q, 99) <= 12}
+    return base, photo, near - photo
 
 # nombre de lignes de texte par page (work/texts/<mag>.txt) : une page photo n'en a presque pas
 LINES = {}
@@ -78,14 +81,16 @@ stats = collections.Counter()
 for mag, m in mags.items():
     for a in m.get('articles', []):
         k = f"{mag}:{a['slug']}"
-        base, extra = pages_of(mag, a)
+        base, extra, near = pages_of(mag, a) if pages_of(mag, a)[0] else (set(), set(), set())
         pages = base | extra
         imgs = []
         for s in raw['articles'].get(k, []):
             mm = PAT.match(s)
             if not mm: continue
             if (mm.group(1), mm.group(3)) in recurring: stats['répété'] += 1; continue
-            if pages and int(mm.group(2)) not in pages: stats['hors page'] += 1; continue
+            pg = int(mm.group(2))
+            # page voisine avec du texte (index, sommaire…) : la photo n'est gardée que si l'extraction l'a attribuée à ce seul article
+            if pages and pg not in pages and not (pg in near and OWNERS[s] <= 1): stats['hors page'] += 1; continue
             imgs.append(s)
         if imgs: out['articles'][k] = imgs; stats['articles avec photos'] += 1
         elif base and a.get('type') != 'annonce':
