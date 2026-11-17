@@ -44,5 +44,6 @@
       ],
       "advertiserOnly": false
     }
-  ]
+  ],
+  "pdfUnavailable": true
 }

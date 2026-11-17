@@ -36,3 +36,8 @@ Coquilles du magazine imprimé ou de l'extraction, corrigées par recoupement (a
 - **ABarthel Sàrl** (CHE-112.915.119) : radiée le 23.12.2022 après fusion avec Cadramont SA, elle-même absorbée en 2023 par Cadramont Manufacture SA (Le Locle, CHE-107.176.528) – source Zefix/FOSC. Site abarthel.ch retiré (domaine inexistant), mention ajoutée sur la fiche.
 - **AGG Kanton Bern** : la BVE est devenue la BVD. Site → bvd.be.ch/…/amt-fuer-grundstuecke-und-gebaeude.html, e-mail info.agg@be.ch, NPA 3013 (site officiel).
 - **Amt für Kultur und Sport SO** : déménagé Kreuzackerstrasse 1, 4502 Solothurn, tél. 032 627 60 60, site so.ch/…/amt-fuer-kultur-und-sport/ (site officiel).
+
+## 2026-11-17 – Couvertures des magazines
+- 20 couvertures régénérées depuis la page 1 des PDF, coupées au format fini (TrimBox) : fin des traits de coupe et des doubles pages (Horlogerie 2015 à 2021 et 2023 : seule la couverture, moitié droite, est gardée).
+- 9 PDF commencent par le sommaire (couverture absente du fichier web) : couvertures existantes conservées.
+- CCIG 2013 : le PDF ne contient qu'une couverture « non disponible » → bouton de téléchargement retiré (pdfUnavailable).

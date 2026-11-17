@@ -80,6 +80,8 @@ const SOURCES = fs.existsSync(path.join(DATA, 'sources.json')) ? JSON.parse(fs.r
 // liens relatifs, valables sur github.io comme sur swissknowhow.ch. Repli : URL d'origine sur swissknowhow.ch.
 const pdfLinks = (m) => {
   const src = SOURCES[m.slug];
+  // Le fichier publié ne contient pas le magazine (ex. CCIG 2013 : couverture « non disponible ») : pas de bouton
+  if (m.pdfUnavailable) return null;
   if (src?.pdf) {
     const name = decodeURIComponent(src.pdf.split('/').pop());
     const rel = src.pdf.includes('/wp-content/uploads/') ? 'wp-content/uploads/' + src.pdf.split('/wp-content/uploads/')[1] : '';
