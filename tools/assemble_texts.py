@@ -39,6 +39,7 @@ def join(lines):
 # pdftotext supprime le trait d'union des mots composés coupés en fin de ligne (« savoir-/faire » → « savoirfaire »).
 # On le rétablit quand la forme avec trait d'union existe ailleurs dans les magazines.
 _COMP = None
+_CAP = {}
 def compounds():
     global _COMP
     if _COMP is None:
@@ -52,6 +53,11 @@ def compounds():
         best = {}
         for k, n in sorted(hy.items(), key=lambda x: -x[1]): best.setdefault(k.lower(), k)   # graphie la plus fréquente (majuscules comprises)
         _COMP = {k.replace('-', ''): best[k] for k, n in tot.items() if n >= 2 and len(k) >= 8}
+        global _CAP
+        _CAP = {}
+        for k in hy:
+            a, b = k.split('-', 1)
+            if b[:1].isupper(): _CAP.setdefault(k.lower().replace('-', ''), k)
     return _COMP
 def fix_compounds(txt):
     C = compounds()
@@ -59,6 +65,7 @@ def fix_compounds(txt):
         w = m.group(0); h = C.get(w.lower())
         if not h: return w
         if w.isupper(): return h.upper()
+        if any(ch.isupper() for ch in w[1:]) and w.lower() in _CAP: h = _CAP[w.lower()]   # « MonodPiguet » → « Monod-Piguet »
         return h[0].upper() + h[1:] if w[0].isupper() else h
     return re.sub(r"[^\W\d_]{8,}", sub, txt)
 
