@@ -1,6 +1,7 @@
 """Contrôle des photos : chaque photo d'article doit venir d'une page où l'article est imprimé.
 
-- pages de l'article : data/texts (pdfPages, base 1, issus du texte intégral) sinon data/pagemap.json (base 0) ;
+- pages de l'article (numérotation PDF, base 1, comme les noms des photos pNNN) : data/texts (pdfPages)
+  sinon data/pagemap.json ; une page voisine sans texte d'un autre article (page photo d'ouverture) est admise ;
 - retire les éléments répétés sur ≥ 3 pages d'un même magazine (bandeaux, logos de rubrique) ;
 - sans photo restante : la page du magazine est reproduite (docs/assets/pages/<mag>/pNNN.webp) ;
 - fiches entreprise : photos des articles qui la concernent (sans les pages collectives de > 3 entreprises).
@@ -35,22 +36,32 @@ def pdf_path(mag):
     p = ROOT / 'docs' / rel
     return p if rel and p.exists() else None
 
-def render(mag, page0):
-    out = ROOT / 'docs' / 'assets' / 'pages' / mag / f'p{page0:03d}.webp'
+def render(mag, page):
+    out = ROOT / 'docs' / 'assets' / 'pages' / mag / f'p{page:03d}.webp'
     if not out.exists():
         pdf = pdf_path(mag)
         if not pdf: return ''
         out.parent.mkdir(parents=True, exist_ok=True)
         tmp = out.with_suffix('')
-        subprocess.run(['pdftoppm', '-f', str(page0 + 1), '-l', str(page0 + 1), '-scale-to-x', '1000', '-scale-to-y', '-1', '-singlefile', '-png', str(pdf), str(tmp)], check=True, capture_output=True)
+        subprocess.run(['pdftoppm', '-f', str(page), '-l', str(page), '-scale-to-x', '1000', '-scale-to-y', '-1', '-singlefile', '-png', str(pdf), str(tmp)], check=True, capture_output=True)
         im = Image.open(str(tmp) + '.png').convert('RGB'); im.save(out, 'WEBP', quality=80, method=6); Path(str(tmp) + '.png').unlink()
     return str(out.relative_to(ROOT / 'docs'))
 
 def pages_of(mag, a):
     t = texts.get(mag, {}).get(a['slug'], {})
-    if t.get('pdfPages'): return {p - 1 for p in t['pdfPages']}, 'texte'
-    p = pm.get(f"{mag}:{a['slug']}")
-    return (set(p['pages']), 'pagemap') if p else (set(), '')
+    if t.get('pdfPages'): base = set(t['pdfPages'])
+    else:
+        p = pm.get(f"{mag}:{a['slug']}")
+        if not p: return set(), ''
+        base = set(p['pages'])
+    # page voisine sans texte d'aucun autre article : page photo d'ouverture ou de fin
+    other = TEXT_PAGES[mag] - base
+    extra = {q for b in base for q in (b - 1, b + 1) if q > 0 and q not in base and q not in other}
+    return base | extra, 'ok'
+
+TEXT_PAGES = collections.defaultdict(set)
+for mag, d in texts.items():
+    for v in d.values(): TEXT_PAGES[mag].update(v.get('pdfPages') or [])
 
 out = {'articles': {}, 'companies': {}, 'pageImages': {}}
 stats = collections.Counter()
