@@ -674,5 +674,1059 @@
    }
   ],
   "note": ""
+ },
+ "sante-2024-editorial-marc-devaud": {
+  "lang": "fr",
+  "pages": "p. 2-3",
+  "pdfPages": [
+   4
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Notre hôpital est en constante mutation. Notamment depuis une douzaine d’années, suite à la révision de la loi fédérale sur l'assurance-maladie (LAMal). Celle-ci a orienté le système de santé suisse vers un nouveau modèle de financement basé sur des forfaits, inspiré du modèle allemand. L’objectif était d’atteindre une meilleure efficience. Pas sûr que cela ait réussi à ce stade. Les établissements ont perdu en autonomie et l’on a assisté à une augmentation de la pression sur la durée des séjours, au renforcement de la concurrence public-privé et à une recherche de productivité et rentabilité, pas toujours en lien avec la mission de base qui est de soigner."
+   },
+   {
+    "t": "p",
+    "x": "Il n’empêche, les établissements hospitaliers comme le nôtre n’ont pas eu d’autres options que de revoir en profondeur leur façon d’envisager l’avenir pour s’adapter à ces évolutions."
+   },
+   {
+    "t": "p",
+    "x": "Face à ces changements, notre hôpital a choisi une stratégie sur le long terme. Ainsi, des décisions ont dû être prises, pas toujours populaires, bien souvent critiquées. La fermeture de deux sites (Châtel-Saint-Denis et Billens), la centralisation programmée des cas aigus sur le seul site de Fribourg, le développement des soins ambulatoires et de la réadaptation sur les sites périphériques. Le processus a été chahuté. Il a fallu expliquer et il faut continuer à le faire, pour montrer en quoi ces nombreuses adaptations sont indispensables."
+   },
+   {
+    "t": "p",
+    "x": "Ces décisions sont pourtant celles qui permettent aujourd’hui d’inscrire notre hôpital dans une vision à long terme. Celle-ci passe également par la construction d’un nouveau centre hospitalier à Fribourg à l’horizon 2035, plus adapté à nos missions, afin de poursuivre les adaptations choisies jusqu’à maintenant, mais également de se préparer à des défis d’avenir : augmentation et vieillissement de la population, pénurie de personnel, évolution rapide de la médecine, entre autres. Pour ce faire, nous cherchons aussi à nous rapprocher de tous les partenaires de santé régionaux afin de créer un véritable écosystème qui permette de travailler de manière coordonnée à toutes les étapes de la prise en charge du patient."
+   },
+   {
+    "t": "p",
+    "x": "Mais ce processus n’est pas linéaire et des événements extérieurs viennent constamment le bousculer. Prochainement le système de santé fribourgeois et l’hôpital fribourgeois feront l’objet de votations populaires déterminantes pour leur futur. Selon les résultats qui sortiront des urnes, notre feuille de route sera confirmée ou devra faire l’objet d’adaptations."
+   },
+   {
+    "t": "p",
+    "x": "Faire entrer notre hôpital dans une nouvelle ère est un défi ardu, mais passionnant. Ce magazine montre combien l’HFR fait preuve de dynamisme et combien ses différents services sont à la recherche continue de l’excellence et de l’innovation, dans les limites des ressources disponibles. Et c’est seulement ensemble, avec tout notre personnel, loyal, fidèle et motivé, que nous pourrons mener à bien cette stratégie d’avenir."
+   }
+  ]
+ },
+ "sante-2024-digitalisation-gestion-operationnelle": {
+  "lang": "fr",
+  "pages": "p. 5",
+  "pdfPages": [
+   7
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Un des principaux défis pour un établissement hospitalier est de gérer et surtout d’anticiper les flux de patients afin que le taux d’occupation des lits soit optimal. Depuis quelques années, la direction des opérations de l’HFR affine son pilotage de l’opérationnel en renforçant notamment la digitalisation.",
+    "lead": true
+   },
+   {
+    "t": "h",
+    "x": "Traiter les données"
+   },
+   {
+    "t": "p",
+    "x": "Pour optimiser la conduite des opérations, la direction de celles-ci a d’abord dû établir un état des lieux des processus et des outils utilisés dans les divers services et départements de l’hôpital. « Afin d’avoir une vision en temps réel de la situation de l’hôpital, nous devons croiser toute une série d’indicateurs les plus divers. La gestion des entrées et sorties, la planification des interventions, la durée des prises en charge, l’occupation des services, la coordination avec les partenaires de santé, etc. Avant le Covid, nous disposions pour cela de toute une série d’outils parfois assez disparates. Nous avons fait un énorme travail de fond pour les uniformiser », explique Stéphane Brand."
+   },
+   {
+    "t": "p",
+    "x": "La direction des opérations a notamment totalement reconfiguré l’outil de planification des lits, POLYPOINT DIS, pour l’usage spécifique de l’HFR. « Nous avons également entièrement recréé un datawarehouse pour traiter ces diverses données, ceci au moyen de la solution Power Bi », ajoute Stéphane Brand."
+   },
+   {
+    "t": "h",
+    "x": "Optimiser aussi les processus de travail"
+   },
+   {
+    "t": "p",
+    "x": "Outre les solutions informatiques, il a également fallu travailler sur l’uniformisation des processus de travail et notamment de saisie des données standardisées et structurées des patients par le personnel. « Cela signifie un grand travail de sensibilisation et d’éducation du personnel à ces nouvelles pratiques ». Pour mener sa démarche, l’HFR a certes observé ce qui se passait dans d’autres établissements, mais a choisi de mener ces changements sans support de l’extérieur."
+   },
+   {
+    "t": "p",
+    "x": "Au final, tout l’opérationnel de l’hôpital a grandement gagné en agilité, selon le directeur des opérations. « Nous parvenons désormais à fonctionner avec un taux d’occupation des lits extrêmement élevé »."
+   },
+   {
+    "t": "h",
+    "x": "L’avenir par l’IA"
+   },
+   {
+    "t": "p",
+    "x": "Le processus est toujours en cours. Chaque semaine, une séance plénière réunit les 25 services médicaux de l’hôpital pour un point de situation commun afin de connaître au plus près la situation du moment."
+   },
+   {
+    "t": "p",
+    "x": "Quand cette démarche d’optimisation sera-t-elle terminée ? « Sans doute jamais, tant un hôpital est un établissement vivant, en continuelle mutation. Nous considérons cette démarche comme une amélioration continue. A terme, l’étape suivante pourrait être l’intégration de l’Intelligence artificielle qui pourra nous permettre d’encore mieux anticiper certains rythmes », souligne Stéphane Brand."
+   },
+   {
+    "t": "p",
+    "x": "Gérer ainsi la conduite d’un hôpital, entre fluctuation de patients ou de personnel, est un véritable exercice d’équilibriste, « mais qui est passionnant au quotidien. Car aucun jour ne ressemble à un autre »."
+   }
+  ]
+ },
+ "sante-2024-laboratoire-dgorder": {
+  "lang": "fr",
+  "pages": "p. 10",
+  "pdfPages": [
+   12
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Depuis l’ordre du médecin jusqu’à l’analyse en laboratoire et le rendu des résultats, la prescription électronique des demandes d’examen est digitalisée à l'HFR. Un changement de pratique qui permet de gagner en efficience à divers niveaux.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "C’est l’exemple même de la digitalisation réussie d’un processus médical. Lancé dès 2018, le projet DGOrder de l’HFR a été maintenant étendu à tous les services stationnaires. Il permet désormais un monitoring complet des demandes d’analyses médicales au sein de l’établissement. Et cette prescription électronique des demandes d’examen était très attendue par le corps médical."
+   },
+   {
+    "t": "p",
+    "x": "« Cette digitalisation du processus permet un gain en efficience », explique le Dr. Jean-Luc Magnin, chef des Laboratoires de l’HFR, qui a mené le projet à bien avec M. Christophe Bosteels du service informatique de l’HFR. Gain de temps, simplification des demandes et processus, diminution du risque d’erreurs, fiabilité des prélèvements et des informations sont autant d’avantages induits par cette nouvelle procédure informatisée."
+   },
+   {
+    "t": "h",
+    "x": "Solution développée à l’interne"
+   },
+   {
+    "t": "p",
+    "x": "C’est en collaboration avec la société Datamed que l’‘HFR a développé le module DGOrder installé dans son établissement. Une solution intégrée qui permet de monitorer informatiquement tous les aspects relatifs à une analyse médicale, depuis la rédaction de l’ordre jusqu’au résultat de l’analyse, en passant par toutes les étapes intermédiaires et notamment le moment du prélèvement. « C’est surtout cet instant qui est critique dans tout le processus. Il faut avoir la garantie sur la bonne identité du patient. L’homonymie peut en effet être un facteur d’erreur. L’heure et la date exacte du prélèvement sont également des informations très importantes pour toute l’analyse », souligne encore le Dr Jean-Luc Magnin."
+   },
+   {
+    "t": "h",
+    "x": "Procédure digitalisée"
+   },
+   {
+    "t": "p",
+    "x": "La procédure digitalisée est la suivante : le médecin donne l’ordre d’analyse directement dans le DPI (Dossier Patient Informatisé) via le logiciel DGOrder. Le soignant reçoit la demande, valide sa prise en charge et découvre les détails de l’acte médical à accomplir. Au moment de procéder au prélèvement, le scan du bracelet du patient est indispensable pour s’assurer de l’identité de ce dernier et l’adéquation de la demande. Au moyen d’un ordinateur portable intégré au chariot de matériel, le soignant s’identifie et peut obtenir et également saisir des informations complémentaires, en marge de la demande proprement dite."
+   },
+   {
+    "t": "p",
+    "x": "Le prélèvement réalisé bénéficie ensuite d’un suivi complet jusqu’à l’analyse finale. Celle-ci sera d’ailleurs automatiquement intégrée au DPI via DGOrder. A noter qu’à tout moment, le médecin peut consulter l’état d’avancement de sa demande."
+   },
+   {
+    "t": "h",
+    "x": "L’IA bientôt intégrée"
+   },
+   {
+    "t": "p",
+    "x": "Dans le développement de sa solution digitale, l’HFR est allé particulièrement loin et désormais, d’autres établissements hospitaliers s’inspirent de cette expérience à leur propre compte. Le projet est évolutif et pourrait bien à l’avenir intégrer de l’intelligence artificielle. Celle-ci pourrait en effet seconder le médecin en examinant la pertinence des analyses demandées, mais également en en proposant d’autres."
+   }
+  ]
+ },
+ "sante-2024-urgences-vincent-ribordy": {
+  "lang": "fr",
+  "pages": "p. 11",
+  "pdfPages": [
+   13
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Comme la plupart des hôpitaux en Suisse, le Service des urgences de l’HFR vit sous la pression croissante d’un afflux de patients. Son médecin-chef, le professeur Vincent Ribordy, également co-président de la Société suisse de médecine et de sauvetage, aborde la question sans tabous.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Ce phénomène est très marqué à Fribourg, canton qui compte une forte croissance de sa population et une des plus faibles densités de médecins de famille de Suisse pour 1000 habitants. C’est une situation complexe aux yeux du professeur Ribordy, qui nécessite plusieurs actions à mener en parallèle et à différents niveaux."
+   },
+   {
+    "t": "p",
+    "x": "Au niveau politique, il est essentiel de prendre des mesures de renforcement de la première ligne du système de santé (médecins et soignants de premier recours, permanences) afin de préserver le bon fonctionnement du Service des urgences. Ce renforcement doit permettre de recentrer le Service des urgences sur sa mission principale, à savoir les urgences vitales et les cas complexes."
+   },
+   {
+    "t": "p",
+    "x": "La création d’un titre de médecin urgentiste, tel qu’il existe dans la plupart des pays occidentaux, est également essentielle et offrirait une bonne complémentarité avec le titre de médecine générale. Les Services des urgences reposent actuellement sur quelques cadres, trop peu nombreux pour répondre à l’ampleur de la mission et qui s'épuiseront faute de relève."
+   },
+   {
+    "t": "p",
+    "x": "Enfin, il faut planifier et construire de nouvelles infrastructures adaptées à l’évolution démographique et de la médecine, pour éviter une saturation telle que des patients se retrouvent « dans le couloir », marqueur ultime de la dégradation d’un système de santé, phénomène déjà observé dans des pays limitrophes."
+   },
+   {
+    "t": "p",
+    "x": "Le professeur Ribordy rappelle une réalité pas toujours bien comprise : l’excellence d’un service des urgences comme celui de Fribourg dépend de la disponibilité d’un plateau technique complet et de nombreux spécialistes prêts à intervenir immédiatement de jour comme de nuit. Il s’agit d’un dispositif très exigeant en terme de moyens, d'organisation (H24, 7/7) et de compétences."
+   },
+   {
+    "t": "p",
+    "x": "Pour rester performantes, les équipes doivent intervenir fréquemment, ce qui dépend de la grandeur du bassin de population. Si la masse critique de patient est insuffisante, le niveau de performance risque de baisser tandis que le service va perdre en attractivité, allant jusqu’à menacer l’institution de ne plus être reconnue comme centre de compétence et établissement de formation."
+   },
+   {
+    "t": "p",
+    "x": "Dans le canton de Fribourg, la première ligne est constituée par les pédiatres, les médecins de famille, les soins à domicile, la médecine de garde et un réseau de permanences. C’est le bon système, relève le professeur Ribordy, mais il ne parvient pas aujourd’hui à répondre aux besoins de la population. En conséquence, les patients se rendent trop souvent aux Urgences pour des problèmes de santé qui peuvent être traités par les médecins généralistes ou dans des permanences."
+   },
+   {
+    "t": "p",
+    "x": "« Cela entraîne une mauvaise utilisation des ressources prévues pour les Urgences et génère de nombreux problèmes », explique le professeur Ribordy. Il y a d’une part la frustration et le mécontentement des patients en raison de délais de prise en charge trop longs. En conséquence, le personnel risque de s’épuiser, de se démotiver et de quitter la profession, aggravant la pénurie déjà observée."
+   },
+   {
+    "t": "p",
+    "x": "C'est un cercle vicieux qu'il faut interrompre car il risque de dégrader la qualité des soins. En effet, dans ces conditions il y a un risque d'incidents et d'erreurs."
+   },
+   {
+    "t": "h",
+    "x": "Former davantage et financer une réserve hospitalière"
+   },
+   {
+    "t": "p",
+    "x": "Outre le renforcement de la première ligne, le médecin-chef insiste, comme nombre de responsables du domaine de la santé, sur la nécessité de valoriser les médecins de premier recours par un meilleur équilibre entre les salaires des médecins spécialistes et des médecins généralistes."
+   },
+   {
+    "t": "p",
+    "x": "Un effort doit également être consenti pour la formation, car « il n’est pas acceptable qu’un pays riche comme la Suisse profite pareillement en pillant les cerveaux à l’étranger, d’où proviennent 40% de ses médecins. » Cette dépendance s’observe dans le Service des urgences de l’HFR, où près de la moitié des médecins proviennent de France."
+   },
+   {
+    "t": "p",
+    "x": "Le système de santé actuel induit une pression financière constante sur les hôpitaux publics qui les pousse à travailler avec de très hauts taux d’occupation des lits, si bien que le travail à flux tendu et à la limite de la capacité devient la règle, dans un contexte de pénurie de personnel."
+   },
+   {
+    "t": "p",
+    "x": "« Mais comment un service d’urgences peut-il fonctionner sans disposer d’une réserve de capacité pour répondre aux fluctuations ? » s’interroge le professeur Ribordy."
+   },
+   {
+    "t": "p",
+    "x": "Plus que jamais, conclut le responsable des Urgences, il est nécessaire de s’engager pour la relève et d’œuvrer pour maintenir de bonnes conditions de travail. Et d’en appeler à une prise de conscience et à des réformes urgentes, non seulement dans le canton de Fribourg, mais aussi à l’échelle nationale."
+   }
+  ]
+ },
+ "sante-2024-urgences-pediatriques": {
+  "lang": "fr",
+  "pages": "p. 16",
+  "pdfPages": [
+   18
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "En 2023, les urgences pédiatriques de l’hôpital fribourgeois ont fait face à plus de 20'000 consultations. Pour comparaison, durant l’année 2014, 12'000 patients « seulement » avaient été vus. Un nombre qui augmente constamment, pour des raisons très diverses. L’augmentation de la population du canton joue certainement un rôle, ainsi que le manque de pédiatre installés dans certaines régions du canton. Il est aussi possible que les parents plus sous pression par le rythme de notre société prennent plus facilement le chemin des urgences avec leur enfant que par le passé. Une grande partie des consultations effectuées aux urgences pédiatriques le sont en fin de journée et en soirée, soit lorsque les pédiatres installés ne sont plus disponibles."
+   },
+   {
+    "t": "p",
+    "x": "« Les adaptations au niveau du personnel et des locaux en lien avec cette augmentation constante, ainsi que les fluctuations de la fréquentation au fil du temps (fluctuation selon l’heure, le jour de la semaine ou le mois) sont les principaux défis que devra relever notre service ces prochaines années », souligne la docteure Céline Ritter Schenk qui co-dirige les urgences pédiatriques avec sa consoeur la docteure Cosette Pharisa Rochat."
+   },
+   {
+    "t": "p",
+    "x": "En conséquence, les ressources en personnel et l’adaptation des locaux sont une problématique avec laquelle il faudra compter dans le futur afin de répondre à la demande."
+   },
+   {
+    "t": "h",
+    "x": "Centralisées à Fribourg"
+   },
+   {
+    "t": "p",
+    "x": "Les urgences pédiatriques sont centralisées sur le seul site de Fribourg. Les admissions sont communes avec les urgences traditionnelles. Mais les jeunes patients âgés jusqu’à seize ans sont ensuite dirigés sur cette unité spécifique, rattachée directement au service de pédiatrie et travaillant en direct avec celui-ci. Une équipe dédiée d’infirmières s’occupe ainsi de trier les cas et les traiter selon leur degré d’urgence, avec le cas échéant le soutien de médecins spécialistes."
+   },
+   {
+    "t": "p",
+    "x": "En général, les jeunes patients vus aux urgences pédiatriques souffrent de maladies aiguës à leur arrivée. Les pathologies qui y sont traitées sont souvent la fièvre, les difficultés respiratoires, les infection pulmonaires, gastro-intestinales, urinaire ou ORL. Mais aussi la traumatologie avec des plaies, fractures, brûlures ou traumatisme crânien ainsi que des problèmes psychiatriques."
+   },
+   {
+    "t": "p",
+    "x": "Les raisons de consultations sont variables au fil des saisons, par exemple en hiver nous avons beaucoup de maladies respiratoires telles que des bronchiolites. Une situation tout à fait similaire à d’autres régions du pays."
+   },
+   {
+    "t": "h",
+    "x": "Locaux modulables"
+   },
+   {
+    "t": "p",
+    "x": "Les urgences pédiatriques disposent de nouveaux locaux depuis l’été 2019, modulables pour s’adapter aux circonstances. Elle dispose de deux box de tri, deux de consultation rapide, trois réservés à la consultation et un box de déchoquage (réanimation). Enfin, une chambre de deux lits permet des mises en observations de courte durée."
+   },
+   {
+    "t": "p",
+    "x": "Lorsque les patients doivent être hospitalisés, ils sont transférés dans le Service de pédiatrie. Cette étape est aussi parfois retardée en raison du haut taux d’occupation de l'unité d'hospitalisation, ce qui entraine une pression supplémentaire sur les urgences. De plus, au vu du manque de place dans les locaux des urgences pédiatriques, une à deux salle de consultation « fast-track » (consultation rapide) sont délocalisées dans les locaux de la pédiatrie. « On est souvent à l’étroit. Avec l’accroissement de la fréquentation, on se retrouve souvent dans des situations tendues », reconnait néanmoins la Dre Ritter Schenk qui ajoute que tout le monde dans le service attend avec impatience la construction du futur nouvel hôpital, espéré pour la prochaine décennie."
+   },
+   {
+    "t": "h",
+    "x": "Equipe médico-soignante spécialisée en urgences pédiatriques"
+   },
+   {
+    "t": "p",
+    "x": "Une grande partie de l’équipe soignante a suivi une formation certifiante supplémentaire de 2 ans dédiée à la prise en charge spécifique des patients aux urgences pédiatriques. De plus, les médecins coresponsables du service ont également un diplôme de spécialiste en médecine d’urgences pédiatriques qui complète leur formation de pédiatre. Ce cadre permet de créer un environnement favorable à la formation des jeunes collègues. Une mission et contribution importante de l’HFR pour lutter contre la pénurie de pédiatres dans le canton et au-delà."
+   }
+  ]
+ },
+ "sante-2024-centres-de-sante": {
+  "lang": "fr",
+  "pages": "p. 17",
+  "pdfPages": [
+   19
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Ils sont le complément indispensable à la nouvelle structure de l’hôpital fribourgeois. Les Centres de santé vont à l’avenir permettre d’amener certaines prestations médicales au plus près du patient. Celui-ci disposera alors d’un accès proche à différentes consultations spécialisées, à des traitements ambulatoires et à des prestations paramédicales diverses. Ceci grâce à une collaboration public-privé, à un réseau de prestataires internes et externes à l’HFR.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "« Il s’agit d’une formule gagnant-gagnant, qui permet de notre côté une optimisation de nos prestations et davantage de proximité du côté du patient », souligne la Dre Anne-Catherine Barras-Moret, coordinatrice du projet."
+   },
+   {
+    "t": "h",
+    "x": "Trois centres prévus"
+   },
+   {
+    "t": "p",
+    "x": "Pour l’heure, trois centres de santé sont prévus dans les régions périphériques : à Riaz, Tavel et Meyriez. Un quatrième centre pourrait voir le jour dans la Sarine également à terme."
+   },
+   {
+    "t": "p",
+    "x": "Le projet le plus avancé est celui du Centre de santé du Sud fribourgeois. Il est déployé simultanément sur les sites de Riaz (site principal, géré par HFR), de Billens et de Châtel-SaintDenis. Ces deux derniers sont gérés par les réseaux santé des districts de la Glâne et de la Veveyse. Avec ses trois sites, ce centre offre une palette de prestations complémentaires et coordonnées de soins ambulatoires tels que la rhumatologie, un centre métabolique, l’antalgie, l’oncologie, l’ostéoporose, l’infectiologie, l’angiologie, la gastro-entérologie, l’endoscopie ou encore la néphrologie. En tant que partenaires externes, les Ligues de santé, le Réseau fribourgeois de santé mentale (RFSM) et le Réseau santé Gruyère, Glâne ou Veveyse selon les sites, apportent également des prestations spécifiques."
+   },
+   {
+    "t": "h",
+    "x": "Une formule qui fait déjà ses preuves"
+   },
+   {
+    "t": "p",
+    "x": "Le Centre de santé du Sud fribourgeois a été inauguré en janvier 2023. « D’ores et déjà, le modèle montre son efficacité. Les consultations sont pleines. Nombre de patients ne seraient sans doute jamais venus jusqu’à Fribourg pour certains soins. Ce modèle s’inscrit parfaitement dans la tendance au vieillissement de la population et à l’augmentation des maladies chroniques », souligne encore Anne-Catherine Barras-Moret."
+   },
+   {
+    "t": "p",
+    "x": "A Tavel, le projet de centre de santé est en cours. Des consultations ambulatoires de l’HFR sont déjà disponibles, comme la diététique, la néphrologie, l’oncologie ou encore la dermatologie. A Meyriez également on commence à mettre en place la structure, en visant à intégrer notamment diverses consultations spécifiques déjà proposées dans la région par des partenaires externes."
+   },
+   {
+    "t": "p",
+    "x": "La stratégie de mise en place des centres de santé découle directement de la création en 2007 de l’hôpital fribourgeois (HFR) qui a réuni les différents hôpitaux publics du canton. Aujourd’hui l’HFR est composé d’un site central de soins aigus à Fribourg et de trois sites périphériques (Riaz, Tavel et Meyriez). La mise en place des Centres de santé se fait en étroite collaboration avec les préfets, qui président les réseaux santé de leur district, comme le précise encore Anne-Catherine Barras-Moret : « C’est une nécessité d’impliquer les régions, car elles connaissent parfaitement leurs besoins en matière de santé »."
+   }
+  ]
+ },
+ "sante-2024-cesarienne-douce": {
+  "lang": "fr",
+  "pages": "p. 19",
+  "pdfPages": [
+   21
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "L'HFR fait partie des hôpitaux suisses qui maîtrisent parfaitement la pratique de la césarienne dite douce, ou encore participative. Tour d’horizon de ses bienfaits et de ses limites avec le Dr Nordine Ben Ali, médecin-chef adjoint en gynécologie et obstétrique.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "En Suisse, quelque 30% des femmes accouchent par césarienne. L'HFR s’inscrit dans la moyenne nationale. En 2022, sur 1100 naissances, quelque 280 césariennes y ont été pratiquées (la moitié en urgence), et un tiers de celles-ci ont été des césariennes douces. « Nous avons suffisamment de recul depuis 2020, les doutes et les réticences ont été levés, si bien qu’aujourd’hui je la propose quasi systématiquement à mes patientes devant passer par une césarienne pour des raisons de sécurité », précise le Dr Nordine Ben Ali."
+   },
+   {
+    "t": "p",
+    "x": "Il ne s’agit pas d’une alternative à un accouchement naturel, mais bien d’une option ouverte en cas de nécessité de pratiquer une césarienne. Elle nécessite que le chirurgien se concerte avec la patiente et l’ensemble des intervenants en salle de césarienne afin de réaliser les préparatifs spécifiques : l’installation sur la table d’accouchement est différente, les draps opératoires doivent être positionnés différemment et les anesthésistes placent le monitorage de façon à libérer les bras de la patiente. Selon les circonstances, la césarienne douce peut même entrer en ligne de compte en cas d’urgence, autrement dit sans avoir été prévue. Elle peut aussi être interrompue au besoin, par exemple si l’enfant montre des difficultés d’adaptation après sa naissance et doit recevoir rapidement une aide respiratoire et ne peut donc pas être maintenu sur le ventre de sa mère."
+   },
+   {
+    "t": "p",
+    "x": "Cette pratique trouve son origine en 2008 à Londres où des gynécologues l’ont développée afin de mieux établir le lien entre la mère et son bébé et de permettre aux couples de vivre un accouchement aussi proche que possible de ce qu’il aurait été par voie vaginale. La césarienne douce a fait ses preuves et est aujourd’hui proposée dans de très nombreux hôpitaux et maternités du monde entier."
+   },
+   {
+    "t": "h",
+    "x": "Philosophie de prise en charge"
+   },
+   {
+    "t": "p",
+    "x": "Ni l’acte chirurgical, ni l’anesthésie partielle (rachianesthésie) ne diffèrent d’une césarienne classique, mais une philosophie très différente de prise en charge reproduit, autant que possible, les conditions d’un accouchement naturel. Ainsi, le chirurgien abaisse le champ de manière que la patiente puisse voir la tête de son bébé émerger et le recevoir ensuite contre sa poitrine. Comme le conjoint, convié à assister à la naissance, elle ne rate pas le premier instant de vie de l’enfant et entend ses premiers cris. Son principal bénéfice, explique le Dr Nordine Ben Ali, tient à une très nette amélioration de la satisfaction des patientes. Lors d’une césarienne classique, il n’est pas rare que la mère ne puisse accueillir son bébé que deux heures après sa naissance."
+   },
+   {
+    "t": "p",
+    "x": "Avec la césarienne douce, le nouveau-né est mis au sein une trentaine de minutes après sa venue au monde, ce qui correspond à une recommandation de l’OMS. Une étude d’un important hôpital berlinois démontre de plus une amélioration de l’allaitement des mères accouchant par césarienne."
+   },
+   {
+    "t": "p",
+    "x": "Il existe aujourd’hui suffisamment de recul pour rassurer sur les risques d’infection au niveau de la paroi abdominale ; ils ne semblent pas significativement plus élevés que lors d’une césarienne classique et la durée de l’opération n’est pas sensiblement plus longue. Toutefois, alors que les auteurs britanniques de 2008 présageaient un bénéfice pour l’enfant (diminution du risque de difficulté respiratoire), il n’existe pour l’heure aucune étude confirmant un tel gain."
+   },
+   {
+    "t": "h",
+    "x": "« Nous venons de loin »"
+   },
+   {
+    "t": "p",
+    "x": "Cette pratique permet aux futures mères de mieux vivre une césarienne, opération qui est souvent source de frustration. « Jusqu’en 1970, les césariennes étaient réalisées sous anesthésie générale, rappelle le Dr Ben Ali. Nous venons de loin, d’une époque où les mères étaient absentes à la naissance de leur enfant, un vrai trou de mémoire, et où les pères ne faisaient connaissance du nouveau-né qu’à la nurserie. »"
+   },
+   {
+    "t": "p",
+    "x": "Les progrès ont permis de renoncer à l’anesthésie générale, puis, à la fin des années 90, les conjoints ont eu accès à la salle de césarienne. Avec la césarienne douce, une étape supplémentaire est franchie dans l’humanisation de ce processus de naissance."
+   }
+  ]
+ },
+ "sante-2024-master-medecine-de-famille": {
+  "lang": "fr",
+  "pages": "p. 24",
+  "pdfPages": [
+   26
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "En 2022, une première volée de 37 étudiants a décroché un diplôme de médecin orienté en médecine de famille à l’Université de Fribourg. Cette démarche prometteuse repose sur une convention liant cette dernière à l’hôpital fribourgeois (HFR) et au Réseau fribourgeois de santé mentale (RFSM).",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Tout a commencé en 2013 par une étude de faisabilité commanditée à l’Université et à l’HFR par le Conseil d’Etat fribourgeois. Six ans plus tard, une première volée d’étudiants entamait un cursus de Master orienté en médecine de famille. Il s’agit bien sûr de pallier le manque chronique de médecins de famille, pénurie particulièrement marquée à Fribourg ; ce canton en croissance démographique figure en effet en queue du classement de la densité médicale en médecine de famille."
+   },
+   {
+    "t": "p",
+    "x": "Le Dr Antoine Meyer, membre du groupe de travail Master en médecine chargé de la mise en place de cette nouvelle filière, qualifie cette démarche de « franc succès » et se réjouit de la « motivation élevée » des étudiants. Historiquement, l’Université de Fribourg ne formait les étudiants que pour les deux premières années du Bachelor en médecine, puis la 3e année a été introduite en 2009. Depuis 2019, le cycle universitaire de médecine complet peut être accompli à Fribourg."
+   },
+   {
+    "t": "h",
+    "x": "Page blanche"
+   },
+   {
+    "t": "p",
+    "x": "Ce succès ne doit rien au hasard. « Un noyau dur », selon l’expression du Dr Meyer, soit une petite équipe soudée, encadrée par une cheffe de projet, s’est mise à la tâche sitôt l’étude bouclée et approuvée. « Nous sommes partis d’une page totalement blanche, dit-il, c’est un avantage car il n’y a rien à détruire, tout est à créer. » Il faut certes passer par des enseignements incontournables et obligatoires, mais au-delà du PROFILES (document concernant la formation des étudiants en médecine entré en force en Suisse en 2021), les universités disposent d’une certaine liberté."
+   },
+   {
+    "t": "p",
+    "x": "L’axe médecine de famille privilégié par l’HFR, le RFSM et l’Université de Fribourg signifie que les matières enseignées doivent être conçues et réfléchies avec un médecin de famille ; c’est une sorte de boussole qui oriente le plus possible vers une médecine clinique. Plutôt que de préparer à des examens avec notes, ce Master privilégie autant que possible des rapports d’auto-évaluation des étudiants."
+   },
+   {
+    "t": "p",
+    "x": "Les volées en Master ont été calibrées à 40 étudiants afin de garantir un contact étroit entre eux et avec les intervenants. Le travail de Master mobilise beaucoup de ressources, avec une forte exposition clinique : entre la 4e et la 5e année, 30 semaines de stages dans les services de l’HFR sont prévues. Autre initiative novatrice, les étudiants sont suivis pendant tout le cursus du Master par un learning advisor, lequel conseille, encadre et aide à progresser trois à quatre étudiants."
+   },
+   {
+    "t": "h",
+    "x": "Encore du chemin"
+   },
+   {
+    "t": "p",
+    "x": "Les premiers succès de ce nouveau Master orienté en médecine de famille sont encourageants, mais il y a encore du chemin avant que la pénurie de médecins généralistes ne soit plus qu’un mauvais souvenir. « Nous travaillons maintenant avec le Conseil d’Etat pour renforcer la filière de formation post-graduée en médecine de famille. Des assistants, déjà médecins, peuvent ainsi se former en cabinet dans notre canton », relève le Dr Meyer."
+   },
+   {
+    "t": "p",
+    "x": "Le diplôme de médecin n’est pas encore un droit de pratiquer. Les titres de spécialiste, dont la médecine interne générale, s’acquièrent en 5 à 6 ans minimum. Il existe 45 titres de spécialisation. Même s’il est permis de l’espérer, il n’est pas dit que la majorité des lauréates et lauréats du Master en médecine fribourgeois rejoindra des cabinets généralistes ou en ouvrira. D’autres facteurs interviennent, comme les revenus supérieurs des médecins spécialisés ou encore, de manière plus générale, le fait que la Suisse ne forme pas assez de médecins (40% des médecins pratiquant dans notre pays sont étrangers). « Tôt ou tard, la Confédération sera contrainte de prendre des mesures », conclut le Dr Antoine Meyer."
+   }
+  ]
+ },
+ "sante-2024-enjeux-readaptation": {
+  "lang": "fr",
+  "pages": "p. 25",
+  "pdfPages": [
+   27
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Le vieillissement de la population et les progrès de la médecine entraînent des changements, voire des bouleversements, plus ou moins marqués selon le domaine de spécialité. Le Dr Titus Bihl-Lainsbury, médecin-chef adjoint du service de réadaptation gériatrique de l’HFR Tafers, pointe les enjeux de ce proche futur pour les hôpitaux et pour l’HFR en particulier.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "La réadaptation couvre plusieurs domaines de la médecine. L’offre est riche à l’HFR avec des prestations multidisciplinaires en réadaptation neurologique, musculo-squelettique, gériatrique, cardiologique et pneumologique. Cela permet d’avoir des filières fluides pour les patients fribourgeois qui ne sont pas contraints d’effectuer leur réadaptation hors du canton."
+   },
+   {
+    "t": "p",
+    "x": "Les évolutions de la médecine vont dans le sens d’une réadaptation de moins en moins stationnaire et toujours plus ambulatoire. « Cela suppose une réorganisation, relève le Dr Bihl-Lainsbury, un réaménagement de certains espaces. »"
+   },
+   {
+    "t": "p",
+    "x": "Deux exemples :"
+   },
+   {
+    "t": "p",
+    "x": "- en cardiologie, la microchirurgie se pratique de plus en plus : au lieu d’ouvrir le thorax, on opère le cœur en n’occasionnant que de petites cicatrices, si bien que les patientes et patients récupèrent beaucoup plus vite."
+   },
+   {
+    "t": "p",
+    "x": "- dans le domaine de la rééducation musculosquelettique, la pose de prothèses de hanche et de genou recourt à des techniques conservatrices de la musculature autour des articulations qui ne nécessitent pas de réadaptation intensive après l’opération."
+   },
+   {
+    "t": "p",
+    "x": "Des protocoles de réadaptation bien établis, en stationnaire, peuvent ainsi être remis en question. « Cette évolution, souligne le Dr Bihl-Lainsbury, n’est pas sans conséquences pour les hôpitaux ou pour les centres spécialisés. »"
+   },
+   {
+    "t": "h",
+    "x": "Vers la réadaptation ambulatoire"
+   },
+   {
+    "t": "p",
+    "x": "Plutôt qu’un séjour à l’hôpital à temps complet, la réadaptation ambulatoire s’impose de plus en plus aujourd’hui. Les patients viennent le matin, mangent sur place et partent en fin de journée. Les mêmes programmes que pour l’hospitalisation stationnaire s’appliquent, mais les patients ne passent plus la nuit à l’hôpital. C’est déjà le cas en particulier pour la réadaptation cardio-vasculaire et la réadaptation pulmonaire."
+   },
+   {
+    "t": "p",
+    "x": "Autre évolution contemporaine, des programmes de réadaptation préventive commencent à émerger, par exemple le programme GLA:D, mis en place à l’HFR. Il consiste en une prise en charge éducative et réadaptative des personnes souffrant d’arthrose du genou et de la hanche. Il en résulte une meilleure mobilité et une diminution des douleurs, autrement dit une amélioration de la qualité de vie. Ces programmes permettent de retarder, voire d’éviter une intervention chirurgicale. Si cette intervention devient nécessaire, ces patients auront un meilleur état fonctionnel et récupèreront mieux après leur opération."
+   },
+   {
+    "t": "h",
+    "x": "Vieillissement et réadaptation"
+   },
+   {
+    "t": "p",
+    "x": "La population tend à vivre plus longtemps sans pathologie, ce qui correspond clairement à un objectif de santé publique. En se basant sur le registre des AVC de Dijon, on apprend par exemple que l’espérance de vie sans AVC a augmenté de 13 ans ces dernières années. Les premiers problèmes de santé apparaissant plus tardivement, la population susceptible d’avoir besoin de réadaptation sera plus âgée, avec un risque accru de développer plusieurs maladies en même temps."
+   },
+   {
+    "t": "p",
+    "x": "Les services de réadaptation doivent s’adapter à cette réalité ; l’offre devra aussi intégrer la prise en charge des patients avec une maladie chronique, le handicap pouvant être lui-même considéré comme tel en raison des conséquences douloureuses et fonctionnelles associées. Ces évolutions appellent des réorientations. « Je n’ai pas toutes les réponses », concède le Dr Bihl-Lainsbury, il y a même pour l’heure plus de questions que de réponses. »"
+   },
+   {
+    "t": "p",
+    "x": "On peut imaginer que les hôpitaux auront en réadaptation stationnaire des patients plus âgés et polypathologiques. L’HFR a d’ailleurs pour objectif d’ouvrir 24 lits supplémentaires en réadaptation gériatrique et gériatrie aiguë sur le site de l’HFR Tafers dès que possible."
+   },
+   {
+    "t": "p",
+    "x": "En parallèle, l’offre de réadaptation ambulatoire va se développer. « Cependant, la structure tarifaire n’est pas encore adaptée à ces nouvelles réalités pour toutes les filières», relève le Dr Bihl-Lainsbury."
+   }
+  ]
+ },
+ "sante-2024-caisse-des-medecins": {
+  "lang": "fr",
+  "pages": "p. 26-28",
+  "pdfPages": [
+   28,
+   29
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Quand on pratique la médecine, les tâches de facturation sont parfois une véritable corvée. La Caisse des Médecins propose de sous-traiter ce type d’opérations administratives pour ses client·es, cabinets médicaux ou thérapeutiques.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Décharger le personnel médical et soignant des tâches administratives de facturation pour lui permettre de se concentrer sur son art, telle est la mission de la Caisse des Médecins. Cette coopérative est spécialisée dans la gestion de débiteurs pour les cabinets médicaux et thérapeutiques. Société de services par excellence, elle offre un encadrement complet à toute une série de professionnel·les de santé."
+   },
+   {
+    "t": "h",
+    "x": "Un écosystème autour de l’hôpital"
+   },
+   {
+    "t": "p",
+    "x": "Autour de l’hôpital fribourgeois (HFR) gravitent toute une série de prestataires de santé. Des cabinets de médecins, chirurgiens, dentistes, psychologues, physiothérapeutes, ou encore infirmier·ères indépendant·es ou services de soins à domicile, par exemple. Un écosystème d’environ 750 client·es concerné·es de près ou de loin par l’HFR et qui ont confié leur facturation à la Caisse des Médecins."
+   },
+   {
+    "t": "p",
+    "x": "La fondation Commonwealth avait mené une enquête auprès des médecins de premier recours dans dix pays, dont la Suisse. Plus des deux tiers des médecins interrogés pensent que le temps consacré aux tâches Caisse des Médecins administratives est un problème majeur. Ils considèrent le temps passé à la facturation et aux questions d’assurance comme particulièrement chronophage."
+   },
+   {
+    "t": "h",
+    "x": "Leader en Suisse"
+   },
+   {
+    "t": "p",
+    "x": "C’est pour répondre positivement à ce genre de problématique qu’avait été fondée en 1964 la Caisse des Médecins par un groupe de docteurs zurichois qui souhaitaient mutualiser leur facturation."
+   },
+   {
+    "t": "p",
+    "x": "La Caisse des Médecins est aujourd’hui leader en Suisse dans la sous-traitance de facturation médicale. La coopérative entend jouer la carte de la proximité, tant avec ses membres qu’avec leur patientèle. Elle offre des prestations à la carte et peut ainsi s’occuper de facturer, d’imprimer et envoyer les factures, encaisser les paiements, gérer les éventuels contentieux, former le personnel, etc. Au travers de ses dix agences, la coopérative conseille aussi les fournisseurs de prestations pour choisir le bon tarif. Enfin, elle joue également souvent le rôle d’intermédiaire entre les patient·es et les caisses maladie."
+   },
+   {
+    "t": "h",
+    "x": "Des logiciels spécifiques"
+   },
+   {
+    "t": "p",
+    "x": "Afin de compléter encore plus l’accompagnement de ses client·es, la Caisse des Médecins a également développé des logiciels de facturation. Elle met à leur disposition la variante I basée sur internet, qui permet une gestion complète de la facturation à travers son interface web MediOnline et prochainement le logiciel Rockethealth."
+   },
+   {
+    "t": "p",
+    "x": "« Grâce à nos services personnalisés et professionnels, nos client·es profitent d’un confort total d’utilisation et peuvent se concentrer sur leur métier de base », explique Catherine Coquart, responsable de la Caisse des Médecins pour la Suisse romande et alémanique."
+   },
+   {
+    "t": "p",
+    "x": "Depuis sa création, la société est constituée en coopérative. Ses client·es peuvent ainsi devenir membre et prendre part aux décisions de l’entreprise en faisant l’acquisition de parts sociales. Véritable acteur du système de santé, la Caisse des Médecins basée à Urdorf (ZH) est également partie prenante dans certains grands projets stratégiques sur le plan national (dossier électronique du patient, tarification…) dans lesquels elle apporte son expertise."
+   },
+   {
+    "t": "h",
+    "x": "Rockethealth, le logiciel médical du futur"
+   },
+   {
+    "t": "p",
+    "x": "Afin de compléter son offre en solutions informatiques, la Caisse des Médecins mettra prochainement un nouveau programme à disposition de ses client·es. Le logiciel Rockethealth permet de gérer le dossier médical des patient·es depuis une simple tablette. Désormais, cette application voit son rayon d’action étendu à la gestion de l’agenda et à la facturation. Le médecin en cabinet pourra ainsi entièrement gérer une consultation depuis sa tablette."
+   },
+   {
+    "t": "h",
+    "x": "La Caisse des Médecins en chiffres"
+   },
+   {
+    "t": "p",
+    "x": "• 1964 : année de fondation de la coopérative à Zurich"
+   },
+   {
+    "t": "p",
+    "x": "• 20'000 client·es en Suisse"
+   },
+   {
+    "t": "p",
+    "x": "• 12 millions de factures établies chaque année"
+   },
+   {
+    "t": "p",
+    "x": "• Plus de 3 milliards de chiffre d’affaires annuel"
+   },
+   {
+    "t": "p",
+    "x": "• 10 agences dans le pays"
+   },
+   {
+    "t": "p",
+    "x": "• 357 employé·es"
+   }
+  ]
+ },
+ "sante-2024-bp-conseils": {
+  "lang": "fr",
+  "pages": "p. 29",
+  "pdfPages": [
+   31
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Au sein de son cabinet de conseils, Brigitte Philips partage sa longue expérience en milieu hospitalier avec les institutions de prestations de soins en santé et sociales qui souhaitent optimiser leurs processus et leur management, au travers d’audits, de conseils, de mise en place de projets et de formations.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Aider les établissements de prestations de soins à optimiser leurs processus et leur management, c’est le quotidien de BP-Conseils, cabinet de consulting spécifique au secteur des soins qui a été fondé par Brigitte Philips. Cette professionnelle assied son expertise sur sa longue expérience en milieu hospitalier. Un parcours complet, tant sur le terrain qu’au niveau décisionnel, qui lui donne une grande connaissance des problématiques et enjeux et lui permet aujourd’hui d’apporter une expertise et un regard extérieur précieux sur les institutions de soins."
+   },
+   {
+    "t": "p",
+    "x": "L'environnement actuel des organisations en santé et sociales nécessite des ajustements rapides qui exigent innovation, qualité et performance. L’objectif est d'augmenter et d’améliorer la productivité, les résultats et la valeur ajoutée des prestations dans la durée tout en réduisant les temps de traitement. BP-Conseils apporte accompagnement, conseils, propositions de solutions et leur mise en œuvre dans le cadre d'une collaboration constructive avec l'organisation. Le cabinet propose ses services autour de quatre axes principaux :"
+   },
+   {
+    "t": "p",
+    "x": "Innovation organisationnelle : pilotage de démarches de transformation de pratiques et de fonctionnement."
+   },
+   {
+    "t": "p",
+    "x": "Projets opérationnels : pilotage de projets innovants."
+   },
+   {
+    "t": "p",
+    "x": "Accompagnement et coaching managérial : soutien aux cadres et aux équipes dans les transformations et innovations."
+   },
+   {
+    "t": "p",
+    "x": "Formations professionnelles : pour renforcer la posture et développer les compétences des collaborateurs."
+   },
+   {
+    "t": "p",
+    "x": "Les missions du cabinet sont effectuées dans le respect de valeurs essentielles telles que professionnalisme, créativité, engagement et éthique. Basé à Genève, le cabinet est toutefois actif dans toute la Suisse romande et au-delà."
+   }
+  ]
+ },
+ "sante-2024-arthrex-swiss": {
+  "lang": "fr",
+  "pages": "p. 30-31",
+  "pdfPages": [
+   32
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Non seulement la société Arthrex développe, fabrique et vend des dispositifs médicaux, mais elle forme également ses clients à pouvoir utiliser ses produits. Pour la première fois récemment, l’entreprise a parqué son MobileLab devant le site de Fribourg de l‘hôpital fribourgeois (HFR) avec lequel elle collabore étroitement.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Acteur majeur dans le domaine de la chirurgie orthopédique et la traumatologie depuis plus de 40 ans, Arthrex produit et distribue des dispositifs médicaux dans plus de cent pays à travers le monde. L’entreprise est également devenue pionnière dans le domaine de l’arthroscopie et a ainsi créé plus de 18 000 produits et procédures chirurgicales offrant de réelles avancées dans la pratique de la chirurgie orthopédique mini-invasive."
+   },
+   {
+    "t": "p",
+    "x": "« La marque est un partenaire important de l’HFR » estime le Prof. Moritz Tannast, médecin-chef de chirurgie orthopédique à l’hôpital fribourgeois. Arthrex est ainsi avant tout un des principaux fournisseurs d’instruments et d’implants pour la chirurgie orthopédique et traumatologique de l’établissement. Cela s’accompagne de plusieurs services, comme la consignation des éléments. Arthrex alimente un stock d’implants, de kits ou d’outils dans l’enceinte même du service. L’assortiment est remis à jour en continu afin de garantir une disponibilité de tous les instants."
+   },
+   {
+    "t": "h",
+    "x": "Formation importante"
+   },
+   {
+    "t": "p",
+    "x": "La formation est un autre axe de ses partenariats. Car lorsqu’on utilise une catégorie d’implants, il faut savoir les poser. Une formation de qualité prend alors tout son sens. Arthrex dispense ses formations dans son centre européen de Munich. Cet Arthrolab, offre 40 stations de travail pour organiser des cours individuelles pour les clients. Ceux-ci peuvent ainsi s’entraîner à utiliser les produits et techniques Arthrex."
+   },
+   {
+    "t": "p",
+    "x": "Mais surtout, l’entreprise met en œuvre le MobileLab. Ce camion laboratoire mobile d’anatomie dispose de tout l’équipement nécessaire pour tester l’implantation de matériel et donner des sessions de formation aux spécialistes des diverses régions d’intervention orthopédiques. Du personnel spécialisé est à disposition pour orienter les praticiens dans l’utilisation des divers dispositifs. Ce laboratoire mobile permet une formation ciblée et individuelle sur des modèles articulaires et des préparations humaines directement chez le client. Le laboratoire dispose de la dernière technologie de transmission d’images Synergy 4K."
+   },
+   {
+    "t": "h",
+    "x": "Un camion pour former"
+   },
+   {
+    "t": "p",
+    "x": "Disposant de deux stations de travail équipées pour réaliser toutes les procédures d’arthroscopie ou d’arthroplastie de l’épaule, du genou, du pied et de la main, le MobileLab est venu pour la première fois à l’HFR l’automne passé et a permis à des dizaines de spécialistes de se former à diverses interventions."
+   },
+   {
+    "t": "p",
+    "x": "En tant que filiale helvétique du groupe international fondée il y a 15 ans, Arthrex Swiss SA a son siège social à Belp, près de Bern. Une cinquantaine de personnes y travaillent dans le service interne comme, la direction, les ressources humaines, la comptabilité et le marketing ainsi que l’équipe de la logistique qui s’occupent de la gestion du stock et de l’expédition de tous les produits aux clients dans toute la Suisse. En plus Arthrex Suisse SA emploie également 33 collaborateurs au service externe comme représentant de vente dans toute la Suisse."
+   }
+  ]
+ },
+ "sante-2024-kessler": {
+  "lang": "fr",
+  "pages": "p. 34",
+  "pdfPages": [
+   36
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "La société Kessler & Co SA offre à ses clients un conseil complet en matière de gestion des risques, d’assurance et de prévoyance. Cette société s’occupe notamment des portefeuilles d’assurances d’une cinquantaine d’hôpitaux et cliniques en Suisse.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Kessler est aujourd’hui la principale entreprise dans le domaine du conseil global en risques, assurances et prévoyance en Suisse. Fondée en 1915, Kessler compte aujourd’hui 350 collaborateurs travaillant au siège à Zurich et sur les sites de Bâle, Berne, Genève, Lausanne, Lucerne, Neuchâtel, Saint-Gall, Sion et Vaduz. La société familiale s’occupe de plus de 1 500 moyennes et grandes entreprises suisses issues des services, du commerce et de l’industrie, du secteur public, ou encore de la santé."
+   },
+   {
+    "t": "h",
+    "x": "Une cinquantaine d’hôpitaux et cliniques"
+   },
+   {
+    "t": "p",
+    "x": "Kessler conseille ainsi les acteurs majeurs du secteur de la santé, tels que les hôpitaux, les cliniques, les EMS, les réseaux de soins à domicile ainsi que les associations et fondations de prévention et promotion de la santé, etc. Mandatée par l’hôpital fribourgeois (HFR), Kessler gère également les portefeuilles d’assurances d’une cinquantaine d’autres hôpitaux et cliniques en Suisse, avec une vision globale sur les risques spécifiques liés au domaine de la santé tels que : responsabilité civile, dommages matériels et perte d’exploitation, assurances de personnes, RC des dirigeants (D&O) et cyber."
+   },
+   {
+    "t": "p",
+    "x": "« Rechercher pour nos clients les meilleures solutions du marché est notre priorité. Notre force de proposition porte sur tout le portefeuille que nous gérons de A à Z. Grâce à notre check-list digitale des risques assurables, nous développons une politique d’assurance et de gestion des risques pour leur profil de risque spécifique et pouvons leur suggérer des mesures d’amélioration », explique Jean-François Léchot, Responsable de département Santé & Services publics chez Kessler."
+   },
+   {
+    "t": "h",
+    "x": "De nouveaux défis"
+   },
+   {
+    "t": "p",
+    "x": "Dans une société en constante évolution, le monde de la santé doit faire face à de nouveaux défis, notamment en matière de responsabilité. « Les patients présentent en effet davantage de revendications qu’auparavant », note Valérie Scilipoti, Chargée de clientèle pour la Suisse romande. La sécurité des données et les cyberrisques sont également des enjeux cruciaux et d’actualité."
+   },
+   {
+    "t": "p",
+    "x": "Kessler dispose d’une réelle expertise sur les risques d’un marché spécifique. « Nos divers spécialistes de branches collaborent étroitement afin d’échanger leurs expériences face aux risques et à un marché qui se durcit fortement depuis de nombreuses années. », indique Valérie Scilipoti. Chaque client bénéficie ainsi d’un encadrement personnalisé, adapté à ses besoins, et d’un team complet pour le conseiller. L’entreprise organise aussi plusieurs événements de partage de connaissances avec ses clients, comme des petits-déjeuners sous forme de webinaires nommés « La Matinale Kessler » ou des formations spécifiques pour les fonctions dirigeantes dans le cadre de la Kessler Academy sur des thématiques bien précises."
+   },
+   {
+    "t": "h",
+    "x": "Entreprise familiale"
+   },
+   {
+    "t": "p",
+    "x": "À sa fondation en 1915, l’entreprise familiale était spécialisée dans l’assurance de marchandises de toutes natures, acheminées par bateau dans le monde entier. Cette spécialisation est d’ailleurs à l’origine de la roue de gouvernail qui orne le logo de la société. Au fil des ans, Kessler a développé son organisation et ses activités et remplit aujourd’hui, avec la quatrième génération de la famille, une fonction de conseiller en risques principalement, puis de courtier en assurances."
+   },
+   {
+    "t": "p",
+    "x": "L’entreprise affiche depuis de nombreuses années un taux de fidélisation de ses clients de plus de 97%. Comme le relève Valérie Scilipoti, « c’est un indicateur clé de la qualité de nos prestations »."
+   }
+  ]
+ },
+ "sante-2024-blanchisseries-generales-lbg": {
+  "lang": "fr",
+  "pages": "p. 35-37",
+  "pdfPages": [
+   37,
+   38
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Leader de la gestion globale du linge professionnel, principalement pour les établissements de la santé en Suisse occidentale, les Blanchisseries Générales LBG SA proposent des solutions de services complets. Fondée il y a quarante ans, la société met l’accent sur la qualité de ses prestations et la proximité avec sa clientèle. LBG fait bien plus que laver du linge !",
+    "lead": true
+   },
+   {
+    "t": "h",
+    "x": "DÉVELOPPEMENT DE L’ENTREPRISE"
+   },
+   {
+    "t": "p",
+    "x": "LBG propose à ses clients une palette complète de services en lien avec la gestion globale et optimisée du linge à usage professionnel. L’entreprise est leader en Romandie sur ce marché. « Nous sommes principalement actifs dans le domaine de la santé et comptons parmi nos clients une grande partie des hôpitaux, cliniques privées et EMS de Suisse romande », relève François Haenni, directeur général."
+   },
+   {
+    "t": "p",
+    "x": "L’entreprise a connu un fort essor, en particulier durant la dernière décennie. « Cette croissance est notamment due à la forte reconnaissance de la qualité de nos prestations qui nous a fait gagner de nombreux marchés, privés ou publics », ajoute encore le directeur. La société a notamment repris deux nouvelles blanchisseries en 2013 et 2015 afin de compléter sa capacité de traitement et surtout garantir la fiabilité de son service en disposant de plusieurs unités qui peuvent se compléter, voire se substituer en cas de problèmes techniques."
+   },
+   {
+    "t": "h",
+    "x": "Un engagement social et environnemental"
+   },
+   {
+    "t": "p",
+    "x": "Ses engagements environnementaux sont concrets. En 2016, LBG s'est engagée auprès de l'Agence de l'énergie pour l'économie à réduire de 7 % ses émissions de CO2 en 5 ans, nécessitant plusieurs millions d'investissements. Objectif dépassé puisqu’aujourd’hui, ces émissions ont été réduites à plus de 9 %. Engagée depuis de très nombreuses années dans la norme ISO 14001, la société est également l’une des rares entreprises dans ce secteur à pouvoir se targuer d’être membre de Swiss Label. LBG concrétisera d’ailleurs sa démarche de responsabilité sociétale et de développement durable en 2024 avec la labellisation EcoEntreprise. Sa politique sociale, notamment dans la diversité, est marquée par une majorité féminine dans son effectif, son comité de direction et son Conseil d’administration. A ce titre, et aussi grâce à ses engagements environnementaux, elle a obtenu le prix PME 2023 du Cercle Suisse des Administratrices."
+   },
+   {
+    "t": "h",
+    "x": "Une compétence reconnue dans la qualité et l’hygiène"
+   },
+   {
+    "t": "p",
+    "x": "Œuvrant dans des secteurs où l’hygiène irréprochable est de mise, LBG est ainsi certifiée en conséquence, notamment RABC EN 14’065 (biocontamination) et se fait auditer régulièrement par des laboratoires indépendants. Sa philosophie d’amélioration continue est notamment axée sur les normes ISO 9001, 14001 et 45001 (santé et sécurité)."
+   },
+   {
+    "t": "h",
+    "x": "Location et entretien des textiles"
+   },
+   {
+    "t": "p",
+    "x": "La société propose ainsi un catalogue de plusieurs centaines d’articles, développés entre autres pour les applications médicales de tous types. « Cette solution évite au client d’investir lui-même dans les textiles pour son activité et son personnel », relève encore François Haenni. Dans ses quatre blanchisseries, des tunnels de lavage et d’impressionnants convoyeurs automatiques ainsi qu’une technologie de traçabilité éprouvée voient passer près de 45 tonnes de linge par jour."
+   },
+   {
+    "t": "p",
+    "x": "Les Blanchisseries Générales LBG SA proposent différents services catalogués ainsi :"
+   },
+   {
+    "t": "p",
+    "x": "PRIMO : location d’une gamme complète de linge en leasing selon les besoins précis du client. Les LBG garantissent à celui-ci des textiles impeccables et disponibles en tout temps, en s’occupant notamment du transport, du traitement et du réassort."
+   },
+   {
+    "t": "p",
+    "x": "GLOBO : mise à disposition de collaboratrices et collaborateurs, directement chez le client, pour gérer, commander, collecter et ranger le linge au sein même de l’établissement de santé et des services de soins."
+   },
+   {
+    "t": "p",
+    "x": "PERSO : service d'entretien complet du linge privé des établissements et du linge personnel des résidents. Le linge est collecté et retourné dans les trois jours ouvrables."
+   },
+   {
+    "t": "p",
+    "x": "DAVO : gestion, chez les clients, de chambres de distribution et de vêtements (DAV), lesquels permettent une maîtrise logistique et une rationalisation de l’espace, de la consommation et des coûts."
+   },
+   {
+    "t": "p",
+    "x": "CHRONO : accès en tout temps par le client à l’historique de lavage de ses propres articles (p. ex. rideaux, duvets, etc.) L’indication de la nécessité ou non de le traiter, via un code couleur et selon un barème défini par le client, permet de maintenir un taux de propreté idéal pour le bien-être de ses patients ou résidents."
+   },
+   {
+    "t": "p",
+    "x": "Ainsi que de nombreuses autres prestations selon les désirs des clients. Chaque client peut ainsi choisir les prestations qui correspondent exactement à ses exigences, avec en plus un support technique et une assistance personnalisée. « Nous privilégions un rapport de confiance sur la durée avec nos clients, toujours en suivant nos valeurs de fiabilité, qualité et proximité », souligne François Haenni."
+   },
+   {
+    "t": "p",
+    "x": "Pour l’entreprise qui vient de fêter ses 40 ans d’existence, les investissements dans les outils de production restent soutenus sur les quatre sites, non seulement pour garantir les services mais également afin de poursuivre le développement de solutions innovantes et mener à bien sa mission : « garantir un linge à la fois propre et sain, en suffisance, au bon endroit et au bon moment. »"
+   },
+   {
+    "t": "h",
+    "x": "Les Blanchisseries Générales en quelques chiffres"
+   },
+   {
+    "t": "p",
+    "x": "4 blanchisseries, dont deux sont situées à Yverdon-les-Bains (VD) et deux autres à Chailly-sur-Montreux (VD) et Marsens (FR)"
+   },
+   {
+    "t": "p",
+    "x": "45 tonnes de linge lavé chaque jour"
+   },
+   {
+    "t": "p",
+    "x": "270 collaborateurs"
+   },
+   {
+    "t": "p",
+    "x": "4 filières d’apprentissage et de nombreuses places de stage (employé·es de commerce, gestionnaires en entretien des textiles, logisticien·nes et automaticien·nes)"
+   },
+   {
+    "t": "p",
+    "x": "91 % des collaboratrices et collaborateurs résident dans les cantons où sont situées les blanchisseries et 66 % parcourent moins de 15 km pour se rendre sur leur lieu de travail"
+   },
+   {
+    "t": "p",
+    "x": "6 ans, c’est l’ancienneté moyenne du personnel"
+   },
+   {
+    "t": "p",
+    "x": "+ de 200 sites-clients desservis"
+   }
+  ]
+ },
+ "sante-2024-ligues-de-sante": {
+  "lang": "fr",
+  "pages": "p. 38-39",
+  "pdfPages": [
+   40
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Les ligues de santé fribourgeoises réunissent trois associations qui viennent en aide aux personnes souffrant de diabète, de maladies pulmonaires ou encore du cancer. Cette organisation unique en Suisse forme ainsi un partenaire important dans les soins ambulatoires du canton.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Elles sont l’un des principaux acteurs des soins ambulatoires dans le canton de Fribourg. Les ligues de santé fédèrent en leur sein trois associations actives dans le domaine des maladies chroniques. Leur objectif est d’œuvrer au bien-être et à l’amélioration de la qualité de vie des personnes souffrant de maladies de type persistant. « Nous prodiguons des soins infirmiers, mais également un accompagnement psycho-social et sommes actifs dans la prévention », souligne Corinne Uginet, directrice des ligues. Celles-ci s’inscrivent ainsi comme un partenaire de santé essentiel qui vient s’insérer dans la chaîne globale des soins. « Au travers de nos prestations, nous sommes présents pour les patients avant, pendant et après la maladie », relève encore Corinne Uginet."
+   },
+   {
+    "t": "p",
+    "x": "Chacune des trois associations membres des Ligues de santé est indépendante. diabètefribourg vient en aide aux personnes diabétiques et à leurs proches. Des infirmiers spécialisés et diététiciennes garantissent le suivi des traitements et la gestion de la maladie, des soins de pieds complètent la prise en charge. La vente de matériel et la formation à son utilisation garantit une sécurité de traitement. Un accompagnement psycho-social est mis en place afin de faire face aux conséquences de la maladie, et des activités de prévention complètent le catalogue de prestations."
+   },
+   {
+    "t": "p",
+    "x": "De son côté, la Ligue pulmonaire fribourgeoise prend en charge, conseille et accompagne les personnes atteintes d'insuffisance respiratoire, de maladies pulmonaires ou de tuberculose. Elle s'engage pour limiter l'impact des difficultés et maladies respiratoires sur la qualité de vie des personnes et de leurs proches. En tant que centre de remise des appareils respiratoires, la Ligue pulmonaire fribourgeoise met à disposition tous les moyens thérapeutiques utiles et en assure l’entretien. La prévention du tabagisme, et le dépistage de différentes pathologies respiratoires font partie des missions de l’association."
+   },
+   {
+    "t": "p",
+    "x": "Quant à la Ligue fribourgeoise contre le cancer, ses prestations sont très diversifiées au travers de ses cinq secteurs que sont prévention et promotion de la santé, conseil et soutien, équipe mobile de soins palliatifs Voltigo, centre de dépistage du cancer et registre des tumeurs. Le cœur des activités repose sur le travail social de la ligue, pour faire face aux conséquences de la maladie cancéreuse."
+   },
+   {
+    "t": "p",
+    "x": "Basées en ville de Fribourg, les ligues disposent de sept antennes dans le canton, soit une par district. Au total, une centaine de spécialistes, infirmierères, diététicien-nes, assistants sociaux ou autres spécialistes sont employés par les associations."
+   },
+   {
+    "t": "p",
+    "x": "L’association des ligues de santé quant à elle se charge de la coordination et assure la mutualisation de certains services, notamment administratifs. Elles œuvrent en direct mais également au travers de mandats de prestations qui leur sont confiés par le canton. Elles effectuent systématiquement des prises en charge coordonnées avec les autres acteurs du domaine de l’ambulatoire."
+   },
+   {
+    "t": "p",
+    "x": "Fédérer ainsi des associations de santé aux objectifs similaires peut sembler logique. Pourtant, l’exemple fribourgeois des Ligues de santé fondé en 1999 est unique dans le pays !"
+   },
+   {
+    "t": "p",
+    "x": "Le projet de ces associations est de renforcer davantage leur présence, notamment dans les centres de santé du canton, au bénéfice de la population fribourgeoise."
+   }
+  ]
+ },
+ "sante-2024-swisscom-infrastructure-it": {
+  "lang": "fr",
+  "pages": "p. 40-41",
+  "pdfPages": [
+   42
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "L'exploitation de l’infrastructure informatique de l’hôpital fribourgeois (HFR) sera bientôt gérée en grande partie par Swisscom. L'entreprise reprendra cette tâche jusqu'alors assurée par le service IT du canton dans l'optique de renforcer la digitalisation de l'établissement hospitalier. Swisscom gère déjà l’IT de plusieurs établissements hospitaliers du pays.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "À la fin de l’année 2024, l’infrastructure informatique de l’hôpital fribourgeois (HFR) sera exploitée en sous-traitance par Swisscom. Cette décision découle d’une Ordonnance cantonale validée par le Conseil d’État en 2021 et vise à redéfinir les missions du SITel (Service de l'informatique et des télécommunications de l’État de Fribourg) en recentrant ses activités sur les services de l’État. Les établissements autonomes de droit public comme l’HFR ont eu l’obligation de trouver des alternatives. Plusieurs appels d’offres publics par lots ont donc été lancés. « Nous avons eu le plaisir d’être retenus pour la totalité de ces lots », précise Jean-Marc Bongni, Account Director chez Swisscom."
+   },
+   {
+    "t": "h",
+    "x": "Trois lots importants"
+   },
+   {
+    "t": "p",
+    "x": "Ces trois lots concernent ainsi les « réseaux et la téléphonie », les « serveurs de stockage » et la gestion des « services Microsoft » de l’Hôpital fribourgeois. « Le projet est complexe, puisqu’il concerne les quatre sites de l’HFR, plus de 4500 utilisateurs internes et externes et prévoit de supporter plus de 200 applications métiers différentes », précise encore Jean-Marc Bongni. Swisscom a été choisi par l’HFR pour ses compétences en la matière, sa force de proposition, la qualité des ressources proposées et surtout pour son expérience dans ce type de projets. « Nous gérons déjà l’IT de plusieurs établissements hospitaliers de Suisse », rappelle Jean-Marc Bongni. Par ailleurs, une politique de prix compétitifs et cohérents a également pesé dans la balance."
+   },
+   {
+    "t": "h",
+    "x": "Défi de la cybersécurité"
+   },
+   {
+    "t": "p",
+    "x": "Les tâches de Swisscom prévoient une transition complète des activités IT du SiTel sur l’année 2024, avec notamment la migration des données sur de nouveaux serveurs. Les défis pour l’entreprise et pour la Direction des systèmes d’information (DSI) de l’HFR sont nombreux, et passent notamment par le renforcement de la digitalisation à tous les niveaux de l’établissement hospitalier, tout en garantissant une continuité maximale pendant la phase de migration. « La cybersécurité et la protection des données seront aussi de gros challenges ». Les données médicales sont en effet éminemment sensibles et sont une cible de choix pour les cyberattaques. Les contraintes légales, notamment sur la protection des données, viennent encore s’ajouter à cela. Swisscom devra ainsi assurer une exploitation sans faille 24h sur 24 et sept jours sur sept."
+   },
+   {
+    "t": "h",
+    "x": "Prêt pour la numérisation dans le secteur de la santé"
+   },
+   {
+    "t": "p",
+    "x": "Depuis des années, Swisscom marque de son empreinte le secteur suisse de la santé, soutenant plus de 4000 médecins, 160 hôpitaux, 70 instituts, laboratoires et assurances. En tant que moteur de la transformation numérique en Suisse, le secteur de la santé profite donc également de notre longue expérience et de notre expertise."
+   },
+   {
+    "t": "p",
+    "x": "Le portefeuille adapté aux besoins spécifiques des hôpitaux comprend l'exploitation de centres de calcul et de solutions cloud, la couverture des exigences en matière de sécurité, les services liés à la place de travail numérique, les offres dans le domaine de la communication et de la collaboration, l'exploitation du servicedesk jusqu'à la prise en charge d'applications essentiellement administratives dans l'hôpital. En outre, il existe une offre de conseil complète allant de la stratégie de numérisation à la numérisation du parcours du patient."
+   },
+   {
+    "t": "p",
+    "x": "Notre engagement en faveur de l'innovation se manifeste par le développement de solutions d'avenir. Des logiciels de cabinet médical de la prochaine génération à la mise en réseau numérique dans le secteur de la santé, nous misons sur les technologies les plus modernes. Cette force d'innovation ne procure pas seulement des avantages sur le marché, mais garantit également une sécurité d'investissement à long terme pour nos clients."
+   }
+  ]
+ },
+ "sante-2024-trigonorm": {
+  "lang": "fr",
+  "pages": "p. 42",
+  "pdfPages": [
+   44
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Besoin d’aide pour optimiser vos espaces de stockage et vos flux logistiques ? L’entreprise bernoise Trigonorm SA propose des solutions sur mesure, adaptées à tous les besoins, qui s’appuient sur son système TRIGO de qualité Swiss-made.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Nichée à l’entrée de la vallée de l’Emmental, la société Trigonorm SA a bâti sa réputation grâce à la création de solutions de rangement personnalisées. Ses aménagements sont minutieusement adaptés aux spécificités des pièces et aux besoins de chaque client, permettant une utilisation optimale de l'espace disponible tout en répondant aux besoins de stockage."
+   },
+   {
+    "t": "h",
+    "x": "Un système éprouvé"
+   },
+   {
+    "t": "p",
+    "x": "Fort d'une expérience de près de cinquante ans, l'entreprise est spécialisée dans la fabrication de rayonnages et d’aménagements pour tout type d’entreprise. Le système Trigo est largement reconnu pour sa structure métallique robuste, fixée par boulonnage, associée à des tablettes en bois qui confèrent une légèreté tout en assurant une grande résistance. Outre sa solidité, l'atout majeur de ce système réside dans sa capacité à être entièrement fabriqué sur mesure pour s’adapter aux exigences spécifiques de chaque environnement, optimisant ainsi l’espace disponible et les flux logistiques."
+   },
+   {
+    "t": "h",
+    "x": "Une offre diversifiée"
+   },
+   {
+    "t": "p",
+    "x": "Ce système est disponible en version fixe ou mobile et se décline également en chariot ou en table. Fabriqué entièrement en Suisse, il trouve des applications dans tous les secteurs industriels ainsi que dans le domaine hospitalier."
+   },
+   {
+    "t": "p",
+    "x": "En complément de ses propres produits, Trigonorm SA propose une sélection de produits de partenaires externes, comme le système de modules ISO-normés Scanmodul, conçu spécifiquement pour répondre aux besoins de logistique hospitalière. Des armoires aux vestiaires, en passant par les bacs de stockage et les racks à palettes, ces éléments viennent enrichir l'offre de l'entreprise, garantissant des solutions complètes et parfaitement adaptées."
+   },
+   {
+    "t": "h",
+    "x": "De la planification jusqu’à la pose"
+   },
+   {
+    "t": "p",
+    "x": "Trigonorm SA propose un service complet et personnalisé, depuis la planification d’une installation ou d’un entrepôt jusqu’au montage final, en passant par la conception et la fabrication. Avec une équipe d'une vingtaine de personnes basée à Linden (BE), l’entreprise est active à l'échelle nationale, apportant son expertise à une clientèle variée à la recherche de solutions de stockage fiables et sur mesure."
+   }
+  ]
+ },
+ "sante-2024-vitalrh": {
+  "lang": "fr",
+  "pages": "p. 43",
+  "pdfPages": [
+   45
+  ],
+  "source": "pdf",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Rechercher et placer du personnel médical, la société VitalRh de Neuchâtel le fait pour toutes sortes d’établissements de santé en Suisse. Afin d’endiguer la pénurie, c’est vers l’Europe et avant tout la France que se tourne l’agence de placement.",
+    "lead": true
+   },
+   {
+    "t": "p",
+    "x": "Spécialisée dans l’emploi fixe et temporaire pour les secteurs médical et paramédical en Suisse, la société neuchâteloise VitalRh recrute et place du personnel spécialisé pour le compte de tous types d’établissements de santé : hôpitaux, cliniques, EMS, cabinets, réseaux de soins, etc. L’entreprise est à même de recruter la totalité des professions en relation avec un établissement médico-social, depuis le personnel d’entretien jusqu’au corps médical le plus pointu."
+   },
+   {
+    "t": "p",
+    "x": "Dans un marché extrêmement tendu, qui présente une pénurie de personnel encore accrue par la récente crise sanitaire, l’expertise et le réseau de VitalRh sont précieux pour recruter des candidat-e-s de qualité."
+   },
+   {
+    "t": "p",
+    "x": "Le personnel médical manque cruellement en Suisse, faute de suffisamment de formation. C’est ainsi vers les pays européens que le bureau se tourne pour trouver des professionnels. Essentiellement vers la France."
+   },
+   {
+    "t": "h",
+    "x": "Système de santé suisse attirant"
+   },
+   {
+    "t": "p",
+    "x": "L’excellente réputation du système de santé suisse séduit en effet le personnel médical étranger. « Les candidat-e-s savent qu’ils peuvent en Suisse exercer leur pratique dans les valeurs qui leur sont chères », explique Carine Vasseur, directrice de VitalRh. Les salaires intéressants sont bien entendu un autre argument de poids pour convaincre des professionnels européens de venir travailler dans notre pays."
+   },
+   {
+    "t": "p",
+    "x": "Autre particularité post-Covid, les missions sont désormais souvent plus courtes que par le passé. Pour une durée de quelques mois parfois. Une situation peut-être due à la lassitude du personnel après la crise sanitaire et l’envie de se préserver en alternant des mandats de courte durée et des pauses professionnelles."
+   },
+   {
+    "t": "p",
+    "x": "Pour recruter au-delà des frontières helvétiques, la société VitalRh dispose d’un vaste et efficace réseau de recherche. « Et surtout, nous nous distinguons par nos services très complets et personnalisés pour attirer la confiance des meilleurs professionnels », indique Carine Vasseur."
+   },
+   {
+    "t": "h",
+    "x": "Encadrement personnalisé"
+   },
+   {
+    "t": "p",
+    "x": "Ainsi, VitalRh apporte un grand soin à l’encadrement des candidats, notamment en les soutenant dans les diverses démarches en vue de leur installation dans le pays, en premier lieu par la recherche d’un logis proche de leur futur emploi."
+   },
+   {
+    "t": "p",
+    "x": "Créée en automne 2010 à Neuchâtel, la société VitalRh est composée d’une petite équipe au bénéfice de 20 ans d’expérience dans le recrutement, le placement et la gestion des ressources humaines. Structure volontairement réduite afin de pouvoir rester agile, la société travaille pour tous types d’établissements, y compris les grands hôpitaux tels le HFR, mais avec toujours le souci de respecter ses valeurs humanistes."
+   }
+  ]
  }
 }

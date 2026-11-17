@@ -20,6 +20,11 @@ def load_lines(mag):
         L[int(n[1:])] = t; pages[int(n[1:])] = page
     return L, pages
 
+CLEAN = {'\u00ad': '', '\x07': '', '\ufb01': 'fi', '\ufb02': 'fl', '\ufb00': 'ff', '\ufb03': 'ffi', '\ufb04': 'ffl'}
+def clean(t):
+    for a, b in CLEAN.items(): t = t.replace(a, b)
+    return t
+
 def join(lines):
     out = ''
     for t in lines:
@@ -41,14 +46,19 @@ def compounds():
         hy, joined = collections.Counter(), collections.Counter()
         for f in glob.glob(str(W / '*.txt')):
             t = Path(f).read_text(encoding='utf-8')
-            for m in re.finditer(r"(?<![\w-])([^\W\d_]{2,})-([^\W\d_]{2,})(?![\w-])", t): hy[(m.group(1) + '-' + m.group(2)).lower()] += 1
-        _COMP = {k.replace('-', ''): k for k, n in hy.items() if n >= 2 and len(k) >= 8}
+            for m in re.finditer(r"(?<![\w-])([^\W\d_]{2,})-([^\W\d_]{2,})(?![\w-])", t): hy[m.group(1) + '-' + m.group(2)] += 1
+        tot = collections.Counter()
+        for k, n in hy.items(): tot[k.lower()] += n
+        best = {}
+        for k, n in sorted(hy.items(), key=lambda x: -x[1]): best.setdefault(k.lower(), k)   # graphie la plus fréquente (majuscules comprises)
+        _COMP = {k.replace('-', ''): best[k] for k, n in tot.items() if n >= 2 and len(k) >= 8}
     return _COMP
 def fix_compounds(txt):
     C = compounds()
     def sub(m):
         w = m.group(0); h = C.get(w.lower())
         if not h: return w
+        if w.isupper(): return h.upper()
         return h[0].upper() + h[1:] if w[0].isupper() else h
     return re.sub(r"[^\W\d_]{8,}", sub, txt)
 
@@ -75,8 +85,8 @@ def build(mag):
                 r = r if isinstance(r, list) else [r, r]
                 ids += list(range(int(r[0]), int(r[-1]) + 1))
             if any(i not in L for i in ids): bad = f'ligne hors fichier dans {slug}'; break
-            raw = join([L[i] for i in ids])
-            txt = fix_compounds(b.get('x') or raw)
+            raw = join([clean(L[i]) for i in ids])
+            txt = fix_compounds(clean(b.get('x') or raw)).strip()
             if b.get('x'):
                 ra, xa = words(raw), words(txt)
                 sim = difflib.SequenceMatcher(None, ra, xa, autojunk=False).ratio() if ra else 0
