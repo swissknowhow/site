@@ -210,3 +210,32 @@
 - eichenberger-futuretech : société radiée en 2019, décider du sort de la fiche.
 - ensemble-hospitalier-de-la-cote : vérifier puis remplacer le lien par www.ehc-vd.ch.
 - Toujours en attente : écoles Minerva et EFB, liens UNIL/UNIGE/vd.ch (4 fiches), darwin-airline, bp-conseils, centre-laser-victor-hugo, `noindex` + canonical sur les redirections, redirection comconsulting.ch.
+
+## 2026-11-18
+
+**Consignes et contexte**
+- `seo/AGENT.md` modifié : interdiction de modifier, résumer ou réécrire les textes des articles (`data/texts`, texte de l'édition imprimée validé par les entreprises) et de réintroduire images ou résumés IA. Appliqué.
+- Gros commit humain du 17/11 (`edb0fb5d`) : texte intégral imprimé pour 1 175 articles, photos contrôlées, retrait des images et résumés IA. Les meta descriptions sont désormais un extrait du texte imprimé.
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis.
+- Audit SEO : titres > 70 car. 361, titres en double 4 (inchangés). Nouveau : **739 meta descriptions dupliquées** (718 entre une fiche entreprise et son article, la fiche reprenant le même extrait ; 21 entre articles republiés) et 35 descriptions < 70 car. (annonces au texte très court, plus /404.html).
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Correction faite (tools/build.mjs)**
+- Meta description des fiches entreprises : « Nom, Ville : » suivi du début du texte imprimé (coupé au mot, ≤ 155 car.), au lieu du même extrait que l'article. Aucun texte réécrit ni résumé : seuls le nom et la ville, déjà sur la fiche, sont ajoutés devant. Doublons : 739 → 54 (restent uniquement des articles republiés à l'identique d'une édition à l'autre). 750 fiches régénérées, seules les lignes description / og:description changent.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `fasmed` à `geotherm`)
+- En panne (domaine inexistant) :
+  - fondation-osirix (Genève) : www.foundation.osirixfoundation.com → inexistant. Zefix : Fondation OsiriX, Genève, CHE-114.620.706, **active**. www.osirixfoundation.com répond 200 : lien probablement à corriger (sous-domaine erroné).
+  - gems-world-academy-etoy (Etoy) : www.gemsworldacademy-etoy.com → inexistant. Zefix : « GEMS World Academy SA en liquidation », Etoy, CHE-338.023.933, **en liquidation**.
+- Non vérifiables : frigaz (DNS en échec temporaire), gainerie-moderne, genevaccord (erreur TLS du proxy), ferring (403 anti-robot).
+- OK (200) : les 24 autres.
+- Reprise au prochain passage : première fiche après `geotherm`.
+
+**Actions humaines requises**
+- fondation-osirix : vérifier puis corriger le lien en https://www.osirixfoundation.com/.
+- gems-world-academy-etoy : école en liquidation, décider du sort de la fiche.
+- À trancher : les 54 descriptions encore dupliquées concernent des articles republiés mot pour mot (ex. Meyer Sintermetall 2015-2018). Proposition : ajouter l'édition en tête de description, comme pour les titres, ou désigner une édition de référence par canonical.
+- Toujours en attente : ehc (nouveau lien probable www.ehc-vd.ch), eichenberger (radiée), écoles Minerva et EFB, liens UNIL/UNIGE/vd.ch, darwin-airline, bp-conseils, centre-laser-victor-hugo, `noindex` + canonical sur les redirections, redirection comconsulting.ch.

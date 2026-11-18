@@ -559,7 +559,8 @@ function pageCompany(c) {
   </aside>
 </div>
 ${related.length ? `<section class="wrap section">${sectionHead('Dans le même secteur et la même région', '', r)}<div class="grid grid-4">${related.map((o) => companyCard(o, r)).join('')}</div></section>` : ''}`;
-  write(`entreprises/${c.slug}/index.html`, layout({ depth: 2, title: [c.name, [c.sector, c.city].filter(Boolean).join(', ')].filter(Boolean).join(' – ').slice(0, 70), description: excerpt(bodyPlain(mainArt)) || `${c.name}${c.sector ? ' — ' + c.sector : ''}${c.city ? ', ' + c.city : ''}`, active: 'entreprises/', body, jsonld, image: gallery[0] }));
+  // Meta description : nom et ville en tête, puis le début du texte imprimé, pour ne pas dupliquer celle de l'article.
+  write(`entreprises/${c.slug}/index.html`, layout({ depth: 2, title: [c.name, [c.sector, c.city].filter(Boolean).join(', ')].filter(Boolean).join(' – ').slice(0, 70), description: (mainArt ? excerpt(`${[c.name, c.city].filter(Boolean).join(', ')} : ${bodyPlain(mainArt)}`) : '') || `${c.name}${c.sector ? ' — ' + c.sector : ''}${c.city ? ', ' + c.city : ''}`, active: 'entreprises/', body, jsonld, image: gallery[0] }));
 }
 
 function pageArticles() {
