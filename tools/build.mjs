@@ -582,6 +582,15 @@ function pageArticles() {
   write('articles/index.html', layout({ depth: 1, title: 'Articles & interviews', description: `${list.length} articles, interviews et publireportages Swiss Knowhow sur les entreprises suisses, à filtrer par thème, type et magazine.`, active: 'articles/', body }));
 }
 
+// Meta description d'article : extrait du texte imprimé. Si ce même extrait sert à plusieurs articles (texte republié d'une édition à l'autre),
+// l'édition est placée en tête pour distinguer les pages, sans toucher au texte.
+let articleDescCount = null;
+function articleDescription(a, m) {
+  const base = excerpt(bodyPlain(a)) || a.subtitle || a.title;
+  if (!articleDescCount) { articleDescCount = new Map(); for (const o of articles) { const d = excerpt(bodyPlain(o)) || o.subtitle || o.title; articleDescCount.set(d, (articleDescCount.get(d) || 0) + 1); } }
+  if (articleDescCount.get(base) < 2 || !m) return base;
+  return excerpt(`${m.series || m.title}${m.year ? ' ' + m.year : ''} : ${bodyPlain(a) || a.subtitle || a.title}`);
+}
 let articleTitleCount = null; // slug → titre de page désambiguïsé
 function pageArticle(a) {
   const r = '../../'; PH_ROOT = r;
@@ -634,7 +643,7 @@ function pageArticle(a) {
 ${cos.length ? `<section class="wrap section">${sectionHead(cos.length > 1 ? 'Entreprises citées' : 'Entreprise citée', '', r)}<div class="grid grid-4">${cos.map((c) => companyCard(c, r)).join('')}</div></section>` : ''}
 ${same.length ? `<section class="wrap section">${sectionHead('Sur le même thème', `themes/${th}/`, r)}<div class="grid grid-3">${same.map((o) => articleCard(o, r)).join('')}</div></section>` : ''}`;
   const jsonld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: excerpt(bodyPlain(a)) || a.subtitle || undefined, url: `${SITE_URL}/articles/${a.slug}/`, mainEntityOfPage: `${SITE_URL}/articles/${a.slug}/`, image: a.images?.[0] ? `${SITE_URL}/${a.images[0]}` : undefined, inLanguage: 'fr', publisher: { '@type': 'Organization', name: PUBLISHER.name, url: SITE_URL }, isPartOf: m ? { '@type': 'PublicationIssue', name: m.title, datePublished: m.year ? String(m.year) : undefined } : undefined }).replace(/[<>&]/g, (ch) => '\\u00' + ch.charCodeAt(0).toString(16));
-  write(`articles/${a.slug}/index.html`, layout({ depth: 2, title: articleTitleCount.get(a.slug) || a.title, description: excerpt(bodyPlain(a)) || a.subtitle || a.title, active: 'articles/', body, jsonld, image: a.images?.[0] }));
+  write(`articles/${a.slug}/index.html`, layout({ depth: 2, title: articleTitleCount.get(a.slug) || a.title, description: articleDescription(a, m), active: 'articles/', body, jsonld, image: a.images?.[0] }));
 }
 
 function pageThemes() {

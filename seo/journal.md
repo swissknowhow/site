@@ -239,3 +239,27 @@
 - gems-world-academy-etoy : école en liquidation, décider du sort de la fiche.
 - À trancher : les 54 descriptions encore dupliquées concernent des articles republiés mot pour mot (ex. Meyer Sintermetall 2015-2018). Proposition : ajouter l'édition en tête de description, comme pour les titres, ou désigner une édition de référence par canonical.
 - Toujours en attente : ehc (nouveau lien probable www.ehc-vd.ch), eichenberger (radiée), écoles Minerva et EFB, liens UNIL/UNIGE/vd.ch, darwin-airline, bp-conseils, centre-laser-victor-hugo, `noindex` + canonical sur les redirections, redirection comconsulting.ch.
+
+## 2026-11-19
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : titres > 70 car. 361, titres en double 4, descriptions < 70 car. 35 (annonces au texte court + /404.html), descriptions en double 54.
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Correction faite (tools/build.mjs)**
+- Meta description des articles dont l'extrait imprimé est identique à celui d'un autre article (texte republié d'une édition à l'autre) : l'édition est placée en tête, ex. « Horlogerie 2016 : Meyer Sintermetall est une des rares… ». Texte imprimé inchangé, seule l'édition est ajoutée devant. Descriptions en double : 54 → 1 (Stadt Solothurn – Kurt Fluri, même édition et même année dans deux éditions régionales). 141 articles régénérés, seules les lignes description / og:description changent.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `gepy-papaux` à `henri-badoux`)
+- En panne :
+  - hastag-zuerich (Birmensdorf) : www.hastag.ch redirige vers une page Jura Materials qui répond 404. Zefix : « HASTAG (Zürich) AG », Birmensdorf, CHE-105.874.811, **radiée le 2012-06-20** ; ses succursales radiées en 2020. Activité probablement reprise par Jura Materials (déduit de la redirection, non vérifié).
+  - gs-time (Dongio) : www.gstime-watches.ch → domaine inexistant. Zefix : « GS Time Sagl in liquidazione », Acquarossa, CHE-221.525.858, **radiée le 2024-04-30**.
+  - guillod-gunther (La Chaux-de-Fonds) : www.guillod-gunther.ch → domaine inexistant. Zefix : « Guillod-Günther S.A. en liquidation », CHE-101.935.307, **radiée le 2022-05-09**.
+- Non vérifiables : griffes-consulting (erreur TLS du proxy), groupe-e (403 anti-robot).
+- OK (200) : les 25 autres.
+- Reprise au prochain passage : première fiche après `henri-badoux`.
+
+**Actions humaines requises**
+- Trois sociétés radiées de plus (HASTAG Zürich, GS Time, Guillod-Günther). Avec bp-conseils, eichenberger (radiées), darwin-airline et gems (en liquidation), cela fait 7 fiches d'entreprises disparues en 6 jours de rotation : une règle générale serait utile (mention « Société radiée » sur la fiche, comme pour ABarthel ?).
+- Toujours en attente : liens OsiriX et EHC à corriger, écoles Minerva et EFB, liens UNIL/UNIGE/vd.ch, centre-laser-victor-hugo, `noindex` + canonical sur les redirections, redirection comconsulting.ch.
