@@ -263,3 +263,29 @@
 **Actions humaines requises**
 - Trois sociétés radiées de plus (HASTAG Zürich, GS Time, Guillod-Günther). Avec bp-conseils, eichenberger (radiées), darwin-airline et gems (en liquidation), cela fait 7 fiches d'entreprises disparues en 6 jours de rotation : une règle générale serait utile (mention « Société radiée » sur la fiche, comme pour ABarthel ?).
 - Toujours en attente : liens OsiriX et EHC à corriger, écoles Minerva et EFB, liens UNIL/UNIGE/vd.ch, centre-laser-victor-hugo, `noindex` + canonical sur les redirections, redirection comconsulting.ch.
+
+## 2026-11-20
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : titres > 70 car. 361, titres en double 4, descriptions en double 1. Descriptions < 70 car. : 35 (24 fiches entreprises sans article complet, réduites au nom, parfois avec « Non précisé » ou la ville répétée ; 9 annonces/articles très courts ; /recherche/).
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Correction faite (tools/build.mjs)**
+- Description de repli des fiches entreprises sans article complet (`companyFallbackDescription`) : nom, secteur (sauf « Non précisé »), ville (sauf si déjà dans le nom), puis uniquement ce que la fiche affiche réellement : « coordonnées » si adresse/téléphone/e-mail, « site web » si lien, et le nombre d'éditions où l'entreprise paraît. Ex. « B. Braun Medical AG — Produits et services médicaux, Sempach : coordonnées, site web et parution dans les magazines Swiss Knowhow. » Descriptions < 70 car. : 35 → 24 (restent les noms très courts et les annonces, dont le texte imprimé ne peut pas être allongé). 35 fiches régénérées, seules les lignes description / og:description changent.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `henri-robert` à `incabloc`)
+- En panne :
+  - hestia-constructions (Carouge) : www.hestia.ch → domaine inexistant. Zefix : « HESTIA CONSTRUCTIONS SA », Plan-les-Ouates, CHE-116.281.242, **radiée le 2022-06-29** (probablement la même société après déménagement, non certain).
+  - imh (Le Locle) : imhsa.ch → domaine inexistant. Zefix : « I.M.H. Innovations Manufactures Horlogères SA, en liquidation », La Chaux-de-Fonds, CHE-113.657.380, **radiée le 2025-05-13**.
+  - iffp (Lausanne) : www.iffp.swiss → domaine inexistant ; www.iffp.ch répond 200 (l'institut a été renommé HEFP, fait connu non vérifié ici). Institution fédérale, pas de recherche Zefix.
+  - hiv-biel-seeland : page www.bern-cci.ch/biel-seeland/… → 404 (www.bern-cci.ch en ligne). Association patronale, page déplacée.
+- Non vérifiables (DNS résolu ; erreur TLS/proxy ou 403) : hopitaux-universitaires-de-geneve, hygin-debons, ibaarau, id-imagerie-developpement, il-falegname-fabrizio, hktdc (403).
+- OK (200) : les 20 autres.
+- Reprise au prochain passage : première fiche après `incabloc`.
+
+**Actions humaines requises**
+- Deux sociétés radiées de plus (Hestia Constructions, IMH) : 9 fiches d'entreprises disparues en 7 jours de rotation.
+- Liens à mettre à jour : IFFP (www.iffp.ch ou nouveau site HEFP), HIV Biel-Seeland (nouvelle page bern-cci.ch).
+- Toujours en attente : liens OsiriX et EHC, écoles Minerva et EFB, liens UNIL/UNIGE/vd.ch, centre-laser-victor-hugo, règle pour les sociétés radiées, `noindex` + canonical sur les redirections, redirection comconsulting.ch.

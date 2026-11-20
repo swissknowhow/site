@@ -506,6 +506,18 @@ function pageCompanies() {
   write('entreprises/index.html', layout({ depth: 1, title: 'Annuaire des entreprises', description: `Annuaire de ${companies.length} entreprises suisses présentées dans Swiss Knowhow : coordonnées, secteurs, articles.`, active: 'entreprises/', body }));
 }
 
+// Description de repli d'une fiche sans article complet : uniquement des faits déjà affichés sur la fiche
+// (nom, secteur, ville, présence de coordonnées / site web, nombre d'éditions où l'entreprise apparaît).
+function companyFallbackDescription(c, apps) {
+  const sector = c.sector && !/^non précisé$/i.test(c.sector.trim()) ? c.sector : '';
+  const city = c.city && !c.name.toLowerCase().includes(c.city.toLowerCase()) ? c.city : '';
+  const head = [c.name, sector].filter(Boolean).join(' — ') + (city ? `, ${city}` : '');
+  const n = new Set(apps.map((x) => x.magazine)).size;
+  const what = [(c.phone || c.email || c.address) ? 'coordonnées' : '', webUrl(c.website) ? 'site web' : ''].filter(Boolean).join(', ');
+  const tail = n ? `${n > 1 ? `${n} parutions` : 'parution'} dans les magazines ${SITE_NAME}` : '';
+  return excerpt(`${head} : ${[what, tail].filter(Boolean).join(' et ')}.`);
+}
+
 function pageCompany(c) {
   const r = '../../'; PH_ROOT = r;
   const th = c.themes[0];
@@ -560,7 +572,7 @@ function pageCompany(c) {
 </div>
 ${related.length ? `<section class="wrap section">${sectionHead('Dans le même secteur et la même région', '', r)}<div class="grid grid-4">${related.map((o) => companyCard(o, r)).join('')}</div></section>` : ''}`;
   // Meta description : nom et ville en tête, puis le début du texte imprimé, pour ne pas dupliquer celle de l'article.
-  write(`entreprises/${c.slug}/index.html`, layout({ depth: 2, title: [c.name, [c.sector, c.city].filter(Boolean).join(', ')].filter(Boolean).join(' – ').slice(0, 70), description: (mainArt ? excerpt(`${[c.name, c.city].filter(Boolean).join(', ')} : ${bodyPlain(mainArt)}`) : '') || `${c.name}${c.sector ? ' — ' + c.sector : ''}${c.city ? ', ' + c.city : ''}`, active: 'entreprises/', body, jsonld, image: gallery[0] }));
+  write(`entreprises/${c.slug}/index.html`, layout({ depth: 2, title: [c.name, [c.sector, c.city].filter(Boolean).join(', ')].filter(Boolean).join(' – ').slice(0, 70), description: (mainArt ? excerpt(`${[c.name, c.city].filter(Boolean).join(', ')} : ${bodyPlain(mainArt)}`) : '') || companyFallbackDescription(c, apps), active: 'entreprises/', body, jsonld, image: gallery[0] }));
 }
 
 function pageArticles() {
