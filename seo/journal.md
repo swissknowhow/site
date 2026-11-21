@@ -289,3 +289,33 @@
 - Deux sociétés radiées de plus (Hestia Constructions, IMH) : 9 fiches d'entreprises disparues en 7 jours de rotation.
 - Liens à mettre à jour : IFFP (www.iffp.ch ou nouveau site HEFP), HIV Biel-Seeland (nouvelle page bern-cci.ch).
 - Toujours en attente : liens OsiriX et EHC, écoles Minerva et EFB, liens UNIL/UNIGE/vd.ch, centre-laser-victor-hugo, règle pour les sociétés radiées, `noindex` + canonical sur les redirections, redirection comconsulting.ch.
+
+## 2026-11-21
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : inchangé (titres > 70 car. 361, titres en double 4, descriptions en double 1, descriptions < 70 car. 24).
+- Maillage interne mesuré : toutes les fiches entreprises ont ≥ 3 liens entrants, les magazines ≥ 3 ; seuls 7 annonces n'ont qu'un lien (depuis leur magazine), ce qui est voulu.
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Problème relevé**
+- JSON-LD `Organization` des fiches : `addressCountry` en toutes lettres (« Suisse » ×739, « France » ×2, « Hong Kong » ×1) au lieu du code ISO 3166-1 attendu par schema.org/Google.
+
+**Correction faite (tools/build.mjs)**
+- Conversion à la génération (`countryIso`) : Suisse → CH, France → FR, Hong Kong → HK (table de correspondance, code à deux lettres conservé tel quel, nom inconnu laissé en clair). Données (`data/`) et texte affiché inchangés. Vérifié : 742 JSON-LD valides (CH 739, FR 2, HK 1) ; 742 fiches régénérées, une seule ligne (le JSON-LD) modifiée par page.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `infra-suisse` à `la-cible-trefilage-profilage`)
+- En panne (domaine inexistant) :
+  - itpc (Zürich) : www.itpc.ch. Zefix : « ITPC AG », Zürich, CHE-112.882.365, **radiée le 2022-02-04**.
+  - jakob-stiefel (Wetzikon) : www.jstiefelgmbh.ch. Zefix : « Jakob Stiefel GmbH in Liquidation », CHE-106.951.928, **en liquidation** ; il existe aussi « Jakob Stiefel Technik AG », Wetzikon, CHE-103.649.203, **active** (successeur probable, non vérifié).
+  - jp-muller (Horgen) : jpmuellerag.ch. Zefix : aucune « J.P. Müller AG » à Horgen trouvée (recherches « J.P. Müller », « J. P. Müller », « JP Mueller ») ; statut inconnu.
+  - inselspital-universitatsklinik-hno (Berne) : www.hno.insel.ch inexistant, mais hno.insel.ch (sans « www ») répond 200. Hôpital public : lien à corriger.
+- Non vérifiables : joseph-bonvallat (erreur TLS du proxy), interprofession-du-gruyere (403 anti-robot).
+- OK (200) : les 24 autres.
+- Reprise au prochain passage : première fiche après `la-cible-trefilage-profilage`.
+
+**Actions humaines requises**
+- Liens à corriger : Inselspital HNO (https://hno.insel.ch/), puis OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch.
+- Sociétés disparues : ITPC (radiée) ; Jakob Stiefel GmbH (en liquidation, à rattacher éventuellement à Jakob Stiefel Technik AG) ; J.P. Müller AG à vérifier. Total depuis le 13/11 : 11 fiches concernées. Règle générale toujours à décider.
+- Toujours en attente : écoles Minerva et EFB, centre-laser-victor-hugo, `noindex` + canonical sur les redirections, redirection comconsulting.ch.

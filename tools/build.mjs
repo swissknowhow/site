@@ -508,6 +508,10 @@ function pageCompanies() {
 
 // Description de repli d'une fiche sans article complet : uniquement des faits déjà affichés sur la fiche
 // (nom, secteur, ville, présence de coordonnées / site web, nombre d'éditions où l'entreprise apparaît).
+// schema.org attend un code pays ISO 3166-1 alpha-2 ; les données gardent le nom en clair (affiché sur la fiche).
+const COUNTRY_ISO = { suisse: 'CH', schweiz: 'CH', svizzera: 'CH', switzerland: 'CH', france: 'FR', allemagne: 'DE', deutschland: 'DE', italie: 'IT', italia: 'IT', autriche: 'AT', 'hong kong': 'HK', liechtenstein: 'LI' };
+const countryIso = (name) => { const k = String(name || '').trim().toLowerCase(); return !k ? 'CH' : (COUNTRY_ISO[k] || (/^[a-z]{2}$/.test(k) ? k.toUpperCase() : name)); };
+
 function companyFallbackDescription(c, apps) {
   const sector = c.sector && !/^non précisé$/i.test(c.sector.trim()) ? c.sector : '';
   const city = c.city && !c.name.toLowerCase().includes(c.city.toLowerCase()) ? c.city : '';
@@ -531,7 +535,7 @@ function pageCompany(c) {
   const jsonld = JSON.stringify({
     '@context': 'https://schema.org', '@type': 'Organization', name: c.name, description: excerpt(bodyPlain(mainArt)) || undefined,
     url: webUrl(c.website) || undefined, telephone: c.phone || undefined, email: c.email || undefined,
-    address: addr.length ? { '@type': 'PostalAddress', streetAddress: c.address || undefined, postalCode: c.postalCode || undefined, addressLocality: c.city || undefined, addressRegion: c.canton || undefined, addressCountry: c.country || 'CH' } : undefined,
+    address: addr.length ? { '@type': 'PostalAddress', streetAddress: c.address || undefined, postalCode: c.postalCode || undefined, addressLocality: c.city || undefined, addressRegion: c.canton || undefined, addressCountry: countryIso(c.country) } : undefined,
   }).replace(/[<>&]/g, (ch) => '\\u00' + ch.charCodeAt(0).toString(16));
   const gallery = (c.images || []).slice(0, 6);
   const body = `
