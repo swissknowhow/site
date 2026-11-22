@@ -319,3 +319,29 @@
 - Liens à corriger : Inselspital HNO (https://hno.insel.ch/), puis OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch.
 - Sociétés disparues : ITPC (radiée) ; Jakob Stiefel GmbH (en liquidation, à rattacher éventuellement à Jakob Stiefel Technik AG) ; J.P. Müller AG à vérifier. Total depuis le 13/11 : 11 fiches concernées. Règle générale toujours à décider.
 - Toujours en attente : écoles Minerva et EFB, centre-laser-victor-hugo, `noindex` + canonical sur les redirections, redirection comconsulting.ch.
+
+## 2026-11-22
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : inchangé (titres > 70 car. 361, titres en double 4, descriptions en double 1, descriptions < 70 car. 24).
+- Images : 23 666 balises `<img>` sans `width`/`height` (risque de décalage de mise en page, Core Web Vitals). **Non corrigé en autonomie** : plusieurs règles CSS imposent un `aspect-ratio` sans hauteur (`.article-img`), qu'un attribut `height` écraserait ; l'ajout demande une passe CSS et une vérification visuelle (proposition ci-dessous).
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Correction faite (tools/build.mjs)**
+- `og:type` = `article` sur les 1184 pages d'articles (au lieu de `website`), pour les aperçus sur les réseaux sociaux et messageries. Nouveau paramètre `ogType` de `layout()`, `website` par défaut. Diff : 1184 fichiers, exactement 1 ligne changée chacun.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `la-manufacture-des-franches-montagnes` à `medacta-international`)
+- En panne (domaine inexistant) :
+  - la-manufacture-des-franches-montagnes (Montfaucon) : www.mfmsa.ch. Zefix : « La Manufacture des Franches-Montagnes S.A. en liquidation », CHE-113.087.040, **radiée le 2019-09-05**.
+  - lernpaedagogisches-zentrum (Zürich) : www.lpz-zh.ch. Zefix : « Lernpädagogisches Zentrum AG in Liquidation », CHE-113.290.546, **radiée le 2020-04-09**.
+  - le-futur-du-cadran (annonceur, sans ville) : www.le-futur-du-cadran.ch. Zefix : aucune entrée trouvée.
+- Non vérifiables (DNS résolu ; délai, TLS/proxy ou 503) : made-in-art, lhc-lausanne-hospitality-consulting, luzi, mecanor, laboroute, ligues-de-sante-du-canton-de-fribourg, meco, manufactures-d-outils-dumont (503).
+- OK (200) : les 19 autres.
+- Reprise au prochain passage : première fiche après `medacta-international`.
+
+**Actions humaines requises**
+- Deux sociétés radiées de plus (Manufacture des Franches-Montagnes, LPZ) + « Le futur du cadran » introuvable : 14 fiches concernées depuis le 13/11. Règle générale toujours à décider.
+- Proposition à valider : ajouter `width`/`height` aux images (avec `height: auto` en CSS là où aucune hauteur n'est imposée), avec contrôle visuel des pages types avant mise en ligne.
+- Toujours en attente : liens Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch ; écoles Minerva et EFB ; centre-laser-victor-hugo ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.

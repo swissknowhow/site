@@ -238,7 +238,7 @@ const NAV = [
   ['contact/', 'Contact'],
 ];
 
-function layout({ depth, root, noindex = false, title, description = '', active = '', body, jsonld = '', image = '' }) {
+function layout({ depth, root, noindex = false, title, description = '', active = '', body, jsonld = '', image = '', ogType = 'website' }) {
   const r = root ?? '../'.repeat(depth);
   const breadcrumbLd = LAST_CRUMBS ? JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [[ '', 'Accueil'], ...LAST_CRUMBS].map(([href, label], i, all) => ({ '@type': 'ListItem', position: i + 1, name: label, item: i === all.length - 1 && href == null ? undefined : `${SITE_URL}/${href}` })) }).replace(/[<>&]/g, (ch) => '\\u00' + ch.charCodeAt(0).toString(16)) : '';
   LAST_CRUMBS = null;
@@ -255,7 +255,7 @@ function layout({ depth, root, noindex = false, title, description = '', active 
 <meta name="description" content="${esc(metaDesc(description))}">
 <meta property="og:title" content="${esc(fullTitle)}">
 <meta property="og:description" content="${esc(metaDesc(description))}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="${ogType}">
 <meta property="og:site_name" content="${SITE_NAME}">
 <meta property="og:locale" content="fr_CH">
 <meta name="twitter:card" content="${image ? 'summary_large_image' : 'summary'}">
@@ -659,7 +659,7 @@ function pageArticle(a) {
 ${cos.length ? `<section class="wrap section">${sectionHead(cos.length > 1 ? 'Entreprises citées' : 'Entreprise citée', '', r)}<div class="grid grid-4">${cos.map((c) => companyCard(c, r)).join('')}</div></section>` : ''}
 ${same.length ? `<section class="wrap section">${sectionHead('Sur le même thème', `themes/${th}/`, r)}<div class="grid grid-3">${same.map((o) => articleCard(o, r)).join('')}</div></section>` : ''}`;
   const jsonld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: excerpt(bodyPlain(a)) || a.subtitle || undefined, url: `${SITE_URL}/articles/${a.slug}/`, mainEntityOfPage: `${SITE_URL}/articles/${a.slug}/`, image: a.images?.[0] ? `${SITE_URL}/${a.images[0]}` : undefined, inLanguage: 'fr', publisher: { '@type': 'Organization', name: PUBLISHER.name, url: SITE_URL }, isPartOf: m ? { '@type': 'PublicationIssue', name: m.title, datePublished: m.year ? String(m.year) : undefined } : undefined }).replace(/[<>&]/g, (ch) => '\\u00' + ch.charCodeAt(0).toString(16));
-  write(`articles/${a.slug}/index.html`, layout({ depth: 2, title: articleTitleCount.get(a.slug) || a.title, description: articleDescription(a, m), active: 'articles/', body, jsonld, image: a.images?.[0] }));
+  write(`articles/${a.slug}/index.html`, layout({ depth: 2, title: articleTitleCount.get(a.slug) || a.title, description: articleDescription(a, m), active: 'articles/', body, jsonld, image: a.images?.[0], ogType: 'article' }));
 }
 
 function pageThemes() {
