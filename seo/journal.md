@@ -345,3 +345,30 @@
 - Deux sociétés radiées de plus (Manufacture des Franches-Montagnes, LPZ) + « Le futur du cadran » introuvable : 14 fiches concernées depuis le 13/11. Règle générale toujours à décider.
 - Proposition à valider : ajouter `width`/`height` aux images (avec `height: auto` en CSS là où aucune hauteur n'est imposée), avec contrôle visuel des pages types avant mise en ligne.
 - Toujours en attente : liens Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch ; écoles Minerva et EFB ; centre-laser-victor-hugo ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.
+
+## 2026-11-23
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : titres > 70 car. 361, descriptions en double 1, descriptions < 70 car. 24, **titres en double 4**.
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Correction faite (tools/build.mjs)**
+- Deuxième passe dans la désambiguïsation des titres d'articles : quand deux pages gardent le même titre après ajout de l'édition (même série, même année), on ajoute la personne interviewée si elle diffère, sinon l'intitulé de l'édition régionale. Résultat :
+  - « Énergies nouvelles Vaud – Patrick Chiché » / « – Michel Herzen » ; « Zürcher Handelskammer (ZHK) – Direktion – Beat Zimmermann » / « – Regine Sauter » ;
+  - « Stadt Solothurn – … (Fribourg, Berne-Bienne et Tessin, mai 2015) » / « (Genève et La Côte, janvier 2015) » ; idem pour l'interview Kurt Fluri 2014 (Suisse alémanique / Valais et Neuchâtel).
+- Titres en double : 4 → 0 ; titres > 70 car. inchangés (361). 8 articles régénérés, seules `<title>` et `og:title` changent.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `medeco-ch` à `neuenschwander-composants-horlogers`)
+- En panne (domaine inexistant) :
+  - nat-new-ambrosetti-technologies (Barbengo) : www.newambrosetti-tech.com. Zefix : « NEW AMBROSETTI TECHNOLOGIES SA in liquidazione », Lugano, CHE-105.203.858, **radiée le 2014-11-28**.
+  - my-private-care (Genève) : www.myprivatecare.ch. Zefix : « My Private Care SARL », Carouge, CHE-115.815.833, **active** ; site à retrouver.
+  - minnovarc (La Chaux-de-Fonds) : www.minnovarc.eu. Zefix : aucune entrée (projet franco-suisse, probablement sans entité au registre).
+- Non vérifiables (DNS résolu ; erreur TLS/proxy ou 406) : medileg, merusa, monnier, metafil-lagirolle, mps-micro-precision-systems, meyrincentre (406).
+- OK (200) : les 21 autres.
+- Reprise au prochain passage : première fiche après `neuenschwander-composants-horlogers`.
+
+**Actions humaines requises**
+- NAT New Ambrosetti radiée (2014) ; My Private Care active, nouveau site à trouver ; Minnovarc (projet) probablement terminé. 17 fiches concernées depuis le 13/11.
+- Toujours en attente : règle pour les sociétés radiées ; liens Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch ; écoles Minerva et EFB ; centre-laser-victor-hugo ; width/height des images ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.

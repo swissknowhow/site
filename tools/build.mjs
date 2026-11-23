@@ -625,6 +625,20 @@ function pageArticle(a) {
         const full = `${t} (${om.series || om.title}${om.year ? ' ' + om.year : ''})`;
         articleTitleCount.set(o.slug, full.length > 70 && yearsUnique ? `${t} (${om.year})` : full);
       }
+      // Deuxième passe : si deux pages gardent le même titre (même série, même année), on distingue par la personne
+      // interviewée quand elle diffère, sinon par l'intitulé de l'édition régionale.
+      const seen = new Map();
+      for (const o of os) { const k = articleTitleCount.get(o.slug); if (k) seen.set(k, [...(seen.get(k) || []), o]); }
+      for (const [, same] of seen) {
+        if (same.length < 2) continue;
+        const persons = same.map((o) => o.people?.[0]?.name || '');
+        const byPerson = persons.every(Boolean) && new Set(persons).size === same.length;
+        for (const o of same) {
+          const om = magBySlug[o.magazine];
+          const edition = String(om?.title || '').replace(/^Swiss Knowhow\s*[–-]\s*/, '').replace(/\s*\(([^)]*)\)\s*$/, ', $1');
+          articleTitleCount.set(o.slug, byPerson ? `${t} – ${o.people[0].name}` : `${t} (${edition})`);
+        }
+      }
     }
   }
   const m = magBySlug[a.magazine];
