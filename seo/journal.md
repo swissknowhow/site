@@ -372,3 +372,25 @@
 **Actions humaines requises**
 - NAT New Ambrosetti radiée (2014) ; My Private Care active, nouveau site à trouver ; Minnovarc (projet) probablement terminé. 17 fiches concernées depuis le 13/11.
 - Toujours en attente : règle pour les sociétés radiées ; liens Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch ; écoles Minerva et EFB ; centre-laser-victor-hugo ; width/height des images ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.
+
+## 2026-11-24
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : titres en double 0, titres > 70 car. 361, descriptions < 70 car. 24, **descriptions en double 1**.
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Correction faite (tools/build.mjs)**
+- `articleDescription` : quand deux articles de même série et même année partagent le même extrait imprimé (même texte dans deux éditions régionales), l'édition régionale est nommée en tête au lieu de la série. Ex. « Union des villes suisses : Valais et Neuchâtel, 2014 : Interview mit Nationalrat Kurt Fluri… ». Descriptions en double : 1 → 0. 2 articles régénérés, seules description / og:description changent. Plus aucun titre ni description en double sur le site.
+
+**Rotation sites d'entreprises** (654 liens ; 30 fiches de `ngl-cleaning-technology` à `polirapid-swiss`)
+- En panne :
+  - placor (Marin-Epagnier) : www.placor.ch → domaine inexistant. Zefix : « Placor SA », Laténa, CHE-102.281.106, **active** (Laténa = commune issue de la fusion incluant Marin-Epagnier) ; site à retrouver.
+- Non vérifiables : pesa (erreur TLS du proxy), orion-protection-juridique (400), osc-organizzazione-sociopsichiatrica-cantonale (403, ti.ch), polirapid-swiss (403).
+- OK (200) : les 25 autres.
+- Reprise au prochain passage : première fiche après `polirapid-swiss`.
+
+**Actions humaines requises**
+- placor : société active, trouver son site actuel.
+- Toujours en attente : règle pour les sociétés radiées (17 fiches) ; liens Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch ; écoles Minerva et EFB ; My Private Care ; centre-laser-victor-hugo ; width/height des images ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.

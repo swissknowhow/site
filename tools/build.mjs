@@ -605,7 +605,13 @@ function articleDescription(a, m) {
   const base = excerpt(bodyPlain(a)) || a.subtitle || a.title;
   if (!articleDescCount) { articleDescCount = new Map(); for (const o of articles) { const d = excerpt(bodyPlain(o)) || o.subtitle || o.title; articleDescCount.set(d, (articleDescCount.get(d) || 0) + 1); } }
   if (articleDescCount.get(base) < 2 || !m) return base;
-  return excerpt(`${m.series || m.title}${m.year ? ' ' + m.year : ''} : ${bodyPlain(a) || a.subtitle || a.title}`);
+  const text = bodyPlain(a) || a.subtitle || a.title;
+  const withSeries = excerpt(`${m.series || m.title}${m.year ? ' ' + m.year : ''} : ${text}`);
+  // Même série et même année dans deux éditions régionales : on nomme l'édition régionale à la place.
+  const twins = articles.filter((o) => o !== a && (excerpt(bodyPlain(o)) || o.subtitle || o.title) === base && magBySlug[o.magazine]?.series === m.series && magBySlug[o.magazine]?.year === m.year);
+  if (!twins.length) return withSeries;
+  const edition = String(m.title || '').replace(/^Swiss Knowhow\s*[–-]\s*/, '').replace(/\s*\(([^)]*)\)\s*$/, ', $1');
+  return excerpt(`${edition} : ${text}`);
 }
 let articleTitleCount = null; // slug → titre de page désambiguïsé
 function pageArticle(a) {
