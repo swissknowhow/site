@@ -41,3 +41,6 @@ Coquilles du magazine imprimé ou de l'extraction, corrigées par recoupement (a
 - 20 couvertures régénérées depuis la page 1 des PDF, coupées au format fini (TrimBox) : fin des traits de coupe et des doubles pages (Horlogerie 2015 à 2021 et 2023 : seule la couverture, moitié droite, est gardée).
 - 9 PDF commencent par le sommaire (couverture absente du fichier web) : couvertures existantes conservées.
 - CCIG 2013 : le PDF ne contient qu'une couverture « non disponible » → bouton de téléchargement retiré (pdfUnavailable).
+
+## 2026-11-24 – Placor SA
+- **Placor SA** (CHE-102.281.106, Laténa) : site www.placor.ch disparu (domaine inexistant) et numéro de téléphone attribué à une autre personne (constat de l'éditeur). Toujours inscrite comme active au registre du commerce (dernière publication FOSC 13.02.2025 : changement de commune). Lien du site retiré, mention « coordonnées plus valides » ajoutée sur la fiche ; coordonnées du magazine conservées.

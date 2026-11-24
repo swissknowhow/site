@@ -3637,11 +3637,12 @@
       "country": "Suisse",
       "phone": "+41 (0)32 756 30 30",
       "email": "info@placor.ch",
-      "website": "www.placor.ch",
+      "website": "",
       "contacts": [],
       "page": "105",
       "pdfPages": [],
-      "advertiserOnly": false
+      "advertiserOnly": false,
+      "notice": "Coordonnées plus valides (site et téléphone hors service, novembre 2026). La société reste inscrite au registre du commerce. Les coordonnées ci-dessous sont celles publiées dans le magazine."
     },
     {
       "slug": "econorm",
