@@ -394,3 +394,35 @@
 **Actions humaines requises**
 - placor : société active, trouver son site actuel.
 - Toujours en attente : règle pour les sociétés radiées (17 fiches) ; liens Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch ; écoles Minerva et EFB ; My Private Care ; centre-laser-victor-hugo ; width/height des images ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.
+
+### 2026-11-24 (suite, à la demande de l'éditeur)
+
+**Registre du commerce (Zefix, détail des publications FOSC) pour les fiches dont le site a disparu**
+
+| Fiche | Statut au registre | Détail |
+|---|---|---|
+| placor | **Active** (Placor SA, Laténa, CHE-102.281.106) | Pas de liquidation. Dernière publication 13.02.2025 : seul changement de commune (fusion La Tène → Laténa). Site à retrouver. |
+| itpc | Radiée 04.02.2022 – **fusion** | Absorbée par SoftwareOne AG, Stans (CHE-107.401.257, active). |
+| hestia-constructions | Radiée 29.06.2022 – **fusion** | Reprise par Swissroc Construction SA, Plan-les-Ouates (CHE-371.855.790, active). |
+| hastag-zuerich | Radiée 20.06.2012 – **reprise** | Reprise par JURA Materials Kies & Beton AG (CHE-106.473.886, active) ; le site redirige d'ailleurs vers Jura Materials. |
+| ecole-minerva | **Active** – **rachetée** | Parts cédées à Cita Holding SA, Lausanne (CHE-272.856.188), FOSC 26.08.2025 ; nouveau gérant. Site à retrouver. |
+| darwin-airline | **En liquidation** (Lugano) | Toujours « in liquidazione », pas encore radiée. |
+| gems-world-academy-etoy | **Faillite** 14.12.2023 | Dissoute par le tribunal (art. 731b CO) puis déclarée en faillite. |
+| jakob-stiefel | **En liquidation** (Wetzikon) | Une société distincte, Jakob Stiefel Technik AG (CHE-103.649.203), est active à Wetzikon ; aucune reprise inscrite entre les deux. |
+| eichenberger-futuretech | Radiée 19.12.2019 – liquidation | Liquidation terminée, aucune reprise. |
+| guillod-gunther | Radiée 09.05.2022 – liquidation | Dissoute par l'AG du 02.12.2020. |
+| imh | Radiée 13.05.2025 – liquidation | Dissoute par l'AG du 25.08.2021. |
+| la-manufacture-des-franches-montagnes | Radiée 05.09.2019 – liquidation | Dissolution décidée le 23.05.2018. |
+| lernpaedagogisches-zentrum | Radiée 09.04.2020 – liquidation | |
+| gs-time | Radiée 30.04.2024 – liquidation | |
+| nat-new-ambrosetti-technologies | Radiée 28.11.2014 – liquidation | |
+| bp-conseils | Radiée 01.03.2024 – cessation d'activité | Entreprise individuelle. |
+| ecole-francaise-de-berne | Association radiée 12.12.2013 | L'école peut être exploitée par une autre entité : non trouvée au registre. |
+| my-private-care | **Active** (Carouge) | Site à retrouver. |
+| bcp-tourbillons | **Active** (La Chaux-de-Fonds) | Site à retrouver. |
+| jp-muller, le-futur-du-cadran, minnovarc, centre-laser-victor-hugo | Introuvables au registre | Aucune entité correspondante (projet, annonceur ou entité étrangère probable). |
+
+**Images : dimensions déclarées (tools/build.mjs + docs/assets/css/style.css)**
+- Constat : poids correct (1 840 WebP, 130 Mo, max 262 Ko, ≤ 1 600 px) ; en revanche aucune des 23 666 balises `<img>` ne déclarait `width`/`height`, d'où des décalages de mise en page au chargement (indicateur CLS des Core Web Vitals).
+- Correction : `width`/`height` réels ajoutés à toutes les images (helper `dims()` sur les 7 gabarits), plus une règle CSS de priorité nulle `:where(img[width][height]) { height: auto; }` pour que les règles existantes gardent la main.
+- Vérifications : 3 821 images contrôlées, dimensions déclarées = dimensions réelles (0 écart) ; captures avant/après de 11 pages types en bureau (1366 px) et mobile (390 px) : hauteurs de page identiques partout ; les seules zones différentes sont des images pas encore chargées au moment de la capture (dans un sens comme dans l'autre), pas des changements de mise en page.

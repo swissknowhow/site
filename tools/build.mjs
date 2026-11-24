@@ -345,8 +345,11 @@ const imgSize = (src) => {
   IMG_SIZE.set(src, d);
   return d;
 };
+// Dimensions réelles de l'image en attributs width/height : le navigateur réserve la place avant le chargement (pas de décalage
+// de mise en page, CLS). Le CSS `:where(img[width][height]) { height: auto }` garantit que l'affichage reste piloté par le CSS.
+const dims = (src) => { const d = imgSize(src); return d ? ` width="${d.w}" height="${d.h}"` : ''; };
 const isPortrait = (src) => { const d = imgSize(src); return !!d && d.h > d.w * 1.05; };
-const img = (src, alt, r, cls = '') => `<img class="${[cls, isPortrait(src) ? 'is-portrait' : '', src.startsWith('assets/pages/') ? 'is-page' : ''].filter(Boolean).join(' ')}" src="${r}${esc(src)}" alt="${esc(src.startsWith('assets/pages/') ? `${alt} – page du magazine` : alt)}" loading="lazy" decoding="async">`;
+const img = (src, alt, r, cls = '') => `<img class="${[cls, isPortrait(src) ? 'is-portrait' : '', src.startsWith('assets/pages/') ? 'is-page' : ''].filter(Boolean).join(' ')}" src="${r}${esc(src)}"${dims(src)} alt="${esc(src.startsWith('assets/pages/') ? `${alt} – page du magazine` : alt)}" loading="lazy" decoding="async">`;
 // Texte original de l'édition imprimée (data/texts) : extrait pour les descriptions, bloc « texte intégral »
 const a2n = (a) => Number(magBySlug[a.magazine]?.year) || 0;
 const bodyPlain = (a) => (a?.body?.blocks || []).filter((b) => b.t !== 'h' && b.t !== 'q').map((b) => b.x).join(' ');
@@ -359,7 +362,7 @@ const fullText = (a, m, heading) => (a?.body ? `<section class="full-text" lang=
   </section>` : '');
 // Photo principale d'un article : un portrait n'est pas recadré en bandeau, il est affiché entier sur un fond flouté.
 const articleHero = (src, alt, r) => (isPortrait(src)
-  ? `<div class="article-portrait"><img class="ap-bg" src="${r}${esc(src)}" alt="" aria-hidden="true" decoding="async"><img class="ap-img" src="${r}${esc(src)}" alt="${esc(alt)}" decoding="async"></div>`
+  ? `<div class="article-portrait"><img class="ap-bg" src="${r}${esc(src)}"${dims(src)} alt="" aria-hidden="true" decoding="async"><img class="ap-img" src="${r}${esc(src)}"${dims(src)} alt="${esc(alt)}" decoding="async"></div>`
   : img(src, alt, r, 'article-img'));
 const location = (c) => [c.postalCode && c.city ? `${c.postalCode} ${c.city}` : c.city, c.canton && CANTONS[c.canton] ? CANTONS[c.canton] : (c.country && c.country !== 'Suisse' ? c.country : '')].filter(Boolean).join(' · ');
 
@@ -434,7 +437,7 @@ function pageHome() {
   const themeCounts = Object.keys(THEMES).map((id) => [id, companies.filter((c) => c.themes.includes(id)).length, articles.filter((a) => a.themes.includes(id)).length]);
   const body = `
 <section class="hero">
-  <div class="hero-bg" aria-hidden="true">${heroImgs.map((s, i) => `<img src="${esc(s)}" alt="" class="hero-i${i}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>`).join('')}</div>
+  <div class="hero-bg" aria-hidden="true">${heroImgs.map((s, i) => `<img src="${esc(s)}"${dims(s)} alt="" class="hero-i${i}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'}>`).join('')}</div>
   <div class="wrap hero-inner">
     <p class="eyebrow light">Le magazine du savoir-faire suisse</p>
     <h1>L'annuaire des entreprises<br>qui font la Suisse.</h1>
@@ -456,7 +459,7 @@ function pageHome() {
 <section class="wrap section">
   ${sectionHead('Explorer par thème', 'themes/', r)}
   <div class="theme-grid">
-    ${themeCounts.filter(([, c, a]) => c + a > 0).map(([id, c, a]) => `<a class="theme-card ${thc(id)}${themePhoto(id) ? ' has-photo' : ''}" href="${r}themes/${id}/">${themePhoto(id) ? `<img class="tc-img" src="${r}${themePhoto(id)}" alt="${esc(themeAlt(id))}" loading="lazy">` : ''}${themeIcon(id, 'theme-ico')}<h3>${esc(THEMES[id].label)}</h3><p>${plural(c, 'entreprise', 'entreprises')} · ${plural(a, 'article', 'articles')}</p></a>`).join('')}
+    ${themeCounts.filter(([, c, a]) => c + a > 0).map(([id, c, a]) => `<a class="theme-card ${thc(id)}${themePhoto(id) ? ' has-photo' : ''}" href="${r}themes/${id}/">${themePhoto(id) ? `<img class="tc-img" src="${r}${themePhoto(id)}"${dims(themePhoto(id))} alt="${esc(themeAlt(id))}" loading="lazy">` : ''}${themeIcon(id, 'theme-ico')}<h3>${esc(THEMES[id].label)}</h3><p>${plural(c, 'entreprise', 'entreprises')} · ${plural(a, 'article', 'articles')}</p></a>`).join('')}
   </div>
 </section>
 <section class="section band">
@@ -694,7 +697,7 @@ function pageThemes() {
 ${Object.entries(THEMES).map(([id, t]) => {
     const nc = companies.filter((c) => c.themes.includes(id)).length;
     const na = articles.filter((a) => a.themes.includes(id)).length;
-    return `<a class="theme-card ${thc(id)}${themePhoto(id) ? ' has-photo' : ''}" href="${r}themes/${id}/">${themePhoto(id) ? `<img class="tc-img" src="${r}${themePhoto(id)}" alt="${esc(themeAlt(id))}" loading="lazy">` : ''}${themeIcon(id, 'theme-ico')}<h3>${esc(t.label)}</h3><p>${plural(nc, 'entreprise', 'entreprises')} · ${plural(na, 'article', 'articles')}</p></a>`;
+    return `<a class="theme-card ${thc(id)}${themePhoto(id) ? ' has-photo' : ''}" href="${r}themes/${id}/">${themePhoto(id) ? `<img class="tc-img" src="${r}${themePhoto(id)}"${dims(themePhoto(id))} alt="${esc(themeAlt(id))}" loading="lazy">` : ''}${themeIcon(id, 'theme-ico')}<h3>${esc(t.label)}</h3><p>${plural(nc, 'entreprise', 'entreprises')} · ${plural(na, 'article', 'articles')}</p></a>`;
   }).join('')}
 </div></section>`;
   write('themes/index.html', layout({ depth: 1, title: 'Thèmes', description: 'Les thèmes de Swiss Knowhow : horlogerie, industrie, santé, construction, énergie, collectivités…', active: 'themes/', body }));
@@ -708,7 +711,7 @@ function pageTheme(id) {
   const ms = magazines.filter((m) => m.themes.includes(id));
   const body = `
 <section class="theme-hero ${thc(id)}${themePhoto(id) ? ' has-photo' : ''}">
-  ${themePhoto(id) ? `<img class="th-bg" src="${r}${themePhoto(id)}" alt="${esc(themeAlt(id))}" fetchpriority="high">` : ''}
+  ${themePhoto(id) ? `<img class="th-bg" src="${r}${themePhoto(id)}"${dims(themePhoto(id))} alt="${esc(themeAlt(id))}" fetchpriority="high">` : ''}
   <div class="wrap">
     ${crumbs([['themes/', 'Thèmes'], [null, t.label]], r)}
     <div class="theme-hero-row">${themeIcon(id, 'theme-ico xl')}<div><h1>${esc(t.label)}</h1><p class="lead">${plural(cs.length, 'entreprise', 'entreprises')} · ${plural(as.length, 'article', 'articles')} · ${plural(ms.length, 'magazine', 'magazines')}</p></div></div>

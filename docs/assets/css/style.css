@@ -544,3 +544,6 @@ img.is-portrait { object-position: 50% 18%; }
 .co-article { margin-bottom: 36px; }
 .co-article .full-text h2 { font-size: 1.5rem; margin-top: 4px; }
 .co-article-link { margin-top: 10px; }
+
+/* Les attributs width/height des images ne servent qu'à réserver la place (ratio) : priorité nulle, toute règle existante l'emporte. */
+:where(img[width][height]) { height: auto; }
