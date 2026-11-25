@@ -428,3 +428,35 @@
 - Vérifications : 3 821 images contrôlées, dimensions déclarées = dimensions réelles (0 écart) ; captures avant/après de 11 pages types en bureau (1366 px) et mobile (390 px) : hauteurs de page identiques partout ; les seules zones différentes sont des images pas encore chargées au moment de la capture (dans un sens comme dans l'autre), pas des changements de mise en page.
 
 **Placor (complément 24.11, information de l'éditeur)** : site disparu et numéro de téléphone attribué à une autre personne. La société reste inscrite comme active au registre (dernière publication 02.2025, changement de commune uniquement), mais elle n'est plus joignable par ses coordonnées publiées : activité probablement arrêtée, sans radiation. Parution unique : Sous-traitance horlogère 2016, p. 105 (article commun avec Kyburz & Cie SA). Aucune trace d'un successeur trouvée.
+
+## 2026-11-25
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- En ligne : mention Placor publiée ; attributs width/height des images présents en production.
+- Audit SEO : 0 titre ni description en double ; titres > 70 car. 361 ; descriptions < 70 car. 24. Aucun lien sans texte accessible.
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Problème relevé**
+- /recherche/ porte un meta `noindex` mais était aussi bloquée par `Disallow: /recherche/` dans robots.txt. Google ne peut alors pas lire le noindex (signalé dans la Search Console : « Bloquée par le fichier robots.txt : 1 »).
+
+**Correction faite (tools/build.mjs)**
+- Ligne `Disallow: /recherche/` retirée de robots.txt : la page reste exclue de l'index par son meta noindex, que Google pourra désormais lire. Vérifié : /recherche/ n'est pas dans le sitemap, aucun lien interne avec paramètres de recherche (pas de risque d'URL en série). Fichiers modifiés : robots.txt uniquement.
+
+**Rotation sites d'entreprises** (653 liens ; 30 fiches de `polissages-gautier` à `reymond-freres`)
+- En panne :
+  - poyry-schweiz (Zürich) : www.poyry.ch → 404. Zefix : Pöyry Schweiz AG **renommée** AFRY Schweiz AG, Zürich, CHE-108.100.605, **active** (rachat de Pöyry par le groupe AFRY) ; nouveau site probable afry.com (répond 200).
+  - queloz (Saignelégier) : www.quelozsa.ch → domaine inexistant. Zefix : aucune « Queloz SA » à Saignelégier (seules des entreprises individuelles Queloz, dont une menuiserie active) ; statut inconnu.
+  - posalux : www.posalux.com/site/fr → 404, mais www.posalux.com répond 200 (page déplacée).
+  - prefecture-biel-bienne : www.jgk.be.ch → domaine inexistant (réorganisation des domaines du canton de Berne). Administration publique.
+  - prefecture-de-nyon : page vd.ch → 404 (5e lien vd.ch cassé).
+- Non vérifiables : procolor (erreur TLS), promotion-bracelets (délai), pwc (403), regio-energie-solothurn (503).
+- OK (200) : les 21 autres.
+- Reprise au prochain passage : première fiche après `reymond-freres`.
+
+**Actions humaines requises**
+- Pöyry → AFRY Schweiz AG (renommage) : mettre à jour le lien (et éventuellement la mention « aujourd'hui AFRY Schweiz AG »).
+- Posalux : remplacer par https://www.posalux.com/ ; Préfecture de Biel/Bienne et de Nyon : nouvelles pages officielles à trouver.
+- Queloz SA : vérifier par téléphone.
+- Toujours en attente : mentions pour les sociétés radiées, en liquidation ou rachetées (tableau du 24.11) ; liens Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.

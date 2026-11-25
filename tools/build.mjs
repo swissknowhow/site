@@ -925,7 +925,8 @@ const n = searchIndex();
 write('.nojekyll', '');
 const expires = new Date(Date.now() + 365 * 864e5).toISOString().replace(/\.\d+Z$/, 'Z');
 write('.well-known/security.txt', `Contact: mailto:${PUBLISHER.email}\nExpires: ${expires}\nPreferred-Languages: fr, de, en\nCanonical: ${SITE_URL}/.well-known/security.txt\n`);
-write('robots.txt', `User-agent: *\nAllow: /\nDisallow: /recherche/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+// /recherche/ n'est pas bloquée ici : elle porte un meta noindex, que Google doit pouvoir lire (un Disallow l'en empêcherait).
+write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${SITEMAP.sort().map((u) => `  <url><loc>${SITE_URL}/${u}</loc></url>`).join('\n')}\n</urlset>\n`);
 console.log(`Sitemap : ${SITEMAP.length} pages`);
 // Couleurs des thèmes pour le JS de recherche
