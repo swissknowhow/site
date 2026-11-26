@@ -349,7 +349,8 @@ const imgSize = (src) => {
 // de mise en page, CLS). Le CSS `:where(img[width][height]) { height: auto }` garantit que l'affichage reste piloté par le CSS.
 const dims = (src) => { const d = imgSize(src); return d ? ` width="${d.w}" height="${d.h}"` : ''; };
 const isPortrait = (src) => { const d = imgSize(src); return !!d && d.h > d.w * 1.05; };
-const img = (src, alt, r, cls = '') => `<img class="${[cls, isPortrait(src) ? 'is-portrait' : '', src.startsWith('assets/pages/') ? 'is-page' : ''].filter(Boolean).join(' ')}" src="${r}${esc(src)}"${dims(src)} alt="${esc(src.startsWith('assets/pages/') ? `${alt} – page du magazine` : alt)}" loading="lazy" decoding="async">`;
+// eager = image principale visible dès l'ouverture (élément LCP) : pas de chargement différé, priorité haute.
+const img = (src, alt, r, cls = '', eager = false) => `<img class="${[cls, isPortrait(src) ? 'is-portrait' : '', src.startsWith('assets/pages/') ? 'is-page' : ''].filter(Boolean).join(' ')}" src="${r}${esc(src)}"${dims(src)} alt="${esc(src.startsWith('assets/pages/') ? `${alt} – page du magazine` : alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 // Texte original de l'édition imprimée (data/texts) : extrait pour les descriptions, bloc « texte intégral »
 const a2n = (a) => Number(magBySlug[a.magazine]?.year) || 0;
 const bodyPlain = (a) => (a?.body?.blocks || []).filter((b) => b.t !== 'h' && b.t !== 'q').map((b) => b.x).join(' ');
@@ -362,12 +363,12 @@ const fullText = (a, m, heading) => (a?.body ? `<section class="full-text" lang=
   </section>` : '');
 // Photo principale d'un article : un portrait n'est pas recadré en bandeau, il est affiché entier sur un fond flouté.
 const articleHero = (src, alt, r) => (isPortrait(src)
-  ? `<div class="article-portrait"><img class="ap-bg" src="${r}${esc(src)}"${dims(src)} alt="" aria-hidden="true" decoding="async"><img class="ap-img" src="${r}${esc(src)}"${dims(src)} alt="${esc(alt)}" decoding="async"></div>`
-  : img(src, alt, r, 'article-img'));
+  ? `<div class="article-portrait"><img class="ap-bg" src="${r}${esc(src)}"${dims(src)} alt="" aria-hidden="true" decoding="async"><img class="ap-img" src="${r}${esc(src)}"${dims(src)} alt="${esc(alt)}" fetchpriority="high" decoding="async"></div>`
+  : img(src, alt, r, 'article-img', true));
 const location = (c) => [c.postalCode && c.city ? `${c.postalCode} ${c.city}` : c.city, c.canton && CANTONS[c.canton] ? CANTONS[c.canton] : (c.country && c.country !== 'Suisse' ? c.country : '')].filter(Boolean).join(' · ');
 
 function magCover(m, r, cls = '') {
-  if (m.cover) return `<div class="cover ${cls}">${img(m.cover, `Couverture — ${m.title}`, r)}</div>`;
+  if (m.cover) return `<div class="cover ${cls}">${img(m.cover, `Couverture — ${m.title}`, r, '', cls === 'lg')}</div>`;
   return `<div class="cover cover-gen ${THEMES[m.themes?.[0]] ? thc(m.themes[0]) : 'th-red'} ${cls}" aria-hidden="true"><span class="cg-brand">SWISS<br>KNOWHOW</span><span class="cg-title">${esc(m.series || m.title)}</span><span class="cg-year">${m.year || ''}</span>${m.themes?.[0] ? themeIcon(m.themes[0], 'cg-ico') : ''}</div>`;
 }
 
@@ -544,7 +545,7 @@ function pageCompany(c) {
   const body = `
 <section class="detail-hero ${THEMES[th] ? thc(th) : 'th-red'}">
   <div class="wrap detail-hero-inner">
-    <div class="detail-media">${gallery.length ? img(gallery[0], c.name, r, 'detail-img') : placeholder(c.name, th, 'detail-img')}</div>
+    <div class="detail-media">${gallery.length ? img(gallery[0], c.name, r, 'detail-img', true) : placeholder(c.name, th, 'detail-img')}</div>
     <div class="detail-text">
       ${crumbs([['entreprises/', 'Annuaire'], [null, c.name]], r)}
       <h1>${esc(c.name)}</h1>

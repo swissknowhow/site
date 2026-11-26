@@ -460,3 +460,32 @@
 - Posalux : remplacer par https://www.posalux.com/ ; Préfecture de Biel/Bienne et de Nyon : nouvelles pages officielles à trouver.
 - Queloz SA : vérifier par téléphone.
 - Toujours en attente : mentions pour les sociétés radiées, en liquidation ou rachetées (tableau du 24.11) ; liens Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.
+
+## 2026-11-26
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200 (robots.txt sans Disallow, en ligne). Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : inchangé (0 doublon, titres > 70 car. 361, descriptions < 70 car. 24).
+- Poids des pages de liste : /articles/ 1,4 Mo de HTML (1 128 images), /entreprises/ 850 Ko, pages de thèmes ~900 Ko ; images en chargement différé, donc acceptable. À surveiller ; une pagination serait un chantier à part.
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Problème relevé**
+- L'image principale, visible dès l'ouverture (élément LCP des Core Web Vitals), était en `loading="lazy"` : image de tête des fiches entreprises (722), image de tête paysage des articles, couverture des pages magazine (31). Le chargement différé retarde justement l'affichage de cet élément.
+
+**Correction faite (tools/build.mjs)**
+- Paramètre `eager` du helper `img()` : l'image principale est chargée immédiatement avec `fetchpriority="high"` (fiches : `detail-img` ; articles : en-tête paysage ; magazines : grande couverture) ; `fetchpriority="high"` ajouté aussi à l'image des en-têtes portrait d'articles (déjà non différée). Toutes les autres images restent différées. Vérifié : au plus une image en priorité haute par page (1 130 articles, 722 fiches, 31 magazines, 11 thèmes). 1 883 pages régénérées, seuls les attributs de chargement changent.
+
+**Rotation sites d'entreprises** (653 liens ; 30 fiches de `rgr-robert-grandpierre-rapp` à `seic`)
+- En panne (domaine inexistant) :
+  - rofin-lasag (Belp) : www.rofin-lasag.ch. Zefix : **renommée** COHERENT Switzerland AG, Belp, CHE-108.144.560, **active** (anciens noms : Lasag AG, ROFIN-LASAG AG).
+  - roubaty (Rossens) : www.roubatysa.ch. Zefix : « S. Roubaty S.A. en liquidation », Gibloux, CHE-106.528.010, **en liquidation** (dissolution décidée par l'AG du 16.12.2025).
+  - s-m-architectes (Le Lignon) : www.sm-ge.ch. Zefix : « S + M Architectes SA, Vernier, en liquidation », CHE-106.627.416, **radiée d'office le 25.03.2026 après faillite** (clôture de la faillite le 10.03.2026).
+- Non vérifiables : rudolf-brugger, safed-suisse, schmidt-technology (erreur TLS du proxy), ryf (403), sbb-infrastruktur-region-mitte (403).
+- OK (200) : les 22 autres.
+- Reprise au prochain passage : première fiche après `seic`.
+
+**Actions humaines requises**
+- Rofin-Lasag → COHERENT Switzerland AG (renommage) : mettre à jour le lien.
+- S. Roubaty (liquidation) et S+M Architectes (faillite, radiée) : à ajouter au tableau des mentions du 24.11.
+- Toujours en attente : mentions sociétés radiées / en liquidation / rachetées ; liens AFRY, Posalux, préfectures, Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.
