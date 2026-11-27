@@ -239,6 +239,8 @@ const NAV = [
 ];
 
 function layout({ depth, root, noindex = false, title, description = '', active = '', body, jsonld = '', image = '', ogType = 'website' }) {
+  // Image d'aperçu (réseaux sociaux, messageries) : à défaut d'image propre, couverture du magazine le plus récent (vraie couverture imprimée).
+  if (!image) image = magazines.find((x) => x.cover)?.cover || '';
   const r = root ?? '../'.repeat(depth);
   const breadcrumbLd = LAST_CRUMBS ? JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [[ '', 'Accueil'], ...LAST_CRUMBS].map(([href, label], i, all) => ({ '@type': 'ListItem', position: i + 1, name: label, item: i === all.length - 1 && href == null ? undefined : `${SITE_URL}/${href}` })) }).replace(/[<>&]/g, (ch) => '\\u00' + ch.charCodeAt(0).toString(16)) : '';
   LAST_CRUMBS = null;
@@ -580,7 +582,7 @@ function pageCompany(c) {
 </div>
 ${related.length ? `<section class="wrap section">${sectionHead('Dans le même secteur et la même région', '', r)}<div class="grid grid-4">${related.map((o) => companyCard(o, r)).join('')}</div></section>` : ''}`;
   // Meta description : nom et ville en tête, puis le début du texte imprimé, pour ne pas dupliquer celle de l'article.
-  write(`entreprises/${c.slug}/index.html`, layout({ depth: 2, title: [c.name, [c.sector, c.city].filter(Boolean).join(', ')].filter(Boolean).join(' – ').slice(0, 70), description: (mainArt ? excerpt(`${[c.name, c.city].filter(Boolean).join(', ')} : ${bodyPlain(mainArt)}`) : '') || companyFallbackDescription(c, apps), active: 'entreprises/', body, jsonld, image: gallery[0] }));
+  write(`entreprises/${c.slug}/index.html`, layout({ depth: 2, title: [c.name, [c.sector, c.city].filter(Boolean).join(', ')].filter(Boolean).join(' – ').slice(0, 70), description: (mainArt ? excerpt(`${[c.name, c.city].filter(Boolean).join(', ')} : ${bodyPlain(mainArt)}`) : '') || companyFallbackDescription(c, apps), active: 'entreprises/', body, jsonld, image: gallery[0] || apps.map((ap) => ap.m.cover).find(Boolean) }));
 }
 
 function pageArticles() {
@@ -683,7 +685,7 @@ function pageArticle(a) {
 ${cos.length ? `<section class="wrap section">${sectionHead(cos.length > 1 ? 'Entreprises citées' : 'Entreprise citée', '', r)}<div class="grid grid-4">${cos.map((c) => companyCard(c, r)).join('')}</div></section>` : ''}
 ${same.length ? `<section class="wrap section">${sectionHead('Sur le même thème', `themes/${th}/`, r)}<div class="grid grid-3">${same.map((o) => articleCard(o, r)).join('')}</div></section>` : ''}`;
   const jsonld = JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: a.title, description: excerpt(bodyPlain(a)) || a.subtitle || undefined, url: `${SITE_URL}/articles/${a.slug}/`, mainEntityOfPage: `${SITE_URL}/articles/${a.slug}/`, image: a.images?.[0] ? `${SITE_URL}/${a.images[0]}` : undefined, inLanguage: 'fr', publisher: { '@type': 'Organization', name: PUBLISHER.name, url: SITE_URL }, isPartOf: m ? { '@type': 'PublicationIssue', name: m.title, datePublished: m.year ? String(m.year) : undefined } : undefined }).replace(/[<>&]/g, (ch) => '\\u00' + ch.charCodeAt(0).toString(16));
-  write(`articles/${a.slug}/index.html`, layout({ depth: 2, title: articleTitleCount.get(a.slug) || a.title, description: articleDescription(a, m), active: 'articles/', body, jsonld, image: a.images?.[0], ogType: 'article' }));
+  write(`articles/${a.slug}/index.html`, layout({ depth: 2, title: articleTitleCount.get(a.slug) || a.title, description: articleDescription(a, m), active: 'articles/', body, jsonld, image: a.images?.[0] || m?.cover, ogType: 'article' }));
 }
 
 function pageThemes() {
@@ -723,7 +725,7 @@ ${cs.length ? `<section class="wrap section">${sectionHead('Entreprises', '', r)
   ${filterBar({ withThemes: false })}
   <div class="grid grid-4" data-list>${cs.map((c) => companyCard(c, r)).join('')}</div><p class="empty" data-empty hidden>Aucun résultat.</p></section>` : ''}
 ${ms.length ? `<section class="section band"><div class="wrap">${sectionHead('Magazines', 'magazines/', r, 'Tous les PDF')}<div class="mag-rail">${ms.map((m) => magCard(m, r)).join('')}</div></div></section>` : ''}`;
-  write(`themes/${id}/index.html`, layout({ depth: 2, title: t.label, description: `${t.label} : ${cs.length} entreprises et ${as.length} articles dans l'annuaire Swiss Knowhow.`, active: 'themes/', body }));
+  write(`themes/${id}/index.html`, layout({ depth: 2, title: t.label, description: `${t.label} : ${cs.length} entreprises et ${as.length} articles dans l'annuaire Swiss Knowhow.`, active: 'themes/', body, image: themePhoto(id) }));
 }
 
 function pageMagazines() {

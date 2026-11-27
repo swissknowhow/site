@@ -489,3 +489,28 @@
 - Rofin-Lasag → COHERENT Switzerland AG (renommage) : mettre à jour le lien.
 - S. Roubaty (liquidation) et S+M Architectes (faillite, radiée) : à ajouter au tableau des mentions du 24.11.
 - Toujours en attente : mentions sociétés radiées / en liquidation / rachetées ; liens AFRY, Posalux, préfectures, Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE/vd.ch ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.
+
+## 2026-11-27
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : inchangé (0 doublon, titres > 70 car. 361, descriptions < 70 car. 24).
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Problème relevé**
+- 137 pages sans `og:image` (aucun aperçu visuel quand on les partage sur LinkedIn, WhatsApp, etc.) : 64 fiches entreprises et 54 articles sans photo, 11 pages de thèmes, les pages de liste, contact, mentions légales, 404.
+
+**Correction faite (tools/build.mjs)**
+- Image d'aperçu de repli, toujours une vraie image imprimée (aucune image IA) : pages de thème → photo du thème (data/theme_photos.json) ; article sans photo → couverture de son magazine ; fiche sans photo → couverture du magazine où l'entreprise est parue ; autres pages → couverture du magazine le plus récent. Vérifié : 2 021 pages sur 2 021 ont un `og:image`, chaque fichier existe. 137 pages régénérées, seules les lignes `og:image` / `twitter:card` changent.
+
+**Rotation sites d'entreprises** (653 liens ; 30 fiches de `sennwald-architectes` à `stadt-winterthur`)
+- En panne :
+  - sipal-vaud : page vd.ch → 404 (6e lien vd.ch cassé ; site vd.ch en ligne). Administration, pas de recherche Zefix.
+- Non vérifiables (DNS résolu ; erreur TLS du proxy ou 500) : similor, stadt-aarau, stadt-baden-standortmarketing, sicli-switzerland (utcfireandsecurity.com, marque probablement reprise : à vérifier), soleol (500).
+- OK (200) : les 24 autres.
+- Reprise au prochain passage : première fiche après `stadt-winterthur`.
+
+**Actions humaines requises**
+- Liens vd.ch : désormais 6 fiches concernées (DECS, DGMR, Affaires extérieures, Préfecture de Nyon, SIPAL, …) : une passe groupée sur les fiches « Canton de Vaud » reste la plus efficace.
+- Toujours en attente : mentions sociétés radiées / en liquidation / rachetées (tableau du 24.11 + Roubaty, S+M Architectes) ; liens AFRY, COHERENT, Posalux, préfectures, Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.
