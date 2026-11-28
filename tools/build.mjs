@@ -725,7 +725,7 @@ ${cs.length ? `<section class="wrap section">${sectionHead('Entreprises', '', r)
   ${filterBar({ withThemes: false })}
   <div class="grid grid-4" data-list>${cs.map((c) => companyCard(c, r)).join('')}</div><p class="empty" data-empty hidden>Aucun résultat.</p></section>` : ''}
 ${ms.length ? `<section class="section band"><div class="wrap">${sectionHead('Magazines', 'magazines/', r, 'Tous les PDF')}<div class="mag-rail">${ms.map((m) => magCard(m, r)).join('')}</div></div></section>` : ''}`;
-  write(`themes/${id}/index.html`, layout({ depth: 2, title: t.label, description: `${t.label} : ${cs.length} entreprises et ${as.length} articles dans l'annuaire Swiss Knowhow.`, active: 'themes/', body, image: themePhoto(id) }));
+  write(`themes/${id}/index.html`, layout({ depth: 2, title: `${t.label} en Suisse – annuaire et articles`.length <= 70 ? `${t.label} en Suisse – annuaire et articles` : `${t.label} en Suisse`, description: `${t.label} : ${cs.length} entreprises et ${as.length} articles dans l'annuaire Swiss Knowhow.`, active: 'themes/', body, image: themePhoto(id) }));
 }
 
 function pageMagazines() {

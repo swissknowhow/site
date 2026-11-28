@@ -514,3 +514,28 @@
 **Actions humaines requises**
 - Liens vd.ch : désormais 6 fiches concernées (DECS, DGMR, Affaires extérieures, Préfecture de Nyon, SIPAL, …) : une passe groupée sur les fiches « Canton de Vaud » reste la plus efficace.
 - Toujours en attente : mentions sociétés radiées / en liquidation / rachetées (tableau du 24.11 + Roubaty, S+M Architectes) ; liens AFRY, COHERENT, Posalux, préfectures, Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.
+
+## 2026-11-28
+
+**Contrôles**
+- https://swissknowhow.ch/, /sitemap.xml, /robots.txt : 200. Sitemap : 2019 URL ; 20 URL tirées au hasard : 20 × 200.
+- `node tools/build.mjs` + `check_site.py` : 2059 pages, 0 lien cassé, 0 valeur vide. `git status` : seul `security.txt` (date), remis. Pas de nouveau commit ni de changement de consignes depuis hier.
+- Audit SEO : inchangé (0 doublon, titres > 70 car. 361, descriptions < 70 car. 24).
+- comconsulting.ch : toujours la page « en construction » d'OVH.
+
+**Problème relevé**
+- Les 11 pages de thèmes (pages carrefour, les mieux placées pour des recherches génériques du type « sous-traitance horlogère suisse ») avaient pour `<title>` le seul libellé du thème, ex. « Horlogerie & microtechnique · Swiss Knowhow ».
+
+**Correction faite (tools/build.mjs)**
+- `<title>` des pages de thèmes : « {thème} en Suisse – annuaire et articles », ou « {thème} en Suisse » si la forme longue dépasse 70 caractères (Collectivités & institutions publiques). Ex. « Horlogerie & microtechnique en Suisse – annuaire et articles ». Le titre h1 affiché sur la page et le fil d'Ariane ne changent pas. 11 pages régénérées, seules `<title>` / `og:title` changent ; aucun titre > 70 car. ajouté.
+
+**Rotation sites d'entreprises** (653 liens ; 30 fiches de `stadt-zuerich-praesidialdepartement` à `tech-insta`)
+- En panne :
+  - stadtentwicklung-winterthur : stadtentwicklung.winterthur.ch → domaine inexistant ; stadt.winterthur.ch répond 200 (service intégré au site de la Ville). Administration, pas de recherche Zefix.
+- Non vérifiables : swiss-stem-cell-bank (erreur TLS du proxy), tavadec (403), swisscreativelab (525, erreur du serveur).
+- OK (200) : les 26 autres.
+- Reprise au prochain passage : première fiche après `tech-insta`.
+
+**Actions humaines requises**
+- Stadtentwicklung Winterthur : nouvelle page à trouver sur stadt.winterthur.ch.
+- Toujours en attente : mentions sociétés radiées / en liquidation / rachetées (tableau du 24.11 + Roubaty, S+M Architectes) ; liens AFRY, COHERENT, Posalux, préfectures, Inselspital HNO, OsiriX, EHC, IFFP, HIV Biel-Seeland, UNIL/UNIGE, vd.ch (6) ; `noindex` + canonical sur les redirections ; redirection comconsulting.ch.
